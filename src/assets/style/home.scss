@@ -1,0 +1,141 @@
+.home-component {
+	background: white;
+	border: 1px solid gainsboro;
+
+	.sld{
+		height: 495px;
+	}
+
+	.part-2{
+		background: white;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.part-1{
+		padding-top: 1em;
+		.addons{
+		.priceoff{
+			height: 270px;
+		    width: 100%;
+		    background: #f98b03;
+		    position: relative;
+
+		    i{
+		    	color: white;
+			    font-size: 4em;
+			    margin-top: 25px;
+		    }
+			.title{
+				font-size: 30px;
+			    font-weight: bold;
+			    color: white;
+			    position: absolute;
+			    top: 0;
+			    bottom: 0;
+			    height: 100px;
+			    margin: auto;
+			    span{
+			    	font-size: 40px;
+			    }
+			}
+			.shop-now {
+		    	font-size: 14px;
+    			color: #333358;
+    			cursor: pointer;
+    			transition: all 1s;
+    			i {
+    				font-size: 14px;
+    				color: #333358;
+    				transition: all 1s;
+    			}
+    			&:hover {
+    				transform: translateX(10px);
+    				color: white;
+    			};
+		    }
+
+		}
+		.deal {
+			width: 100%;
+			background-color: white;
+			position: relative;
+			font-family: "Roboto", sans-serif;
+			text-align: left;
+			border: 1px solid gainsboro;
+    		padding: 1em 0 0 1em;
+    		p{
+    			margin-bottom: 0.5em;
+    		}
+			p:nth-child(1){
+				color: gray;
+			    font-weight: bold;
+			    font-size: 1.3em;
+			};
+			.count-down{
+				padding: 3px;
+			    background: rgba(249, 3, 3, 0.7);
+			    color: white;
+			    width: fit-content;
+			};
+			
+			.parts{
+				display: flex;
+				.one{
+					p:nth-child(1){
+						color: gray;
+					    font-weight: bold;
+					    font-size: 1em;
+					};
+					p:nth-child(2){
+					    color: rgba(249, 3, 3, 0.7);
+					    font-weight: bold;
+					};
+				}
+			}
+			.two {
+				width: 120px;
+			}
+			img{
+				width: 100%;
+			}
+			.shop-now {
+		    	font-size: 14px;
+    			color: #333358;
+    			cursor: pointer;
+    			transition: all 1s;
+    			font-family: "Roboto", sans-serif;
+    			font-weight: bold;
+    			i {
+    				font-size: 14px;
+    				color: #333358;
+    				transition: all 1s;
+    			}
+    			&:hover {
+    				transform: translateX(10px);
+    				color: #f98b03;;
+    			};
+		    }
+		}
+	}
+	}
+	.ft-container {
+		padding: 1em;
+		.feat {
+			border: 1px solid gainsboro;
+			height: 30px;
+			padding-top: 2px;
+			.txt-ft{
+			    font-weight: bold;
+			    color: #aba8a8;
+			    font-family: "roboto";
+			    font-size: 18px;
+			    float: left;
+			    margin-left: 1em;
+			}
+			.show-ft{
+				float: right;
+				margin-right: 1em;
+			}
+		}
+	}
+}
