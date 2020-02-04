@@ -11,63 +11,63 @@
 </template>
 
 <script>
-import axios from "axios";
-import { errorToaster } from "../shared/service/ErrorHandler";
-import CardLoader from "../shared/CardLoader";
-import CardTemplate from "../shared/CardTemplate";
-import EditProduct from "./actions/EditProduct";
+import axios from 'axios'
+import { errorToaster } from '../shared/service/ErrorHandler'
+import CardLoader from '../shared/CardLoader'
+import CardTemplate from '../shared/CardTemplate'
+import EditProduct from './actions/EditProduct'
 export default {
-  name: "BestProducts",
+  name: 'BestProducts',
   components: { CardLoader, CardTemplate, EditProduct },
-  data() {
+  data () {
     return {
       FeaturedProducts: [
-{
-          productImage: "/img/1.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Kamambiri",
-          productPrice: "100$"
+        {
+          productImage: '/img/1.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Kamambiri',
+          productPrice: '100$'
         },
         {
-          productImage: "/img/2.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Sandal",
-          productPrice: "600$"
+          productImage: '/img/2.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Sandal',
+          productPrice: '600$'
         },
         {
-          productImage: "/img/3.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Umoja",
-          productPrice: "400$"
+          productImage: '/img/3.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Umoja',
+          productPrice: '400$'
         },
         {
-          productImage: "/img/shoe-bg.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Slippers",
-          productPrice: "150$"
+          productImage: '/img/shoe-bg.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Slippers',
+          productPrice: '150$'
         },
         {
-          productImage: "/img/3.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Ketch",
-          productPrice: "300$"
+          productImage: '/img/3.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Ketch',
+          productPrice: '300$'
         },
         {
-          productImage: "/img/1.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Style",
-          productPrice: "50$"
+          productImage: '/img/1.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Style',
+          productPrice: '50$'
         }
       ],
       loading: false
-    };
+    }
   },
   methods: {
-    editProduct(product) {
-      this.$refs.editProduct.setProduct(product);
+    editProduct (product) {
+      this.$refs.editProduct.setProduct(product)
     },
 
-    getFeaturedProducts() {
+    getFeaturedProducts () {
       // this.loading = true;
       // axios
       //   .get(`${process.env.VUE_APP_BASE_URL}/best/products`)
@@ -84,10 +84,10 @@ export default {
       //   });
     }
   },
-  created() {
-    this.getFeaturedProducts();
+  created () {
+    this.getFeaturedProducts()
   }
-};
+}
 </script>
 
 <style lang="scss">
@@ -96,6 +96,6 @@ export default {
 }
 svg{
   width: 100% !important;
-  padding: 0 !important; 
+  padding: 0 !important;
 }
 </style>

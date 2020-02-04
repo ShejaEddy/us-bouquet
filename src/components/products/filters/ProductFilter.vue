@@ -12,36 +12,36 @@
       <ul class="list-group cat">
         <li class="list-group-item cat-title">Shop By Fabric</li>
         <li class="list-group-item"  v-for="val in fabric" :value="val" @click="(event) => updateFilter(event, val)">{{ val }}</li>
-      </ul>      
+      </ul>
     </div>
     <create-product ref="createProduct"/>
   </div>
 </template>
 
 <script>
-import CreateProduct from "../actions/CreateProduct";
-import { mapState } from "vuex";
+import CreateProduct from '../actions/CreateProduct'
+import { mapState } from 'vuex'
 export default {
-  name: "productFilter",
-  props: ["categories", "price", "fabric"],
+  name: 'productFilter',
+  props: ['categories', 'price', 'fabric'],
   components: { CreateProduct },
-  computed: mapState(["loggedUser"]),
-  data() {
+  computed: mapState(['loggedUser']),
+  data () {
     return {
-      selectedCategory: "All",
-      selectedSeller: "All",
+      selectedCategory: 'All',
+      selectedSeller: 'All',
       showCreateProductModal: false
-    };
+    }
   },
   methods: {
-    updateFilter(event, productFilterID) {
-      this.$parent.filterProductBy(event, productFilterID);
+    updateFilter (event, productFilterID) {
+      this.$parent.filterProductBy(event, productFilterID)
     },
-    openCreateModal() {
-      this.$refs.createProduct.showModalForm();
+    openCreateModal () {
+      this.$refs.createProduct.showModalForm()
     }
   }
-};
+}
 </script>
 
 <style lang="scss">
@@ -74,6 +74,6 @@ export default {
     }
     }
 }
-  
+
 }
 </style>

@@ -108,60 +108,60 @@
       </div>
     </div>
   </div>
- </div> 
+ </div>
 </template>
 
 <script>
-import { mapState, mapActions, mapMutations } from "vuex";
-import CartCalculator from "./CartCalculator";
+import { mapState, mapActions, mapMutations } from 'vuex'
+import CartCalculator from './CartCalculator'
 export default {
-  name: "CartProducts",
+  name: 'CartProducts',
   components: { CartCalculator },
-  data() {
+  data () {
     return {
-      qty:[]
-    };
-  },
-  computed: {
-    ...mapState(["cartProducts"]),
-    products(){
-      return [...new Set(this.cartProducts.map(v=>JSON.stringify(v)))].map(v=>JSON.parse(v))
-    },
-    
-  },
-  methods: {
-    ...mapMutations(["SET_CART_PRODUCTS","ADD_CART_LOCAL"]),
-    addToCart(product) {
-        this.ADD_CART_LOCAL(product);
-    },
-    removeFromCart(item){
-      var index = null;
-      for (let i = 0; i < this.cartProducts.length; i++) {
-        if(this.cartProducts[i].productName === item.productName) {
-           index = i
-        }
-      }
-      this.cartProducts.splice(index,1)
-      this.SET_CART_PRODUCTS(this.cartProducts);
-      localStorage.setItem("iki-cart", JSON.stringify(this.cartProducts));
-    },
-    QtyProduct(item){
-      return this.cartProducts.filter(v=>v.productName===item.productName).length
-    },
-    removeProductCart(product) {
-      const products = JSON.parse(localStorage.getItem("iki-cart"));
-      for (let i = 0; i < products.length; i++) {
-        if (products[i]._id === product._id) {
-          products.splice(i, 1);
-        }
-      }
-      this.SET_CART_PRODUCTS(products);
-      localStorage.setItem("iki-cart", JSON.stringify(products));
-      this.$refs.cartCalculator.calulateTotalPrice();
+      qty: []
     }
   },
-  mounted() {}
-};
+  computed: {
+    ...mapState(['cartProducts']),
+    products () {
+      return [...new Set(this.cartProducts.map(v => JSON.stringify(v)))].map(v => JSON.parse(v))
+    }
+
+  },
+  methods: {
+    ...mapMutations(['SET_CART_PRODUCTS', 'ADD_CART_LOCAL']),
+    addToCart (product) {
+      this.ADD_CART_LOCAL(product)
+    },
+    removeFromCart (item) {
+      var index = null
+      for (let i = 0; i < this.cartProducts.length; i++) {
+        if (this.cartProducts[i].productName === item.productName) {
+          index = i
+        }
+      }
+      this.cartProducts.splice(index, 1)
+      this.SET_CART_PRODUCTS(this.cartProducts)
+      localStorage.setItem('iki-cart', JSON.stringify(this.cartProducts))
+    },
+    QtyProduct (item) {
+      return this.cartProducts.filter(v => v.productName === item.productName).length
+    },
+    removeProductCart (product) {
+      const products = JSON.parse(localStorage.getItem('iki-cart'))
+      for (let i = 0; i < products.length; i++) {
+        if (products[i]._id === product._id) {
+          products.splice(i, 1)
+        }
+      }
+      this.SET_CART_PRODUCTS(products)
+      localStorage.setItem('iki-cart', JSON.stringify(products))
+      this.$refs.cartCalculator.calulateTotalPrice()
+    }
+  },
+  mounted () {}
+}
 </script>
 
 <style>

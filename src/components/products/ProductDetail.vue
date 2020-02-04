@@ -5,7 +5,7 @@
         <div class="container-fliud">
           <div class="wrapper row">
             <div class="preview col-md-6">
-              
+
               <div class="preview-pic tab-content">
                 <div class="tab-pane active" id="pic-1"><img :src="product.productImage" /></div>
                 <div class="tab-pane" id="pic-2"><img src="/img/2.jpg" /></div>
@@ -20,7 +20,7 @@
                 <li><a data-target="#pic-4" data-toggle="tab"><img src="/img/4.jpg" /></a></li>
                 <li><a data-target="#pic-5" data-toggle="tab"><img src="/img/2.jpg" /></a></li>
               </ul>
-              
+
             </div>
             <div class="details col-md-6">
               <h3 class="product-title">{{product.productName}}</h3>
@@ -71,86 +71,86 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapMutations } from "vuex";
-import CardTemplate from "../shared/CardTemplate";
-import { infoToaster, successToaster, errorToaster } from "../../components/shared/service/ErrorHandler.js";
+import { mapState, mapActions, mapMutations } from 'vuex'
+import CardTemplate from '../shared/CardTemplate'
+import { infoToaster, successToaster, errorToaster } from '../../components/shared/service/ErrorHandler.js'
 
 export default {
-  name: "productDetail",
+  name: 'productDetail',
   components: { CardTemplate },
-  data() {
+  data () {
     return {
       product: {
-          productImage: "/img/shoe-bg.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Slippers",
-          productPrice: "150$"
-        },
+        productImage: '/img/shoe-bg.jpg',
+        productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+        productName: 'Slippers',
+        productPrice: '150$'
+      },
       similarProduct: [
-{
-          productImage: "/img/1.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Kamambiri",
-          productPrice: "100$"
+        {
+          productImage: '/img/1.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Kamambiri',
+          productPrice: '100$'
         },
         {
-          productImage: "/img/2.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Sandal",
-          productPrice: "600$"
+          productImage: '/img/2.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Sandal',
+          productPrice: '600$'
         },
         {
-          productImage: "/img/3.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Umoja",
-          productPrice: "400$"
+          productImage: '/img/3.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Umoja',
+          productPrice: '400$'
         },
         {
-          productImage: "/img/shoe-bg.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Slippers",
-          productPrice: "150$"
+          productImage: '/img/shoe-bg.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Slippers',
+          productPrice: '150$'
         },
         {
-          productImage: "/img/3.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Ketch",
-          productPrice: "300$"
+          productImage: '/img/3.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Ketch',
+          productPrice: '300$'
         },
         {
-          productImage: "/img/1.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Style",
-          productPrice: "50$"
+          productImage: '/img/1.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Style',
+          productPrice: '50$'
         }
       ]
-    };
+    }
   },
   methods: {
-    getSimilarProduct(productSeller) {
+    getSimilarProduct (productSeller) {
       axios
         .get(`${process.env.VUE_APP_BASE_URL}/products/similarProduct`, {
           params: { productSeller: productSeller }
         })
         .then(response => {
-          this.similarProduct = response.data;
+          this.similarProduct = response.data
         })
         .catch(error => {
-          console.log(error);
-        });
+          console.log(error)
+        })
     },
-    ...mapMutations(["ADD_CART_LOCAL"]),
-    addToCart(product) {
-      const data = _.find(this.$store.getters.cartProducts, product);
+    ...mapMutations(['ADD_CART_LOCAL']),
+    addToCart (product) {
+      const data = _.find(this.$store.getters.cartProducts, product)
       if (data) {
-        infoToaster("Already Added", "Product Already Added");
+        infoToaster('Already Added', 'Product Already Added')
       } else {
-        successToaster("Added Successfully", "Product Added Successfully");
-        this.ADD_CART_LOCAL(product);
+        successToaster('Added Successfully', 'Product Added Successfully')
+        this.ADD_CART_LOCAL(product)
       }
     }
   },
-  created() {
+  created () {
     // this.$axios
     //   .get(/products/${this.$route.params.id})
     //   .then(response => {
@@ -171,7 +171,7 @@ export default {
     //     errorToaster("Error while fetching similar products", "");
     //   });
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -221,11 +221,11 @@ export default {
   }
   .preview-thumbnail.nav-tabs li {
     width: 18%;
-    margin-right: 2.5%; 
+    margin-right: 2.5%;
   }
     .preview-thumbnail.nav-tabs li img {
       max-width: 100%;
-      display: block; 
+      display: block;
     }
     .preview-thumbnail.nav-tabs li a {
       padding: 0;
@@ -234,7 +234,7 @@ export default {
       margin-right: 0; }
 
 .tab-content {
-  overflow: hidden; 
+  overflow: hidden;
 }
   .tab-content img {
     max-height: 370px;
@@ -246,7 +246,7 @@ export default {
 
 .card {
   padding: 3em;
-  line-height: 1.5em; 
+  line-height: 1.5em;
   border: none;
   font-family: "Roboto",sans-serif;
 }
@@ -289,10 +289,10 @@ export default {
   margin-top: 0; }
 
 .size {
-  margin-right: 4px; 
+  margin-right: 4px;
 }
   .size:first-of-type {
-    margin-left: 40px; 
+    margin-left: 40px;
   }
 
 .color {
@@ -312,30 +312,30 @@ export default {
   font-size: 0.8em;
   color: #fff;
   -webkit-transition: background .3s ease;
-   transition: background .3s ease; 
+   transition: background .3s ease;
 }
   .add-to-cart:hover, .like:hover {
     background: #b36800;
-    color: #fff; 
+    color: #fff;
   }
 
 .not-available {
   text-align: center;
-  line-height: 2em; 
+  line-height: 2em;
 }
   .not-available:before {
     font-size: 13px;
     font-family: fontawesome;
     content: "\f00d";
-    color: #fff; 
+    color: #fff;
   }
 
 .orange {
-  background: #ff9f1a; 
+  background: #ff9f1a;
 }
 
 .green {
-  background: #85ad00; 
+  background: #85ad00;
 }
 
 .blue {

@@ -6,28 +6,28 @@
     </div>
 </template>
 <script>
-import Modal from "../../shared/Modal.vue";
-import ProductForm from "./ProductForm";
+import Modal from '../../shared/Modal.vue'
+import ProductForm from './ProductForm'
 export default {
-  name: "createProduct",
+  name: 'createProduct',
   components: { Modal, ProductForm },
-  data() {
+  data () {
     return {
       product: new Object(),
       showModal: false
-    };
+    }
   },
   methods: {
-    showModalForm: function() {
-      this.showModal = true;
+    showModalForm: function () {
+      this.showModal = true
     },
 
-    productAction: function(product) {
-      console.log("Creating new Product", product);
+    productAction: function (product) {
+      console.log('Creating new Product', product)
       //
     }
   }
-};
+}
 </script>
 <style lang="scss">
 </style>

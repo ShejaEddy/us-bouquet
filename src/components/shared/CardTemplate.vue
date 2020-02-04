@@ -18,52 +18,52 @@
           <p class="productPrice">{{item.productPrice}}</p>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapActions, mapMutations } from "vuex";
-import { infoToaster, successToaster } from "./service/ErrorHandler";
+import { mapState, mapActions, mapMutations } from 'vuex'
+import { infoToaster, successToaster } from './service/ErrorHandler'
 
-import _ from "lodash";
+import _ from 'lodash'
 export default {
-  name: "cardTemplate",
-  props: ["item"],
-  data() {
+  name: 'cardTemplate',
+  props: ['item'],
+  data () {
     return {
       showModal: false
-    };
+    }
   },
   components: {},
-  computed: mapState(["loggedUser"]),
+  computed: mapState(['loggedUser']),
   methods: {
-    navigateProductDetail(product) {
+    navigateProductDetail (product) {
       this.$router.push({
-        name: "productDetails",
-        params: { id: "193878-38936-39878" }
-      });
+        name: 'productDetails',
+        params: { id: '193878-38936-39878' }
+      })
     },
 
-    ...mapMutations(["ADD_CART_LOCAL"]),
+    ...mapMutations(['ADD_CART_LOCAL']),
 
-    addToCart(product) {
+    addToCart (product) {
       // const data = _.find(this.$store.getters.cartProducts, product);
       // if (data) {
-        // infoToaster("Already Added", "Product Already Added");
+      // infoToaster("Already Added", "Product Already Added");
       // } else {
-        successToaster("Added Successfully", "Product Added Successfully");
-        this.ADD_CART_LOCAL(product);
+      successToaster('Added Successfully', 'Product Added Successfully')
+      this.ADD_CART_LOCAL(product)
       // }
     },
 
     // this will trigger the parentComponent function
-    updateEditProduct(product, id) {
-      this.$parent.editProduct(product);
+    updateEditProduct (product, id) {
+      this.$parent.editProduct(product)
     }
   },
-  mounted() {}
-};
+  mounted () {}
+}
 </script>
 <style lang="scss" scoped>
 #img-card {

@@ -21,12 +21,12 @@
 </template>
 <script>
 export default {
-  props: ["header"],
-  data() {
-    return {};
+  props: ['header'],
+  data () {
+    return {}
   },
   methods: {}
-};
+}
 </script>
 <style lang="scss">
 .showModal {

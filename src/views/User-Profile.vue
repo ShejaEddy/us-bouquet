@@ -25,41 +25,40 @@
 		      		<address-form/>
 		      		<button class="btn btn-primary mx-auto">Save Address</button>
 		      	</div>
-		      	
+
 		      </div>
 		    </div>
   		</div>
 	</div>
 </template>
 <script>
-import Profile from "@/components/Profile.vue";
-import Orders from "@/components/products/orders/orders.vue";
-import AddressTable from "@/components/products/address/table.vue";
-import AddressForm from "@/components/products/address/form.vue";
+import Profile from '@/components/Profile.vue'
+import Orders from '@/components/products/orders/orders.vue'
+import AddressTable from '@/components/products/address/table.vue'
+import AddressForm from '@/components/products/address/form.vue'
 export default {
-	components:{Profile,Orders,AddressTable,AddressForm},
-	data(){
-		return {
+  components: { Profile, Orders, AddressTable, AddressForm },
+  data () {
+    return {
 		  activeItem: 'Profile',
 		  addressTable: true
-		}
-	    
-	},
-	methods: {
+    }
+  },
+  methods: {
 	  	isActive (menuItem) {
 	      return this.activeItem === menuItem
 	    },
 	    setActive (menuItem) {
 	      this.activeItem = menuItem
 	    },
-	    hideTable() {
+	    hideTable () {
 	      this.addressTable = false
 	    }
-	},
-	created(){
-		
-	}
-};
+  },
+  created () {
+
+  }
+}
 </script>
 <style>
 	.user-profile{

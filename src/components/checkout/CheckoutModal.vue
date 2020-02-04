@@ -5,19 +5,18 @@
 </template>
 
 <script>
-import Modal from "../shared/Modal";
+import Modal from '../shared/Modal'
 export default {
-  name: "checkout",
+  name: 'checkout',
   components: { Modal },
-  data() {
+  data () {
     return {
       showModal: false
-    };
+    }
   },
   methods: {}
-};
+}
 </script>
-
 
 <style lang="scss">
 </style>

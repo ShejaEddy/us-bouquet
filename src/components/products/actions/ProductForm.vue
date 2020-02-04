@@ -16,9 +16,9 @@
               <div class="form-group">
                 <label for="productCategory">Product Category</label>
                 <select class="form-control"  v-if="product.productCategory !== 'Create New'" id="productCategory" name="productCategory" v-model="product.productCategory">
-                    <option 
-                      v-for="(category, index) in categories" :key="index" 
-                      v-bind:value="category.productCategory" 
+                    <option
+                      v-for="(category, index) in categories" :key="index"
+                      v-bind:value="category.productCategory"
                       >{{category.productCategory}}
                     </option>
                 </select>
@@ -27,9 +27,9 @@
               <div class="form-group">
                 <label for="productSeller">Product Seller</label>
                 <select class="form-control"  v-if="product.productSeller !== 'Create New'" id="productSeller" name="productSeller" v-model="product.productSeller">
-                    <option 
-                      v-for="(seller, index) in sellers" :key="index" 
-                      v-bind:value="seller.productSeller" 
+                    <option
+                      v-for="(seller, index) in sellers" :key="index"
+                      v-bind:value="seller.productSeller"
                       >{{seller.productSeller}}
                     </option>
                 </select>
@@ -67,61 +67,61 @@
     </div>
 </template>
 <script>
-import axios from "axios";
-import {errorToaster} from "../../shared/service/ErrorHandler.js"
+import axios from 'axios'
+import { errorToaster } from '../../shared/service/ErrorHandler.js'
 export default {
-  name: "productForm",
-  props: ["product"],
-  data() {
+  name: 'productForm',
+  props: ['product'],
+  data () {
     return {
       errors: [],
-      productCategroyDummy: "",
-      productSellerDummy: "",
+      productCategroyDummy: '',
+      productSellerDummy: '',
       categories: [],
       sellers: [],
       loading: false
-    };
-  },
-  methods: {
-    actionProduct(event) {
-      event.preventDefault();
-      this.$emit("submit-form", this.product);
     }
   },
-  created() {
-    this.loading = true;
+  methods: {
+    actionProduct (event) {
+      event.preventDefault()
+      this.$emit('submit-form', this.product)
+    }
+  },
+  created () {
+    this.loading = true
     axios
       .get(`${process.env.VUE_APP_BASE_URL}/products`)
       .then(response => {
         // getting all products and getting the uniq value for
         // productCategory and returning the productCategory property only
         this.categories = _.uniqBy(
-          _.map(response.data, function(object) {
-            return _.pick(object, ["productCategory"]);
+          _.map(response.data, function (object) {
+            return _.pick(object, ['productCategory'])
           }),
-          "productCategory"
-        );
-        this.categories.push({ productCategory: "Create New" });
+          'productCategory'
+        )
+        this.categories.push({ productCategory: 'Create New' })
 
         // getting all products and getting the uniq value for
         // productSeller and returning the productSeller property only
         this.sellers = _.uniqBy(
-          _.map(response.data, function(object) {
-            return _.pick(object, ["productSeller"]);
+          _.map(response.data, function (object) {
+            return _.pick(object, ['productSeller'])
           }),
-          "productSeller"
-        );
+          'productSeller'
+        )
 
-        this.sellers.push({ productSeller: "Create New" });
+        this.sellers.push({ productSeller: 'Create New' })
 
-        this.loading = false;
+        this.loading = false
       })
       .catch(error => {
-        console.log(error);
-        errorToaster("Error while fetching products", "");
-      });
+        console.log(error)
+        errorToaster('Error while fetching products', '')
+      })
   }
-};
+}
 </script>
 <style lang="scss">
 .productForm {

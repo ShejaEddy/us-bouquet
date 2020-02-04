@@ -12,72 +12,71 @@
           <card-loader :loopCount=8 v-if="loading"/>
           <products-list :products_list="product_duplicate" />
         </div>
-      </div> 
+      </div>
     </div>
   </div>
-    
+
 </template>
 
-
 <script>
-import ProductsList from "@/components/products/ProductsList";
-import CardLoader from "@/components/shared/CardLoader";
-import ProductFilter from "@/components/products/filters/ProductFilter"
-import axios from "axios";
-import _ from "lodash";
+import ProductsList from '@/components/products/ProductsList'
+import CardLoader from '@/components/shared/CardLoader'
+import ProductFilter from '@/components/products/filters/ProductFilter'
+import axios from 'axios'
+import _ from 'lodash'
 
 export default {
-  name: "allProducts",
+  name: 'allProducts',
   components: { ProductsList, CardLoader, ProductFilter },
-  data() {
+  data () {
     return {
-      categories: ["new products","best products","popular products"],
-      price: ["High","low"],
-      fabric: ["tissue", "hard", "leather"],
+      categories: ['new products', 'best products', 'popular products'],
+      price: ['High', 'low'],
+      fabric: ['tissue', 'hard', 'leather'],
       products_list: [],
       product_duplicate: [
         {
-          productImage: "/img/1.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Kamambiri",
-          productPrice: "100$"
+          productImage: '/img/1.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Kamambiri',
+          productPrice: '100$'
         },
         {
-          productImage: "/img/2.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Sandal",
-          productPrice: "600$"
+          productImage: '/img/2.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Sandal',
+          productPrice: '600$'
         },
         {
-          productImage: "/img/3.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Umoja",
-          productPrice: "400$"
+          productImage: '/img/3.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Umoja',
+          productPrice: '400$'
         },
         {
-          productImage: "/img/shoe-bg.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Slippers",
-          productPrice: "150$"
+          productImage: '/img/shoe-bg.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Slippers',
+          productPrice: '150$'
         },
         {
-          productImage: "/img/3.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Ketch",
-          productPrice: "300$"
+          productImage: '/img/3.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Ketch',
+          productPrice: '300$'
         },
         {
-          productImage: "/img/1.jpg",
-          productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Style",
-          productPrice: "50$"
+          productImage: '/img/1.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Style',
+          productPrice: '50$'
         }
       ],
       loading: false
-    };
+    }
   },
   methods: {
-    getAllProducts: function() {
+    getAllProducts: function () {
       // this.loading = true;
       // axios
       //   .get(products)
@@ -94,7 +93,7 @@ export default {
       //       "productCategory"
       //     );
       //     this.categories.unshift({ productCategory: "All" });
-          
+
       //     this.sellers = _.uniqBy(
       //       _.map(this.products_list, function(object) {
       //         return _.pick(object, ["productSeller"]);
@@ -107,10 +106,10 @@ export default {
       //     console.log(error);
       //   });
     },
-    
-    filterProductBy(event, productFilterID) {
-      const productList = [...this.product_duplicate];
-      let filteredData = [];
+
+    filterProductBy (event, productFilterID) {
+      const productList = [...this.product_duplicate]
+      let filteredData = []
       console.log(event.target.value)
       // if (event.target.value !== "All") {
       //   productList.map(product => {
@@ -127,10 +126,10 @@ export default {
     }
   },
 
-  created() {
-    this.getAllProducts();
+  created () {
+    this.getAllProducts()
   }
-};
+}
 </script>
 
 <style lang="scss">
@@ -140,7 +139,7 @@ export default {
     background-color: white;
     border: 1px solid gainsboro;
   }
-  
+
 }
 .ft-container {
     padding: 1em;

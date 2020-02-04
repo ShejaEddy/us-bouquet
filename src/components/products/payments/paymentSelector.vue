@@ -3,18 +3,18 @@
   <div class="row d-flex justify-content-center pb-5">
     <div class="paymentCont">
       <div class="headingWrap">
-          <h3 class="headingTop text-center">Select Your Payment Method</h3>  
+          <h3 class="headingTop text-center">Select Your Payment Method</h3>
           <p class="text-center">Created with bootsrap button and using radio button</p>
       </div>
       <div class="paymentWrap">
         <div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
                 <label class="btn paymentMethod active">
                   <div class="method visa"></div>
-                    <input type="radio" name="options" checked> 
+                    <input type="radio" name="options" checked>
                 </label>
                 <label class="btn paymentMethod">
                   <div class="method master-card"></div>
-                    <input type="radio" name="options"> 
+                    <input type="radio" name="options">
                 </label>
                 <label class="btn paymentMethod">
                   <div class="method amex"></div>
@@ -22,13 +22,13 @@
                 </label>
                  <label class="btn paymentMethod">
                   <div class="method vishwa"></div>
-                    <input type="radio" name="options"> 
+                    <input type="radio" name="options">
                 </label>
                 <label class="btn paymentMethod">
                   <div class="method ez-cash"></div>
-                    <input type="radio" name="options"> 
+                    <input type="radio" name="options">
                 </label>
-            </div>        
+            </div>
       </div>
       <div class="footerNavWrap clearfix">
         <div class="btn btn-success pull-left btn-fyi" @click="$router.push('/products')"><i class="fas fa-cart-plus"></i> CONTINUE SHOPPING</div>
@@ -36,13 +36,13 @@
       </div>
     </div>
   </div>
- </div> 
+ </div>
 </template>
 <script>
-import { mapState, mapActions, mapMutations } from "vuex";
+import { mapState, mapActions, mapMutations } from 'vuex'
 export default {
-  
-};
+
+}
 </script>
 <style>
 .paymentSelector {
@@ -107,7 +107,6 @@ export default {
 .paymentWrap .paymentBtnGroup .paymentMethod .method.ez-cash {
   background-image: url("http://www.busbooking.lk/img/carousel/BusBooking.lk_ezCash_offer.png");
 }
-
 
 .paymentWrap .paymentBtnGroup .paymentMethod .method:hover {
   border-color: #4cd264;

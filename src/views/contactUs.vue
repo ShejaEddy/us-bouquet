@@ -1,5 +1,5 @@
 <template>
-<div class="contactUs bg-white pb-5">	
+<div class="contactUs bg-white pb-5">
 	<div class="jumbotron jumbotron-sm">
     <div class="container">
         <div class="row">
@@ -85,9 +85,9 @@
 	color: white;
 	border-radius: 0px;
 }
-.jumbotron-sm { 
+.jumbotron-sm {
 	padding-top: 24px;
-	padding-bottom: 24px; 
+	padding-bottom: 24px;
 }
 .jumbotron small {
 	color: #FFF;

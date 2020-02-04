@@ -7,30 +7,30 @@
 </template>
 
 <script>
-import Modal from "../../shared/Modal";
-import ProductForm from "./ProductForm";
+import Modal from '../../shared/Modal'
+import ProductForm from './ProductForm'
 
 export default {
-  name: "editProduct",
+  name: 'editProduct',
   components: { Modal, ProductForm },
-  data() {
+  data () {
     return {
       product: new Object(),
       showModal: false
-    };
+    }
   },
   methods: {
-    setProduct(product) {
-      this.showModal = true;
-      this.product = product;
+    setProduct (product) {
+      this.showModal = true
+      this.product = product
     },
 
-    productAction: function(product) {
-      console.log("Updated Product Details", product);
+    productAction: function (product) {
+      console.log('Updated Product Details', product)
       // Update the product to server
     }
   }
-};
+}
 </script>
 
 <style>

@@ -29,11 +29,11 @@
     <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button></p></td>
     </tr>
     </tbody>
-        
+
 </table>
-                
+
    </div>
-         
+
      </div>
         <div class="error-template container" v-else>
             <h1>Oops!</h1>
@@ -41,24 +41,24 @@
             <div class="error-actions">
               <button class="btn btn-primary" @click="openForm">Create New Address</button>
             </div>
-        </div>   
+        </div>
 	</div>
 </div>
 </template>
 <script>
 export default{
-	computed: {
-		Address(){
-			return []
-		}
-	},
-	methods:{
-		openForm() {
-			this.$emit("openAddressForm")
-		},
-		createBtn(e) {
-			this.$emit("createBtn",e)
-		}
-	}
-};
+  computed: {
+    Address () {
+      return []
+    }
+  },
+  methods: {
+    openForm () {
+      this.$emit('openAddressForm')
+    },
+    createBtn (e) {
+      this.$emit('createBtn', e)
+    }
+  }
+}
 </script>

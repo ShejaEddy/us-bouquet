@@ -126,7 +126,6 @@ a:hover, a:active {
     margin: 0 0 5px;
 }
 
-
 .feature .feature-box .feature-content {
     float: left;
     padding-left: 28px;

@@ -24,27 +24,27 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions, mapMutations } from "vuex";
+import { mapState, mapActions, mapMutations } from 'vuex'
 export default {
-  name: "cartCalculator",
-  data() {
+  name: 'cartCalculator',
+  data () {
     return {
       totalValue: 0.0
-    };
-  },
-  computed: mapState(["cartProducts"]),
-  methods: {
-    calulateTotalPrice() {
-      this.totalValue = 0;
-      this.cartProducts.forEach(product => {
-        this.totalValue += parseFloat(product.productPrice.replace(",", ""));
-      });
     }
   },
-  created() {
-    this.calulateTotalPrice();
+  computed: mapState(['cartProducts']),
+  methods: {
+    calulateTotalPrice () {
+      this.totalValue = 0
+      this.cartProducts.forEach(product => {
+        this.totalValue += parseFloat(product.productPrice.replace(',', ''))
+      })
+    }
+  },
+  created () {
+    this.calulateTotalPrice()
   }
-};
+}
 </script>
 <style>
 </style>

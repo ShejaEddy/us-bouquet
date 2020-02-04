@@ -53,7 +53,7 @@
                   <td class="border-0 align-middle"><a href="javascript:;;" class="text-dark"><i class="fa fa-trash" @click="removeProductCart(item)"></i></a></td>
                 </tr>
                 <tr  class="border-0">
-                  
+
                 </tr>
               </tbody>
             </table>
@@ -72,36 +72,36 @@
       </div>
     </div>
   </div>
- </div> 
+ </div>
 </template>
 
 <script>
-import { mapState, mapActions, mapMutations } from "vuex";
+import { mapState, mapActions, mapMutations } from 'vuex'
 export default {
-  name: "Orders",
-  data() {
+  name: 'Orders',
+  data () {
     return {
-      qty:[]
-    };
-  },
-  computed: {
-    ...mapState(["orderProducts"]),
-  },
-  methods: {
-    ...mapMutations(["SET_ORDER_PRODUCTS"]),
-    removeProductOrder(product) {
-      const products = JSON.parse(localStorage.getItem("iki-order"));
-      for (let i = 0; i < products.length; i++) {
-        if (products[i]._id === product._id) {
-          products.splice(i, 1);
-        }
-      }
-      this.SET_ORDER_PRODUCTS(products);
-      localStorage.setItem("iki-order", JSON.stringify(products));
+      qty: []
     }
   },
-  mounted() {}
-};
+  computed: {
+    ...mapState(['orderProducts'])
+  },
+  methods: {
+    ...mapMutations(['SET_ORDER_PRODUCTS']),
+    removeProductOrder (product) {
+      const products = JSON.parse(localStorage.getItem('iki-order'))
+      for (let i = 0; i < products.length; i++) {
+        if (products[i]._id === product._id) {
+          products.splice(i, 1)
+        }
+      }
+      this.SET_ORDER_PRODUCTS(products)
+      localStorage.setItem('iki-order', JSON.stringify(products))
+    }
+  },
+  mounted () {}
+}
 </script>
 
 <style>

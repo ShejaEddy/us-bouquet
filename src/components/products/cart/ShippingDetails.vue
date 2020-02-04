@@ -6,14 +6,14 @@
 
 <script>
 export default {
-  name: "ShippingDetails",
-  data() {
-    return {};
+  name: 'ShippingDetails',
+  data () {
+    return {}
   },
   methods: {
-    createShippingDetail() {}
+    createShippingDetail () {}
   }
-};
+}
 </script>
 
 <style lang="scss">
