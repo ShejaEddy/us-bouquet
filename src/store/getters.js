@@ -3,5 +3,6 @@ export default {
     cartProducts: state => state.cartProducts,
     orderProducts: state => state.orderProducts,
     getLoggedUser: state => state.loggedUser,
-    route: state => state.router.status
+    route: state => state.router.status,
+    views: state => state.pages.productEdit
 }

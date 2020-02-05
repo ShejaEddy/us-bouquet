@@ -105,7 +105,7 @@ export default new Router({
         {
           name: "manage product",
           path:"/product-manage",
-          components: () =>import('../components/dashboardLayout/pages/product/product-manage'),
+          components: () =>import('../components/dashboardLayout/pages/product/add-product'),
         },
       ]
     }

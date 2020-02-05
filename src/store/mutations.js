@@ -22,5 +22,8 @@ export default {
     SET_ORDER_PRODUCTS: (state, products) => {
         state.orderProducts = []
         state.orderProducts = products
+    },
+    PRODUCT_EDIT:(state) => {
+        state.pages.productEdit = true
     }
 }

@@ -1,31 +1,31 @@
 <template>
     <div class="content-page">
-        <transition name="fade" mode="out-in">
-            <router-view>
-            </router-view>
-        </transition>
     </div>
 </template>
 
 <script>
-    import getters from "../../../store/getters";
-
+    // import store from "vuex"
+    import productManagement from "../pages/product/add-product";
+    import orders from "../pages/orderManagement/order";
     export default {
-        name: "content"
-    }
-    computed:{
+        name: "content",
+        data(){
+          return{
+            }
+        },
+        components: {
+            productManagement,
+            orders
+        },
+        computed: {},
 
+        methods: {
+            pro() {
+                this.$store.getters.views;
+            }
+        }
     }
 </script>
 
 <style scoped>
-    .fade-enter-active,
-    .fade-leave-active {
-        transition: opacity 0.3s;
-    }
-
-    .fade-enter,
-    .fade-leave-to {
-        opacity: 0;
-    }
 </style>

@@ -8,5 +8,8 @@ export default {
     loggedUser: {},
     router:{
         status:""
+    },
+    pages:{
+        productEdit:false
     }
 }

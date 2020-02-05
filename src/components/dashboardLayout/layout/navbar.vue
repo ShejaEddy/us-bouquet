@@ -80,11 +80,11 @@
             </li>
         </ul>
         <div class="logo-box">
-            <a class="logo text-center" href="#">
+            <router-link to="/admin" class="logo text-center" >
                         <span class="logo-lg">
                             <img class="tsap-logo" alt="" height="70" src="assets/images/logo-light.png">
                         </span>
-            </a>
+            </router-link>
         </div>
     </div>
 </template>
