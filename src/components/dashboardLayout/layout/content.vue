@@ -1,12 +1,10 @@
 <template>
     <div class="content-page">
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-    // import store from "vuex"
-    import productManagement from "../pages/product/add-product";
-    import orders from "../pages/orderManagement/order";
     export default {
         name: "content",
         data(){
@@ -14,8 +12,6 @@
             }
         },
         components: {
-            productManagement,
-            orders
         },
         computed: {},
 

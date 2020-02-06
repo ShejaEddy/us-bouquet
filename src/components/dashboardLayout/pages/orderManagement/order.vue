@@ -1,7 +1,5 @@
 <template>
-
     <div class="order">
-
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -10,7 +8,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-12">
                     <div class="card">
@@ -53,14 +50,6 @@
                                 <table class="table table-centered mb-0">
                                     <thead class="thead-light">
                                     <tr>
-                                        <th style="width: 15px;">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="customCheck1">
-                                                <label class="custom-control-label"
-                                                       for="customCheck1">&nbsp;</label>
-                                            </div>
-                                        </th>
                                         <th>Order ID</th>
                                         <th>Products</th>
                                         <th>Date</th>
@@ -72,31 +61,23 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="customCheck2">
-                                                <label class="custom-control-label"
-                                                       for="customCheck2">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td><a class="text-body font-weight-bold">#UB9708</a></td>
+                                    <tr v-for="(order, index) in orders" :key="index">
+                                        <td><a class="text-body font-weight-bold">{{order.orderId}}</a></td>
                                         <td>
                                             <a><img src="img/1.jpg" alt="tyr" height="32"/></a>
                                         </td>
                                         <td>
-                                            August 05 2018 <small class="text-muted">10:29 PM</small>
+                                            {{order.dates.date}} <small class="text-muted">{{order.dates.time}}</small>
                                         </td>
                                         <td>
                                             <h5><span class="badge bg-soft-success text-success"><i
                                                     class="mdi mdi-coin"></i> Paid</span></h5>
                                         </td>
                                         <td>
-                                            $176.41
+                                            {{order.total}}
                                         </td>
                                         <td>
-                                            Mastercard
+                                            {{order.paymentMethod}}
                                         </td>
                                         <td>
                                             <h5><span class="badge badge-info">Shipped</span></h5>
@@ -107,330 +88,9 @@
                                             <a class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                         </td>
                                     </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="customCheck3">
-                                                <label class="custom-control-label"
-                                                       for="customCheck3">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td><a class="text-body font-weight-bold">#UB9707</a></td>
-                                        <td>
-                                            <a><img src="img/2.jpg" alt="product-img" height="32"/></a>
-                                        </td>
-                                        <td>August 04 2018 <small class="text-muted">08:18 AM</small></td>
-                                        <td>
-                                            <h5><span class="badge bg-soft-warning text-warning"><i
-                                                    class="mdi mdi-timer-sand"></i> Awaiting Authorization</span>
-                                            </h5>
-                                        </td>
-                                        <td>
-                                            $1,458.65
-                                        </td>
-                                        <td>
-                                            Visa
-                                        </td>
-                                        <td>
-                                            <h5><span class="badge badge-warning">Processing</span></h5>
-                                        </td>
-                                        <td>
-                                            <a class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="customCheck4">
-                                                <label class="custom-control-label"
-                                                       for="customCheck4">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td><a class="text-body font-weight-bold">#UB9706</a></td>
-                                        <td>
-                                            <a><img src="img/3.jpg" alt="product-img" height="32"/></a>
-                                        </td>
-                                        <td>August 04 2018 <small class="text-muted">10:29 PM</small></td>
-                                        <td>
-                                            <h5><span class="badge bg-soft-success text-success"><i
-                                                    class="mdi mdi-coin"></i> Paid</span></h5>
-                                        </td>
-                                        <td>
-                                            $801.99
-                                        </td>
-                                        <td>
-                                            Credit Card
-                                        </td>
-                                        <td>
-                                            <h5><span class="badge badge-warning">Processing</span></h5>
-                                        </td>
-                                        <td>
-                                            <a class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="customCheck5">
-                                                <label class="custom-control-label"
-                                                       for="customCheck5">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td><a class="text-body font-weight-bold">#UB9705</a></td>
-                                        <td>
-                                            <a><img src="img/4.jpg" alt="product-img" height="32"/></a>
-                                        </td>
-                                        <td>August 03 2018 <small class="text-muted">07:56 AM</small></td>
-                                        <td>
-                                            <h5><span class="badge bg-soft-success text-success"><i
-                                                    class="mdi mdi-coin"></i> Paid</span></h5>
-                                        </td>
-                                        <td>
-                                            $215.35
-                                        </td>
-                                        <td>
-                                            Mastercard
-                                        </td>
-                                        <td>
-                                            <h5><span class="badge badge-success">Delivered</span></h5>
-                                        </td>
-                                        <td>
-                                            <a class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="customCheck6">
-                                                <label class="custom-control-label"
-                                                       for="customCheck6">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td><a class="text-body font-weight-bold">#UB9704</a></td>
-                                        <td>
-                                            <a><img src="img/shoe-bg.jpg" alt="product-img" height="32"/></a>
-                                        </td>
-                                        <td>May 22 2018 <small class="text-muted">07:22 PM</small></td>
-                                        <td>
-                                            <h5><span class="badge bg-soft-danger text-danger"><i
-                                                    class="mdi mdi-cancel"></i> Payment Failed</span></h5>
-                                        </td>
-                                        <td>
-                                            $2,514.36
-                                        </td>
-                                        <td>
-                                            Paypal
-                                        </td>
-                                        <td>
-                                            <h5><span class="badge badge-danger">Cancelled</span></h5>
-                                        </td>
-                                        <td>
-                                            <a class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="customCheck7">
-                                                <label class="custom-control-label"
-                                                       for="customCheck7">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td><a class="text-body font-weight-bold">#UB9703</a></td>
-                                        <td>
-                                            <a><img src="img/2.jpg" alt="product-img" height="32"/></a>
-                                        </td>
-                                        <td>April 02 2018 <small class="text-muted">03:02 AM</small></td>
-                                        <td>
-                                            <h5><span class="badge bg-soft-success text-success"><i
-                                                    class="mdi mdi-coin"></i> Paid</span></h5>
-                                        </td>
-                                        <td>
-                                            $183.20
-                                        </td>
-                                        <td>
-                                            Payoneer
-                                        </td>
-                                        <td>
-                                            <h5><span class="badge badge-info">Shipped</span></h5>
-                                        </td>
-                                        <td>
-                                            <a class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="customCheck8">
-                                                <label class="custom-control-label"
-                                                       for="customCheck8">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td><a class="text-body font-weight-bold">#UB9702</a></td>
-                                        <td>
-                                            <a><img src="img/1.jpg" alt="product-img" height="32"/></a>
-                                        </td>
-                                        <td>March 18 2018 <small class="text-muted">11:19 PM</small></td>
-                                        <td>
-                                            <h5><span class="badge bg-soft-warning text-warning"><i
-                                                    class="mdi mdi-timer-sand"></i> Awaiting Authorization</span>
-                                            </h5>
-                                        </td>
-                                        <td>
-                                            $1,768.41
-                                        </td>
-                                        <td>
-                                            Visa
-                                        </td>
-                                        <td>
-                                            <h5><span class="badge badge-warning">Processing</span></h5>
-                                        </td>
-                                        <td>
-                                            <a class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="customCheck9">
-                                                <label class="custom-control-label"
-                                                       for="customCheck9">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td><a class="text-body font-weight-bold">#UB9701</a></td>
-                                        <td>
-                                            <a><img src="img/3.jpg" alt="product-img" height="32"/></a>
-                                        </td>
-                                        <td>February 01 2018 <small class="text-muted">07:22 AM</small></td>
-                                        <td>
-                                            <h5><span class="badge bg-soft-info text-info"><i
-                                                    class="mdi mdi-cash"></i> Cash on Delivery</span></h5>
-                                        </td>
-                                        <td>
-                                            $3,582.99
-                                        </td>
-                                        <td>
-                                            Paypal
-                                        </td>
-                                        <td>
-                                            <h5><span class="badge badge-info">Shipped</span></h5>
-                                        </td>
-                                        <td>
-                                            <a class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="customCheck10">
-                                                <label class="custom-control-label"
-                                                       for="customCheck10">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td><a class="text-body font-weight-bold">#UB9700</a></td>
-                                        <td>
-                                            <a><img src="img/2.jpg" alt="product-img" height="32"/></a>
-                                        </td>
-                                        <td>January 22 2018 <small class="text-muted">08:09 PM</small></td>
-                                        <td>
-                                            <h5><span class="badge bg-soft-success text-success"><i
-                                                    class="mdi mdi-coin"></i> Paid</span></h5>
-                                        </td>
-                                        <td>
-                                            $923.95
-                                        </td>
-                                        <td>
-                                            Credit Card
-                                        </td>
-                                        <td>
-                                            <h5><span class="badge badge-success">Delivered</span></h5>
-                                        </td>
-                                        <td>
-                                            <a class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="customCheck11">
-                                                <label class="custom-control-label"
-                                                       for="customCheck11">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td><a class="text-body font-weight-bold">#UB9699</a></td>
-                                        <td>
-                                            <a><img src="img/4.jpg" alt="product-img" height="32"/></a>
-                                        </td>
-                                        <td>January 17 2018 <small class="text-muted">02:30 PM</small></td>
-                                        <td>
-                                            <h5><span class="badge bg-soft-success text-success"><i
-                                                    class="mdi mdi-coin"></i> Paid</span></h5>
-                                        </td>
-                                        <td>
-                                            $5,177.68
-                                        </td>
-                                        <td>
-                                            Mastercard
-                                        </td>
-                                        <td>
-                                            <h5><span class="badge badge-info">Shipped</span></h5>
-                                        </td>
-                                        <td>
-                                            <a class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                        </td>
-                                    </tr>
-
                                     </tbody>
                                 </table>
                             </div>
-
-                            <ul class="pagination pagination-rounded justify-content-end my-2">
-                                <li class="page-item">
-                                    <a class="page-link" aria-label="Previous">
-                                        <span aria-hidden="true">«</span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="javascript: void(0);">1</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="javascript: void(0);">2</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" aria-label="Next">
-                                        <span aria-hidden="true">»</span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -442,12 +102,115 @@
 
 <script>
     export default {
-        name: "order"
+        name: "order",
+        data() {
+            return {
+                orders: [
+
+                    {
+                        orderId: "#UB9708",
+                        productProfile: "img/1.jpg",
+                        dates: {
+                            date: "August 05 2019",
+                            time: "10:29 PM"
+                        },
+                        paymentStatus: "Paid",
+                        total: "17000rfw",
+                        paymentMethod: "Mobile Money",
+                        orderStatus: "Shipped",
+                    },
+                    {
+                        orderId: "#UB9706",
+                        productProfile: "img/3.jpg",
+                        dates: {
+                            date: "August 04 2019",
+                            time: "10:18 AM"
+                        },
+                        paymentStatus: "Paid",
+                        total: "800,000rfw",
+                        paymentMethod: "Credit Card",
+                        orderStatus: "Processing",
+                    },
+                    {
+                        orderId: "#UB9705",
+                        productProfile: "img/4.jpg",
+                        dates: {
+                            date: "August 03 2019",
+                            time: "07:18 AM"
+                        },
+                        paymentStatus: "Paid",
+                        total: "215,000rfw",
+                        paymentMethod: "Mastercard",
+                        orderStatus: "Delivered",
+                    },
+                    {
+                        orderId: "#UB9704",
+                        productProfile: "img/shoe-bg.jpg",
+                        dates: {
+                            date: "May 22 2019",
+                            time: "07:22 PM"
+                        },
+                        paymentStatus: "Payment Failed",
+                        total: "915,000rfw",
+                        paymentMethod: "Tigo Cash",
+                        orderStatus: "Cancelled",
+                    },
+                    {
+                        orderId: "#UB9703",
+                        productProfile: "img/2.jpg",
+                        dates: {
+                            date: "May 22 2019",
+                            time: "07:22 PM"
+                        },
+                        paymentStatus: "Paid",
+                        total: "183,000rfw",
+                        paymentMethod: "Paypal",
+                        orderStatus: "Shipped",
+                    },
+                    {
+                        orderId: "#UB9702",
+                        productProfile: "img/2.jpg",
+                        dates: {
+                            date: "March 18 2019",
+                            time: "11:19 PM"
+                        },
+                        paymentStatus: "Awaiting Authorization",
+                        total: "1,768,000rfw",
+                        paymentMethod: "Visa",
+                        orderStatus: "Processing",
+                    },
+                    {
+                        orderId: "#UB9701",
+                        productProfile: "img/3.jpg",
+                        dates: {
+                            date: "February 01 2019",
+                            time: "07:22 AM"
+                        },
+                        paymentStatus: "Cash on Delivery",
+                        total: "2,768,000rfw",
+                        paymentMethod: "Mobile Money",
+                        orderStatus: "Shipped",
+                    },
+                    {
+                        orderId: "#UB9700",
+                        productProfile: "img/4.jpg",
+                        dates: {
+                            date: "January 22 2019",
+                            time: "08:09 PM"
+                        },
+                        paymentStatus: "Paid",
+                        total: "768,000rfw",
+                        paymentMethod: "TIGO Cash",
+                        orderStatus: "Delivered",
+                    }
+                ]
+            }
+        }
     }
 </script>
 
 <style scoped>
-    .moreOp{
+    .moreOp {
         display: inline-flex;
     }
 </style>

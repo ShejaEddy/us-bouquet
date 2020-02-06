@@ -107,6 +107,16 @@ export default new Router({
           path:"/product-manage",
           components: () =>import('../components/dashboardLayout/pages/product/add-product'),
         },
+        {
+          path:"/orders",
+          name:"admin orders",
+          components:() => import('../components/dashboardLayout/pages/orderManagement/order')
+        },
+        {
+          path:"/seller",
+          name:"sellers list",
+          components: () => import('../components/dashboardLayout/pages/orderManagement/seller')
+        }
       ]
     }
   ]

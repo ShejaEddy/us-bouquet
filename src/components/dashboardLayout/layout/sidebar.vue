@@ -74,12 +74,12 @@
                         </a>
                         <ul class="nav-second-level" >
                             <li>
-                                <span>Orders</span>
+                                <router-link to="/orders">Orders</router-link>
                             </li>
                         </ul>
                         <ul class="nav-second-level" >
                             <li>
-                                <span>Sellers</span>
+                                <router-link to="/seller">Sellers</router-link>
                             </li>
                         </ul>
                     </li>
