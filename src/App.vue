@@ -1,8 +1,8 @@
 <template>
     <div id="app" class="">
-<!--       <web-nav/>-->
+       <web-nav v-if="$router.push != '/admin'"></web-nav>
         <router-view/>
-<!--      <web-footer/>-->
+      <web-footer v-if="$router.push != '/admin'"></web-footer>
     </div>
 </template>
 <script>
@@ -22,6 +22,4 @@
 </script>
 <style lang="scss">
     @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-    @import "./assets/style/app.scss";
-
 </style>
