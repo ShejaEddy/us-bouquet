@@ -13,7 +13,7 @@
                         </a>
                         <ul class="nav-second-level">
                             <li @click="productEdit()">
-                                <router-link style="cursor: pointer">Product Edit</router-link>
+                                <router-link to="/add-product" style="cursor: pointer">Product Edit</router-link>
                             </li>
                             <li>
                                 <a>Product Detail</a>

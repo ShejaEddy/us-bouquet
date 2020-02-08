@@ -1,8 +1,8 @@
 <template>
     <div id="app" class="">
-       <web-nav v-if="$router.push != '/admin'"></web-nav>
-        <router-view/>
-      <web-footer v-if="$router.push != '/admin'"></web-footer>
+<!--       <web-nav ></web-nav>-->
+        <router-view />
+<!--      <web-footer ></web-footer>-->
     </div>
 </template>
 <script>
