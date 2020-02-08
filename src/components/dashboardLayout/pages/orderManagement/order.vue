@@ -70,8 +70,10 @@
                                             {{order.dates.date}} <small class="text-muted">{{order.dates.time}}</small>
                                         </td>
                                         <td>
-                                            <h5><span class="badge bg-soft-success text-success"><i
-                                                    class="mdi mdi-coin"></i> Paid</span></h5>
+                                            <h5><span
+                                                      class="badge bg-soft-success text-success"><i
+                                                    class="mdi mdi-coin"></i> {{order ? order.paymentStatus : "sorry for poor network!" }}</span>
+                                                <span > </span></h5>
                                         </td>
                                         <td>
                                             {{order.total}}
@@ -80,11 +82,9 @@
                                             {{order.paymentMethod}}
                                         </td>
                                         <td>
-                                            <h5><span class="badge badge-info">Shipped</span></h5>
+                                            <h5><span class="badge badge-info">{{order ? order.orderStatus : "sorry for poor network!"}}</span></h5>
                                         </td>
                                         <td class="moreOp">
-                                            <a class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                            <a class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
                                             <a class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                         </td>
                                     </tr>

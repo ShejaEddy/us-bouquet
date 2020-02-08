@@ -1,6 +1,6 @@
 <template>
     <div class="content-page">
-        <router-view></router-view>
+        <router-link></router-link>
     </div>
 </template>
 
@@ -12,6 +12,7 @@
             }
         },
         components: {
+
         },
         computed: {},
 
