@@ -121,6 +121,11 @@ export default new Router({
                     path: "/seller",
                     name: "sellers list",
                     components: () => import('../components/dashboardLayout/pages/orderManagement/seller')
+                },
+                {
+                    path:"/logo",
+                    name:"Logo Management",
+                    components:() => import('../components/dashboardLayout/pages/logoManagement/logo-manage')
                 }
             ]
         }

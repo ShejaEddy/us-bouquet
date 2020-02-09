@@ -30,7 +30,7 @@
                         </a>
                         <ul class="nav-second-level" v-if="logoOption">
                             <li>
-                                <router-link to="#" style="cursor:pointer;">Logo Manage</router-link>
+                                <router-link to="/logo" style="cursor:pointer;">Logo Manage</router-link>
                             </li>
                         </ul>
                     </li>
