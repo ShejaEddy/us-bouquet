@@ -126,6 +126,11 @@ export default new Router({
                     path:"/logo",
                     name:"Logo Management",
                     components:() => import('../components/dashboardLayout/pages/logoManagement/logo-manage')
+                },
+                {
+                    name:"image slider",
+                    path:"/slides",
+                    components:() => import('../components/dashboardLayout/pages/sliderImage/slider-image-manage')
                 }
             ]
         }
