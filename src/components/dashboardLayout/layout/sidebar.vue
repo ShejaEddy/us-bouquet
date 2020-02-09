@@ -6,78 +6,74 @@
 
                 <ul class="metismenu" id="side-menu">
                     <li>
-                        <a style="cursor: pointer">
+                        <a style="cursor: pointer" @click="productOpt = true">
                             <i class="fe-shopping-cart"></i>
-                            <span>Pro Management</span>
-                            <span class="menu-arrow"></span>
+                            <span >Pro Management</span>
+                            <span>
+                              <i class="menu-arrow" ></i>
+                            </span>
                         </a>
-                        <ul class="nav-second-level">
-                            <li @click="productEdit()">
+                        <ul class="nav-second-level" v-if="productOpt">
+                            <li >
                                 <router-link to="/add-product" style="cursor: pointer">Product Edit</router-link>
                             </li>
-                            <li>
-                                <a>Product Detail</a>
+                            <li >
+                                <router-link to="#">Product Detail</router-link>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a style="cursor: pointer">
+                        <a style="cursor: pointer" @click="logoOption = true">
                             <i class="fe-shopping-cart"></i>
                             <span>Logo Management</span>
-                            <span class="menu-arrow"></span>
+                            <i class="menu-arrow"></i>
                         </a>
-                        <ul class="nav-second-level">
+                        <ul class="nav-second-level" v-if="logoOption">
                             <li>
-                                <span>Logo Manage</span>
+                                <router-link to="#" style="cursor:pointer;">Logo Manage</router-link>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a style="cursor: pointer">
+                        <a style="cursor: pointer" @click="sliderOption = true">
                             <i class="fe-shopping-cart"></i>
                             <span>Slider Image</span>
                             <span class="menu-arrow"></span>
                         </a>
-                        <ul class="nav-second-level">
+                        <ul class="nav-second-level" v-if="sliderOption">
                             <li>
-                                <span>Manage Slider Image</span>
+                                <router-link to="#">Manage Slider Image</router-link>
                             </li>
-                        </ul>
-                        <ul class="nav-second-level">
                             <li>
-                                <span>Manage Banner Image</span>
+                                <router-link to="#">Manage Banner Image</router-link>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a style="cursor: pointer">
+                        <a style="cursor: pointer" @click="categoryOption = true">
                             <i class="fe-shopping-cart"></i>
                             <span>Category Management</span>
-                            <span class="menu-arrow"></span>
+                            <i class="menu-arrow"></i>
                         </a>
-                        <ul class="nav-second-level">
+                        <ul class="nav-second-level" v-if="categoryOption">
                             <li>
-                                <span>Category List</span>
+                                <router-link to="#">Category List</router-link>
                             </li>
-                        </ul>
-                        <ul class="nav-second-level">
                             <li>
-                                <span>Sub Category List</span>
+                                <router-link to="#">Sub Category List</router-link>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a style="cursor: pointer">
+                        <a style="cursor: pointer" @click="orderOption = true">
                             <i class="fe-shopping-cart"></i>
                             <span>Order Management</span>
-                            <span class="menu-arrow"></span>
+                            <i class="menu-arrow"></i>
                         </a>
-                        <ul class="nav-second-level">
+                        <ul class="nav-second-level" v-if="orderOption">
                             <li>
                                 <router-link to="/orders">Orders</router-link>
                             </li>
-                        </ul>
-                        <ul class="nav-second-level">
                             <li>
                                 <router-link to="/seller">Sellers</router-link>
                             </li>
@@ -96,7 +92,13 @@
     export default {
         name: "sidebar",
         data() {
-            return {}
+            return {
+                productOpt:false,
+                logoOption:false,
+                sliderOption:false,
+                categoryOption:false,
+                orderOption:false
+            }
         },
         computed: {},
         methods: {
