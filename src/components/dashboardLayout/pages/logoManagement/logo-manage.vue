@@ -33,18 +33,21 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td><a class="text-body font-weight-bold"></a>1.</td><td>
-                                        <small class="text-muted">Tsapal</small>
-                                    </td>
+                                        <td><a class="text-body font-weight-bold"></a>1.</td>
+                                        <td>
+                                            <small class="text-muted">Tsapal</small>
+                                        </td>
                                         <td>
                                             <a><img src="assets/images/logo-light.png" alt="logo" height="50"/></a>
                                         </td>
                                         <td>
-                                            <h5><span class="badge badge-info"></span></h5>
+                                            <span class="badge badge-info"><img src="favicon.ico" alt="favicon"
+                                                                                height="50"></span>
                                         </td>
                                         <td>0</td>
-                                        <td >
-                                            <router-link to="#" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></router-link>
+                                        <td>
+                                            <router-link to="#" class="action-icon"><i
+                                                    class="mdi mdi-square-edit-outline"></i></router-link>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -55,7 +58,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 
