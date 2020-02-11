@@ -10,7 +10,10 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100 img-fluid sld" src="/img/1.jpg" alt="First sld">
+              <img class="d-block w-100 img-fluid sld" src="/img/package.jpg" alt="First sld">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100 img-fluid sld" src="/img/tsapal7.jpg" alt="First sld">
             </div>
             <div class="carousel-item">
               <img class="d-block w-100 img-fluid sld" src="/img/2.jpg" alt="Second sld">

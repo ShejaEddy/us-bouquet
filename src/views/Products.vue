@@ -37,7 +37,7 @@ export default {
       products_list: [],
       product_duplicate: [
         {
-          productImage: "/img/1.jpg",
+          productImage: "/img/tsapal5.jpg",
           productDescription: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
           productName: "Kamambiri",
           productPrice: "100$"
