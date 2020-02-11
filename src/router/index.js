@@ -132,6 +132,16 @@ export default new Router({
                     name:"Image slides",
                     path:"slides",
                     component:() => import('../components/dashboardLayout/pages/sliderImage/slider-image-manage.vue')
+                },
+                {
+                    name:"slider image management",
+                    path:"slider-image",
+                    component: () => import('../components/dashboardLayout/pages/sliderImage/slider-image-manage')
+                },
+                {
+                    name:"category list management",
+                    path:"category-list",
+                    component: () => import('../components/dashboardLayout/pages/categoryManagement/category-list')
                 }
             ]
         }
