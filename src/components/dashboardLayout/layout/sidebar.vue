@@ -8,14 +8,14 @@
                     <li>
                         <a style="cursor: pointer" @click="productOpt = true">
                             <i class="fe-shopping-cart"></i>
-                            <span >Pro Management</span>
+                            <span >Product Management</span>
                             <span>
                               <i class="menu-arrow" ></i>
                             </span>
                         </a>
                         <ul class="nav-second-level" v-if="productOpt">
                             <li >
-                                <router-link to="/add-product" style="cursor: pointer">Product Edit</router-link>
+                                <router-link :to="{name:'Add product'}" style="cursor: pointer">Product Edit</router-link>
                             </li>
                             <li >
                                 <router-link to="#">Product Detail</router-link>
@@ -30,7 +30,7 @@
                         </a>
                         <ul class="nav-second-level" v-if="logoOption">
                             <li>
-                                <router-link to="/logo" style="cursor:pointer;">Logo Manage</router-link>
+                                <router-link :to="{name:'Logo management'}" style="cursor:pointer;">Logo Manage</router-link>
                             </li>
                         </ul>
                     </li>
@@ -72,10 +72,10 @@
                         </a>
                         <ul class="nav-second-level" v-if="orderOption">
                             <li>
-                                <router-link to="/orders">Orders</router-link>
+                                <router-link :to="{name:'All orders'}">Orders</router-link>
                             </li>
                             <li>
-                                <router-link to="/seller">Sellers</router-link>
+                                <router-link :to="{name:'All sellers'}">Sellers</router-link>
                             </li>
                         </ul>
                     </li>
@@ -107,7 +107,7 @@
                 console.log(this.$store.getters.views)
             }
         }
-    }
+    };
 </script>
 
 <style scoped>

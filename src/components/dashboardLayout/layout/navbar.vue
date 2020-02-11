@@ -1,7 +1,6 @@
 <template>
     <div class="navbar-custom">
         <ul class="list-unstyled topnav-menu float-right mb-0">
-
             <li class="d-none d-sm-block">
                 <form class="app-search">
                     <div class="app-search-box">
@@ -92,7 +91,7 @@
 <script>
     export default {
         name: "navbar"
-    }
+    };
 </script>
 
 <style scoped>

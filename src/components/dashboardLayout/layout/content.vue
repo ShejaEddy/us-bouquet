@@ -6,21 +6,22 @@
 
 <script>
     export default {
-        name: "content",
+        name: "dashboard-content",
         data(){
           return{
             }
         },
         components: {
         },
-        computed: {},
-
-        methods: {
+        computed: {
             pro() {
                 this.$store.getters.views;
             }
+        },
+        methods: {
+
         }
-    }
+    };
 </script>
 
 <style scoped>

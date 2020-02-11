@@ -102,7 +102,7 @@
 
 <script>
     export default {
-        name: "order",
+        name: "orders",
         data() {
             return {
                 orders: [
@@ -206,7 +206,7 @@
                 ]
             }
         }
-    }
+    };
 </script>
 
 <style scoped>
