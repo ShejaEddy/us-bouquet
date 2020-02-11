@@ -1,8 +1,8 @@
 <template>
     <div id="app" class="">
-       <!-- <web-nav ></web-nav> -->
+<!--        <web-nav ></web-nav>-->
         <router-view />
-      <!-- <web-footer ></web-footer> -->
+<!--       <web-footer ></web-footer>-->
     </div>
 </template>
 <script>

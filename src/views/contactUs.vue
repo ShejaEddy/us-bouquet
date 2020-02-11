@@ -71,7 +71,7 @@
             </address>
             <address>
                 <strong>Email</strong><br>
-                <a href="mailto:#">shejaeddy@gmail.com</a>
+                <a href="mailto:#">tsapal@gmail.com</a>
             </address>
             </form>
         </div>
