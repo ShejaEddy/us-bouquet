@@ -1,8 +1,8 @@
 <template>
     <div id="app" class="">
-<!--       <web-nav ></web-nav>-->
+       <!-- <web-nav ></web-nav> -->
         <router-view />
-<!--      <web-footer ></web-footer>-->
+      <!-- <web-footer ></web-footer> -->
     </div>
 </template>
 <script>
@@ -18,8 +18,7 @@
             webNav,
             webFooter
         }
-    }
+    };
 </script>
 <style lang="scss">
-    @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 </style>

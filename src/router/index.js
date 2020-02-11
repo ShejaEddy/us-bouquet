@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../views/Home.vue'
 import toastr from '../components/shared/service/ErrorHandler'
+import adminDashboard from "@/components/dashboardLayout/layout/Dashboard.vue"
 import {
     isLoggedIn
 } from '../components/shared/service/authService'
@@ -105,32 +106,32 @@ export default new Router({
         },
         {
             path: "/admin",
-            component: () => import('../components/dashboardLayout/layout/Dashboard.vue'),
+            component: adminDashboard,
             children: [
                 {
-                    name: "manage product",
-                    path: "/add-product",
-                    components: () => import('../components/dashboardLayout/pages/product/add-product'),
+                    name: "Add product",
+                    path: "add-product",
+                    component: () => import('../components/dashboardLayout/pages/product/add-product.vue'),
                 },
                 {
-                    path: "/orders",
-                    name: "admin orders",
-                    components: () => import('../components/dashboardLayout/pages/orderManagement/order')
+                    path: "orders",
+                    name: "All orders",
+                    component: () => import('../components/dashboardLayout/pages/orderManagement/order.vue')
                 },
                 {
-                    path: "/seller",
-                    name: "sellers list",
-                    components: () => import('../components/dashboardLayout/pages/orderManagement/seller')
+                    path: "seller",
+                    name: "All sellers",
+                    component: () => import('../components/dashboardLayout/pages/orderManagement/seller.vue')
                 },
                 {
-                    path:"/logo",
-                    name:"Logo Management",
-                    components:() => import('../components/dashboardLayout/pages/logoManagement/logo-manage')
+                    path:"logo",
+                    name:"Logo management",
+                    component:() => import('../components/dashboardLayout/pages/logoManagement/logo-manage.vue')
                 },
                 {
-                    name:"image slider",
-                    path:"/slides",
-                    components:() => import('../components/dashboardLayout/pages/sliderImage/slider-image-manage')
+                    name:"Image slides",
+                    path:"slides",
+                    component:() => import('../components/dashboardLayout/pages/sliderImage/slider-image-manage.vue')
                 }
             ]
         }
