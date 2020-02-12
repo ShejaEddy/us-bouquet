@@ -60,7 +60,7 @@
                                 <router-link :to="{name:'category list management'}">Category List</router-link>
                             </li>
                             <li>
-                                <router-link to="#">Sub Category List</router-link>
+                                <router-link :to="{name:'sub category management'}">Sub Category List</router-link>
                             </li>
                         </ul>
                     </li>

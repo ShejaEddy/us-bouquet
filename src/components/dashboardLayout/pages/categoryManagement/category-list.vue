@@ -53,9 +53,9 @@
                     <p>
                         <span> showing 1 to 3 of 3 entries </span>
                     </p>
-                    <botton>
+                    <button class="btn-danger">
                         delete
-                    </botton>
+                    </button>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
 
 <script>
     export default {
-        name: "category-list",
+        name: "category list management",
         data(){
             return {
                 categories:[
