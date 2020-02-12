@@ -42,7 +42,7 @@
                         </a>
                         <ul class="nav-second-level" v-if="sliderOption">
                             <li>
-                                <router-link to="#">Manage Slider Image</router-link>
+                                <router-link :to="{name:'Image slides'}">Manage Slider Image</router-link>
                             </li>
                             <li>
                                 <router-link to="#">Manage Banner Image</router-link>
@@ -57,7 +57,7 @@
                         </a>
                         <ul class="nav-second-level" v-if="categoryOption">
                             <li>
-                                <router-link to="#">Category List</router-link>
+                                <router-link :to="{name:'category list management'}">Category List</router-link>
                             </li>
                             <li>
                                 <router-link to="#">Sub Category List</router-link>
