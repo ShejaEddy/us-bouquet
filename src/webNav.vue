@@ -21,7 +21,7 @@
             </div>
         </div>
         <nav class="navbar navbar-expand-lg navbar-light" id="nav">
-            <span class="brand mr-3"><img src="assets/images/logo-light.png" style="width:100%;"></span>
+            <span class="brand mr-3"><img :src="logo" style="width:100%;"></span>
             <button
                     class="navbar-toggler"
                     type="button"
@@ -70,7 +70,8 @@
     export default {
         data() {
             return {
-                cartValue: 0
+                cartValue: 0,
+                logo:"/assets/images/logo.jpg"
             }
         },
         computed: mapState(['cartProducts', 'loggedUser']),

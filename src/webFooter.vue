@@ -3,13 +3,11 @@
         <div class="container">
             <div class="row row-30">
                 <div class="col-md-4 col-xl-5">
-                    <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light"
-                                                                                 src="images/agency/logo-inverse-140x37.png"
-                                                                                 alt="" width="140" height="37"
-                                                                                 srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
+                    <div class="pr-xl-4"><a class="brand" href="#"><img class="brand-logo-light"
+                                                                                 src="/assets/images/logo-light.png"
+                                                                                 alt="" width="82" height="70"></a>
                         <p>We are an award-winning creative agency, dedicated to the best result in the designing of
                             shoes, manufacturing of shoes and marketing.</p>
-                        <!-- Rights-->
                         <p class="rights"><span>©  </span><span
                                 class="copyright-year">2020</span><span> </span><span>Tsapal</span><span>. </span><span>All Rights Reserved.</span>
                         </p>
