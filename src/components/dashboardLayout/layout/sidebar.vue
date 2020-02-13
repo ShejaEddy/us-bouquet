@@ -10,7 +10,8 @@
                             <i class="fe-shopping-cart"></i>
                             <span >Product Management</span>
                             <span>
-                              <i class="menu-arrow" ></i>
+                            <i v-if="!productOpt" class="menu-arrow"></i>
+                            <i  v-else ></i>
                             </span>
                         </a>
                         <ul class="nav-second-level" v-if="productOpt">
@@ -26,7 +27,10 @@
                         <a style="cursor: pointer" @click="logoOption = true">
                             <i class="fe-shopping-cart"></i>
                             <span>Logo Management</span>
-                            <i class="menu-arrow"></i>
+                            <span>
+                            <i v-if="!logoOption" class="menu-arrow"></i>
+                            <i  v-else ></i>
+                            </span>
                         </a>
                         <ul class="nav-second-level" v-if="logoOption">
                             <li>
@@ -38,7 +42,10 @@
                         <a style="cursor: pointer" @click="sliderOption = true">
                             <i class="fe-shopping-cart"></i>
                             <span>Slider Image</span>
-                            <span class="menu-arrow"></span>
+                            <span>
+                            <i v-if="!sliderOption" class="menu-arrow"></i>
+                            <i  v-else ></i>
+                            </span>
                         </a>
                         <ul class="nav-second-level" v-if="sliderOption">
                             <li>
@@ -53,7 +60,10 @@
                         <a style="cursor: pointer" @click="categoryOption = true">
                             <i class="fe-shopping-cart"></i>
                             <span>Category Management</span>
-                            <i class="menu-arrow"></i>
+                            <span>
+                            <i v-if="!categoryOption" class="menu-arrow"></i>
+                            <i  v-else ></i>
+                            </span>
                         </a>
                         <ul class="nav-second-level" v-if="categoryOption">
                             <li>
@@ -68,7 +78,10 @@
                         <a style="cursor: pointer" @click="orderOption = true">
                             <i class="fe-shopping-cart"></i>
                             <span>Order Management</span>
-                            <i class="menu-arrow"></i>
+                            <span>
+                            <i v-if="!orderOption" class="menu-arrow"></i>
+                            <i  v-else ></i>
+                            </span>
                         </a>
                         <ul class="nav-second-level" v-if="orderOption">
                             <li>
