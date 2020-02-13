@@ -154,6 +154,11 @@ export default new Router({
                     component: () => import('../components/dashboardLayout/pages/product/product-list')
                 }
             ]
+        },
+        {
+            path:"*",
+            name:"404 page",
+            component: () => import('../404-page')
         }
     ]
 })
