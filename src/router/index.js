@@ -147,6 +147,11 @@ export default new Router({
                     name:"sub category management",
                     path:"sub-category-list",
                     component:() => import('../components/dashboardLayout/pages/categoryManagement/sub-category-list')
+                },
+                {
+                    name:"product-list-management",
+                    path:"product-list",
+                    component: () => import('../components/dashboardLayout/pages/product/product-list')
                 }
             ]
         }

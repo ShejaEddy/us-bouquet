@@ -81,7 +81,7 @@
         <div class="logo-box">
             <router-link to="/admin" class="logo text-center" >
                         <span class="logo-lg">
-                            <img class="tsap-logo" alt="Tsapl-Logo" height="70" src="assets/images/logo-light.png">
+                            <img class="tsap-logo" alt="Tsapl-Logo" height="70" src="assets/images/logo.jpg">
                         </span>
             </router-link>
         </div>

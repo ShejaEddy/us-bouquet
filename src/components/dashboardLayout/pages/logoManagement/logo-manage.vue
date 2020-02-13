@@ -32,19 +32,19 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td><a class="text-body font-weight-bold"></a>1.</td>
+                                    <tr v-for="(logo, index) in logos" :key='index'>
+                                        <td><a class="text-body font-weight-bold"></a>{{index+1}}.</td>
                                         <td>
-                                            <small class="text-muted">Tsapal</small>
+                                            <small class="text-muted">{{logo.title}}</small>
                                         </td>
                                         <td>
-                                            <a><img src="assets/images/logo-light.png" alt="logo" height="50"/></a>
+                                            <a><img :src="logo.image" alt="logo" height="50"/></a>
                                         </td>
                                         <td>
-                                            <span class="badge badge-info"><img src="favicon.ico" alt="favicon"
+                                            <span class="badge badge-info"><img :src="logo.favicon" alt="favicon"
                                                                                 height="50"></span>
                                         </td>
-                                        <td>0</td>
+                                        <td>{{logo.disabled}}</td>
                                         <td>
                                             <router-link to="#" class="action-icon"><i
                                                     class="mdi mdi-square-edit-outline"></i></router-link>
@@ -63,7 +63,25 @@
 
 <script>
     export default {
-        name: "logo-manage"
+        name: "logo-manage",
+        data() {
+            return {
+                logos: [
+                    {
+                        title: "Tsapl",
+                        image: "/assets/images/logo-light.png",
+                        disabled: '1',
+                        favicon: "favicon.icon"
+                    },
+                    {
+                        title: "logo",
+                        image: "/assets/images/logo.jpg",
+                        disabled: "0",
+                        favicon: "favicon.icon"
+                    }
+                ]
+            }
+        }
     }
 </script>
 

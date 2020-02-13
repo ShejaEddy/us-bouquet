@@ -71,8 +71,13 @@
             return {
                 SubCategories:[
                     {
-                        category:"men",
+                        category:"Men",
                         subCategory:"footwear",
+                        status:"active"
+                    },
+                    {
+                        category:"Men",
+                        subCategory: "Watches",
                         status:"active"
                     },
                     {
@@ -83,6 +88,16 @@
                     {
                         category:"Kid",
                         subCategory: "slipper",
+                        status:"active"
+                    },
+                    {
+                        category:"Men",
+                        subCategory: "T-shirt",
+                        status:"in active"
+                    },
+                    {
+                        category:"Women",
+                        subCategory: "umoja",
                         status:"active"
                     }
                 ]

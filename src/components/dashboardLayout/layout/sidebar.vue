@@ -18,7 +18,7 @@
                                 <router-link :to="{name:'Add product'}" style="cursor: pointer">Product Edit</router-link>
                             </li>
                             <li >
-                                <router-link to="#">Product Detail</router-link>
+                                <router-link :to="{name:'product-list-management'}">Product Detail</router-link>
                             </li>
                         </ul>
                     </li>

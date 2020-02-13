@@ -39,7 +39,7 @@
                                             <small class="text-muted">{{slide.title}}</small>
                                         </td>
                                         <td>
-                                            <a><img src="img/3.jpg" alt="logo" height="50"/></a>
+                                            <a><img :src="slide.picture" alt="logo" height="50"/></a>
                                         </td>
                                         <td>{{ slide.disabled = "true" ? "0" : "1"}}</td>
                                         <td>
@@ -71,17 +71,17 @@
                 sliders: [
                     {
                         title: "shoe",
-                        picture: "big-shoe.jpg",
+                        picture: "/img/tsapal4.jpg",
                         disabled: true
                     },
                     {
                         title: "Masayi",
-                        picture: "2.jpg",
+                        picture: "/img/tsapal2.jpg",
                         disabled: true
                     },
                     {
                         title: "Slipper",
-                        picture: "3.jpg",
+                        picture: "/img/3.jpg",
                         disabled: true
                     }
                 ]

@@ -64,7 +64,7 @@
                                     <tr v-for="(order, index) in orders" :key="index">
                                         <td><a class="text-body font-weight-bold">{{order.orderId}}</a></td>
                                         <td>
-                                            <a><img src="img/1.jpg" alt="tyr" height="32"/></a>
+                                            <a><img :src="order.productProfile" alt="order-image" height="32"/></a>
                                         </td>
                                         <td>
                                             {{order.dates.date}} <small class="text-muted">{{order.dates.time}}</small>
@@ -109,7 +109,7 @@
 
                     {
                         orderId: "#UB9708",
-                        productProfile: "img/1.jpg",
+                        productProfile: "/img/tsapal5.jpg",
                         dates: {
                             date: "August 05 2019",
                             time: "10:29 PM"
@@ -121,7 +121,7 @@
                     },
                     {
                         orderId: "#UB9706",
-                        productProfile: "img/3.jpg",
+                        productProfile: "/img/3.jpg",
                         dates: {
                             date: "August 04 2019",
                             time: "10:18 AM"
@@ -133,7 +133,7 @@
                     },
                     {
                         orderId: "#UB9705",
-                        productProfile: "img/4.jpg",
+                        productProfile: "/img/4.jpg",
                         dates: {
                             date: "August 03 2019",
                             time: "07:18 AM"
@@ -145,7 +145,7 @@
                     },
                     {
                         orderId: "#UB9704",
-                        productProfile: "img/shoe-bg.jpg",
+                        productProfile: "/img/shoe-bg.jpg",
                         dates: {
                             date: "May 22 2019",
                             time: "07:22 PM"
@@ -157,7 +157,7 @@
                     },
                     {
                         orderId: "#UB9703",
-                        productProfile: "img/2.jpg",
+                        productProfile: "/img/2.jpg",
                         dates: {
                             date: "May 22 2019",
                             time: "07:22 PM"
@@ -169,7 +169,7 @@
                     },
                     {
                         orderId: "#UB9702",
-                        productProfile: "img/2.jpg",
+                        productProfile: "/img/2.jpg",
                         dates: {
                             date: "March 18 2019",
                             time: "11:19 PM"
@@ -181,7 +181,7 @@
                     },
                     {
                         orderId: "#UB9701",
-                        productProfile: "img/3.jpg",
+                        productProfile: "/img/3.jpg",
                         dates: {
                             date: "February 01 2019",
                             time: "07:22 AM"
@@ -193,7 +193,7 @@
                     },
                     {
                         orderId: "#UB9700",
-                        productProfile: "img/4.jpg",
+                        productProfile: "/img/4.jpg",
                         dates: {
                             date: "January 22 2019",
                             time: "08:09 PM"
