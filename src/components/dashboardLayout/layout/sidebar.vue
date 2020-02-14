@@ -102,25 +102,25 @@
 </template>
 
 <script>
-    export default {
-        name: "sidebar",
-        data() {
-            return {
-                productOpt:false,
-                logoOption:false,
-                sliderOption:false,
-                categoryOption:false,
-                orderOption:false
-            }
-        },
-        computed: {},
-        methods: {
-            productEdit() {
-                this.$store.dispatch("productManagement")
-                console.log(this.$store.getters.views)
-            }
-        }
-    };
+export default {
+  name: 'sidebar',
+  data () {
+    return {
+      productOpt: false,
+      logoOption: false,
+      sliderOption: false,
+      categoryOption: false,
+      orderOption: false
+    }
+  },
+  computed: {},
+  methods: {
+    productEdit () {
+      this.$store.dispatch('productManagement')
+      console.log(this.$store.getters.views)
+    }
+  }
+}
 </script>
 
 <style scoped>

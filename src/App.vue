@@ -1,24 +1,12 @@
 <template>
-    <div id="app" class="">
-<!--        <web-nav ></web-nav>-->
+    <div id="app" >
         <router-view />
-<!--       <web-footer ></web-footer>-->
     </div>
 </template>
 <script>
-    import {mapState, mapActions, mapMutations} from 'vuex'
-    import {
-        isLoggedIn,
-        getLoggedInUser
-    } from './components/shared/service/authService'
-    import webNav from "./webNav.vue"
-    import webFooter from './webFooter.vue'
-    export default {
-        components:{
-            webNav,
-            webFooter
-        }
-    };
+export default {
+  name: 'App'
+}
 </script>
 <style lang="scss">
 </style>

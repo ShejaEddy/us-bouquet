@@ -76,82 +76,82 @@
 </template>
 
 <script>
-    export default {
-        name: "product-list-management",
-        data() {
-            return {
-                productLists: [
-                    {
-                        productImage: "/img/tsapal5.jpg",
-                        category: "Men",
-                        subCategory: "footwear",
-                        productName: "Kamambiri",
-                        actualPrice: "100$",
-                        offerPrice: "80$",
-                        quantity: "12",
-                        code: 'S267',
-                        disabled: "0"
-                    },
-                    {
-                        productImage: "/img/2.jpg",
-                        category: "Women",
-                        subCategory: "footwear",
-                        productName: "Sandal",
-                        actualPrice: "600$",
-                        offerPrice: "500$",
-                        quantity: "12",
-                        code: 'S267',
-                        disabled: "1"
-                    },
-                    {
-                        productImage: "/img/3.jpg",
-                        category: "Men",
-                        subCategory: "footwear",
-                        productName: "Umoja",
-                        actualPrice: "400$",
-                        offerPrice: "300$",
-                        quantity: "12",
-                        code: 'S267',
-                        disabled: "0"
-                    },
-                    {
-                        productImage: "/img/shoe-bg.jpg",
-                        category: "Women",
-                        subCategory: "footwear",
-                        productName: "Slippers",
-                        actualPrice: "150$",
-                        offerPrice: "140$",
-                        quantity: "12",
-                        code: 'S267',
-                        disabled: "0"
-                    },
-                    {
-                        productImage: "/img/3.jpg",
-                        category: "Men",
-                        subCategory: "footwear",
-                        productName: "Ketch",
-                        actualPrice: "300$",
-                        offerPrice: "250$",
-                        quantity: "12",
-                        code: 'S267',
-                        disabled: "0"
-                    },
-                    {
-                        productImage: "/img/1.jpg",
-                        category: "Men",
-                        subCategory: "footwear",
-                        productName: "Style",
-                        actualPrice: "50$",
-                        offerPrice: "40$",
-                        quantity: "12",
-                        code: 'S267',
-                        disabled: "1"
-                    }
-                ],
-
-            }
+export default {
+  name: 'product-list-management',
+  data () {
+    return {
+      productLists: [
+        {
+          productImage: '/img/tsapal5.jpg',
+          category: 'Men',
+          subCategory: 'footwear',
+          productName: 'Kamambiri',
+          actualPrice: '100$',
+          offerPrice: '80$',
+          quantity: '12',
+          code: 'S267',
+          disabled: '0'
+        },
+        {
+          productImage: '/img/2.jpg',
+          category: 'Women',
+          subCategory: 'footwear',
+          productName: 'Sandal',
+          actualPrice: '600$',
+          offerPrice: '500$',
+          quantity: '12',
+          code: 'S267',
+          disabled: '1'
+        },
+        {
+          productImage: '/img/3.jpg',
+          category: 'Men',
+          subCategory: 'footwear',
+          productName: 'Umoja',
+          actualPrice: '400$',
+          offerPrice: '300$',
+          quantity: '12',
+          code: 'S267',
+          disabled: '0'
+        },
+        {
+          productImage: '/img/shoe-bg.jpg',
+          category: 'Women',
+          subCategory: 'footwear',
+          productName: 'Slippers',
+          actualPrice: '150$',
+          offerPrice: '140$',
+          quantity: '12',
+          code: 'S267',
+          disabled: '0'
+        },
+        {
+          productImage: '/img/3.jpg',
+          category: 'Men',
+          subCategory: 'footwear',
+          productName: 'Ketch',
+          actualPrice: '300$',
+          offerPrice: '250$',
+          quantity: '12',
+          code: 'S267',
+          disabled: '0'
+        },
+        {
+          productImage: '/img/1.jpg',
+          category: 'Men',
+          subCategory: 'footwear',
+          productName: 'Style',
+          actualPrice: '50$',
+          offerPrice: '40$',
+          quantity: '12',
+          code: 'S267',
+          disabled: '1'
         }
+      ]
+
     }
+  }
+}
 </script>
 
 <style scoped>

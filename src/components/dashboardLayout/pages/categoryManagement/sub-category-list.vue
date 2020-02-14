@@ -65,45 +65,45 @@
 </template>
 
 <script>
-    export default {
-        name: "sub-category-list",
-        data(){
-            return {
-                SubCategories:[
-                    {
-                        category:"Men",
-                        subCategory:"footwear",
-                        status:"active"
-                    },
-                    {
-                        category:"Men",
-                        subCategory: "Watches",
-                        status:"active"
-                    },
-                    {
-                        category:"Women",
-                        subCategory:"masayi",
-                        status:"active"
-                    },
-                    {
-                        category:"Kid",
-                        subCategory: "slipper",
-                        status:"active"
-                    },
-                    {
-                        category:"Men",
-                        subCategory: "T-shirt",
-                        status:"in active"
-                    },
-                    {
-                        category:"Women",
-                        subCategory: "umoja",
-                        status:"active"
-                    }
-                ]
-            }
+export default {
+  name: 'sub-category-list',
+  data () {
+    return {
+      SubCategories: [
+        {
+          category: 'Men',
+          subCategory: 'footwear',
+          status: 'active'
+        },
+        {
+          category: 'Men',
+          subCategory: 'Watches',
+          status: 'active'
+        },
+        {
+          category: 'Women',
+          subCategory: 'masayi',
+          status: 'active'
+        },
+        {
+          category: 'Kid',
+          subCategory: 'slipper',
+          status: 'active'
+        },
+        {
+          category: 'Men',
+          subCategory: 'T-shirt',
+          status: 'in active'
+        },
+        {
+          category: 'Women',
+          subCategory: 'umoja',
+          status: 'active'
         }
+      ]
     }
+  }
+}
 </script>
 
 <style scoped>

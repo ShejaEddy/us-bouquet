@@ -18,70 +18,70 @@
 </template>
 
 <script>
-import ProductsList from "@/components/products/ProductsList";
-import CardLoader from "@/components/shared/CardLoader";
-import ProductFilter from "@/components/products/filters/ProductFilter";
-import axios from "axios";
-import _ from "lodash";
+import ProductsList from '@/components/products/ProductsList'
+import CardLoader from '@/components/shared/CardLoader'
+import ProductFilter from '@/components/products/filters/ProductFilter'
+import axios from 'axios'
+import _ from 'lodash'
 
 export default {
-  name: "allProducts",
+  name: 'allProducts',
   components: { ProductsList, CardLoader, ProductFilter },
-  data() {
+  data () {
     return {
-      categories: ["new products", "best products", "popular products"],
-      price: ["High", "low"],
-      fabric: ["tissue", "hard", "leather"],
+      categories: ['new products', 'best products', 'popular products'],
+      price: ['High', 'low'],
+      fabric: ['tissue', 'hard', 'leather'],
       products_list: [],
       product_duplicate: [
         {
-          productImage: "/img/tsapal5.jpg",
+          productImage: '/img/tsapal5.jpg',
           productDescription:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Kamambiri",
-          productPrice: "100$"
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Kamambiri',
+          productPrice: '100$'
         },
         {
-          productImage: "/img/2.jpg",
+          productImage: '/img/2.jpg',
           productDescription:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Sandal",
-          productPrice: "600$"
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Sandal',
+          productPrice: '600$'
         },
         {
-          productImage: "/img/3.jpg",
+          productImage: '/img/3.jpg',
           productDescription:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Umoja",
-          productPrice: "400$"
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Umoja',
+          productPrice: '400$'
         },
         {
-          productImage: "/img/shoe-bg.jpg",
+          productImage: '/img/shoe-bg.jpg',
           productDescription:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Slippers",
-          productPrice: "150$"
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Slippers',
+          productPrice: '150$'
         },
         {
-          productImage: "/img/3.jpg",
+          productImage: '/img/3.jpg',
           productDescription:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Ketch",
-          productPrice: "300$"
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Ketch',
+          productPrice: '300$'
         },
         {
-          productImage: "/img/1.jpg",
+          productImage: '/img/1.jpg',
           productDescription:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.",
-          productName: "Style",
-          productPrice: "50$"
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Style',
+          productPrice: '50$'
         }
       ],
       loading: false
-    };
+    }
   },
   methods: {
-    getAllProducts: function() {
+    getAllProducts: function () {
       // this.loading = true;
       // axios
       //   .get(products)
@@ -111,10 +111,10 @@ export default {
       //   });
     },
 
-    filterProductBy(event, productFilterID) {
-      const productList = [...this.product_duplicate];
-      let filteredData = [];
-      console.log(event.target.value);
+    filterProductBy (event, productFilterID) {
+      const productList = [...this.product_duplicate]
+      let filteredData = []
+      console.log(event.target.value)
       // if (event.target.value !== "All") {
       //   productList.map(product => {
       //     if (product[productFilterID] === event.target.value) {
@@ -130,10 +130,10 @@ export default {
     }
   },
 
-  created() {
-    this.getAllProducts();
+  created () {
+    this.getAllProducts()
   }
-};
+}
 </script>
 
 <style lang="scss">

@@ -71,66 +71,66 @@
     </div>
 </template>
 <script>
-    import axios from 'axios'
-    import {successToaster, errorToaster} from './shared/service/ErrorHandler.js'
+import axios from 'axios'
+import { successToaster, errorToaster } from './shared/service/ErrorHandler.js'
 
-    export default {
-        name: 'CreateAccount',
-        data() {
-            return {
-                showLoader: false,
-                user: {
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    password: ''
-                },
-                errorMessage: []
-            }
-        },
-        methods: {
-            createAccount(e) {
-                this.showLoader = true
-
-                this.errorMessage = []
-
-                if (this.user.firstName.length < 5) {
-                    this.errorMessage.push(
-                        'FirstName should contains more than 5 character'
-                    )
-                }
-
-                if (this.ValidateEmail(this.user.email) === false) {
-                    this.errorMessage.push('Please provide a valid Email address')
-                }
-                if (this.errorMessage.length === 0) {
-                    axios
-                        .post(`${process.env.VUE_APP_BASE_URL}/users`, this.user)
-                        .then(response => {
-                            this.showLoader = false
-                            successToaster(
-                                'Registered Successfully',
-                                'User Registered Successfully'
-                            )
-                        })
-                        .catch(error => {
-                            console.log(error)
-                            errorToaster(
-                                'Registeration Failed',
-                                'Please try again after sometime'
-                            )
-                        })
-                }
-            },
-
-            ValidateEmail(mail) {
-                if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
-                    return true
-                }
-                return false
-            }
-        }
+export default {
+  name: 'CreateAccount',
+  data () {
+    return {
+      showLoader: false,
+      user: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: ''
+      },
+      errorMessage: []
     }
+  },
+  methods: {
+    createAccount (e) {
+      this.showLoader = true
+
+      this.errorMessage = []
+
+      if (this.user.firstName.length < 5) {
+        this.errorMessage.push(
+          'FirstName should contains more than 5 character'
+        )
+      }
+
+      if (this.ValidateEmail(this.user.email) === false) {
+        this.errorMessage.push('Please provide a valid Email address')
+      }
+      if (this.errorMessage.length === 0) {
+        axios
+          .post(`${process.env.VUE_APP_BASE_URL}/users`, this.user)
+          .then(response => {
+            this.showLoader = false
+            successToaster(
+              'Registered Successfully',
+              'User Registered Successfully'
+            )
+          })
+          .catch(error => {
+            console.log(error)
+            errorToaster(
+              'Registeration Failed',
+              'Please try again after sometime'
+            )
+          })
+      }
+    },
+
+    ValidateEmail (mail) {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+        return true
+      }
+      return false
+    }
+  }
+}
 </script>
 
 <style>

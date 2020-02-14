@@ -5,14 +5,14 @@ import actions from './actions'
 import state from './state'
 import getters from './getters'
 import {
-    encryptUser
+  encryptUser
 } from '../components/shared/service/authService'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    state,
-    getters,
-    mutations,
-    actions
+  state,
+  getters,
+  mutations,
+  actions
 })

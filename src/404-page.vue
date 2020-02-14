@@ -27,9 +27,9 @@
 </template>
 
 <script>
-    export default {
-        name: "404 page"
-    }
+export default {
+  name: '404-page'
+}
 </script>
 
 <style scoped>

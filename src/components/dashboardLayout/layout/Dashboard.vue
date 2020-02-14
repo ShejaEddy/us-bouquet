@@ -6,16 +6,16 @@
     </div>
 </template>
 <script>
-    import navbar from './navbar.vue';
-    import sidebar from "./sidebar.vue";
-    import contentView from "./content.vue";
-    export default {
-        components: {
-            navbar,
-            sidebar,
-            contentView
-        }
-    };
+import navbar from './navbar.vue'
+import sidebar from './sidebar.vue'
+import contentView from './content.vue'
+export default {
+  components: {
+    navbar,
+    sidebar,
+    contentView
+  }
+}
 </script>
 <style>
     .dropdown-toggle::after {

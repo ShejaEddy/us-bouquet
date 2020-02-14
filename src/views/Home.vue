@@ -86,25 +86,25 @@
 </template>
 
 <script>
-    import HelloWorld from "@/components/HelloWorld.vue";
-    import FeaturedProducts from "@/components/products/FeaturedProducts.vue";
-    import ProductFilter from "@/components/products/filters/ProductFilter.vue";
+import HelloWorld from '@/components/HelloWorld.vue'
+import FeaturedProducts from '@/components/products/FeaturedProducts.vue'
+import ProductFilter from '@/components/products/filters/ProductFilter.vue'
 
-    export default {
-        name: "home",
-        components: {
-            HelloWorld,
-            FeaturedProducts,
-            ProductFilter
-        },
-        data() {
-            return {
-                categories: ["food", "naked", "bad"],
-                price: ["High", "low"],
-                fabric: ["tissue", "hard", "leather"]
-            };
-        }
-    };
+export default {
+  name: 'home',
+  components: {
+    HelloWorld,
+    FeaturedProducts,
+    ProductFilter
+  },
+  data () {
+    return {
+      categories: ['food', 'naked', 'bad'],
+      price: ['High', 'low'],
+      fabric: ['tissue', 'hard', 'leather']
+    }
+  }
+}
 </script>
 <style lang="scss">
     @import "../assets/style/home.scss";

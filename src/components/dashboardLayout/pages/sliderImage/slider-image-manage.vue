@@ -64,30 +64,30 @@
 </template>
 
 <script>
-    export default {
-        name: "slider-image-manage",
-        data() {
-            return {
-                sliders: [
-                    {
-                        title: "shoe",
-                        picture: "/img/tsapal4.jpg",
-                        disabled: true
-                    },
-                    {
-                        title: "Masayi",
-                        picture: "/img/tsapal2.jpg",
-                        disabled: true
-                    },
-                    {
-                        title: "Slipper",
-                        picture: "/img/3.jpg",
-                        disabled: true
-                    }
-                ]
-            }
+export default {
+  name: 'slider-image-manage',
+  data () {
+    return {
+      sliders: [
+        {
+          title: 'shoe',
+          picture: '/img/tsapal4.jpg',
+          disabled: true
+        },
+        {
+          title: 'Masayi',
+          picture: '/img/tsapal2.jpg',
+          disabled: true
+        },
+        {
+          title: 'Slipper',
+          picture: '/img/3.jpg',
+          disabled: true
         }
+      ]
     }
+  }
+}
 </script>
 
 <style scoped>

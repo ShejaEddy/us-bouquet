@@ -62,27 +62,27 @@
 </template>
 
 <script>
-    export default {
-        name: "logo-manage",
-        data() {
-            return {
-                logos: [
-                    {
-                        title: "Tsapl",
-                        image: "/assets/images/logo-light.png",
-                        disabled: '1',
-                        favicon: "favicon.icon"
-                    },
-                    {
-                        title: "logo",
-                        image: "/assets/images/logo.jpg",
-                        disabled: "0",
-                        favicon: "favicon.icon"
-                    }
-                ]
-            }
+export default {
+  name: 'logo-manage',
+  data () {
+    return {
+      logos: [
+        {
+          title: 'Tsapl',
+          image: '/assets/images/logo-light.png',
+          disabled: '1',
+          favicon: 'favicon.icon'
+        },
+        {
+          title: 'logo',
+          image: '/assets/images/logo.jpg',
+          disabled: '0',
+          favicon: 'favicon.icon'
         }
+      ]
     }
+  }
+}
 </script>
 
 <style scoped>

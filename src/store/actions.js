@@ -1,6 +1,6 @@
-export default  {
-    productManagement({commit}){
-        commit('PRODUCT_EDIT')
-    }
+export default {
+  productManagement ({ commit }) {
+    commit('PRODUCT_EDIT')
+  }
 
 }

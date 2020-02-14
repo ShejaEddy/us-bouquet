@@ -63,27 +63,27 @@
 </template>
 
 <script>
-    export default {
-        name: "category list management",
-        data(){
-            return {
-                categories:[
-                    {
-                        category:"Men",
-                        status:"active"
-                    },
-                    {
-                        category:"Women",
-                        status:"active"
-                    },
-                    {
-                        category:"Kid",
-                        status:"active"
-                    }
-                ]
-            }
+export default {
+  name: 'category list management',
+  data () {
+    return {
+      categories: [
+        {
+          category: 'Men',
+          status: 'active'
+        },
+        {
+          category: 'Women',
+          status: 'active'
+        },
+        {
+          category: 'Kid',
+          status: 'active'
         }
+      ]
     }
+  }
+}
 </script>
 
 <style scoped>

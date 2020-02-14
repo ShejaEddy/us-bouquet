@@ -132,96 +132,96 @@
 </template>
 
 <script>
-    export default {
-        name: "all sellers",
-        data() {
-            return {
-                sellers: [
-                    {
-                        profile: "/assets/images/users/user-10.jpg",
-                        seller: "Shema Fred",
-                        storeName: "Homovee",
-                        products: "8",
-                        walletBalance: "12,000FRW",
-                        createdDate: "7/7/2019",
-                        revenue: "100rfw"
-                    },
-                    {
-                        profile: "/assets/images/users/user-8.jpg",
-                        seller: "Sheja anni",
-                        storeName: "Execucy",
-                        products: "12",
-                        walletBalance: "122,000FRW",
-                        createdDate: "09/12/2019",
-                        revenue: "1000rfw"
-                    },
-                    {
-                        profile: "/assets/images/users/user-5.jpg",
-                        seller: "Kathryn S. Collier",
-                        storeName: "Epiloo",
-                        products: "50",
-                        walletBalance: "122,000FRW",
-                        createdDate: "06/30/2019",
-                        revenue: "1010rfw"
-                    },
-                    {
-                        profile: "/assets/images/users/user-3.jpg",
-                        seller: "Mucyo patrick",
-                        storeName: "Symic",
-                        products: "235",
-                        walletBalance: "352,000FRW",
-                        createdDate: "09/08/2019",
-                        revenue: "5000rfw"
-                    },
-                    {
-                        profile: "/assets/images/users/user-6.jpg",
-                        seller: "Shema allain",
-                        storeName: "Insulore",
-                        products: "435",
-                        walletBalance: "450,000FRW",
-                        createdDate: "09/05/2019",
-                        revenue: "3000rfw"
-                    },
-                    {
-                        profile: "/assets/images/users/user-5.jpg",
-                        seller: "Sheja cedric",
-                        storeName: "Susadmin",
-                        products: "28",
-                        walletBalance: "15,000FRW",
-                        createdDate: "08/02/2019",
-                        revenue: "300rfw"
-                    },
-                    {
-                        profile: "/assets/images/users/user-4.jpg",
-                        seller: "Mucyo emmy",
-                        storeName: "Hyperill",
-                        products: "77",
-                        walletBalance: "45,000FRW",
-                        createdDate: "08/02/2019",
-                        revenue: "4500rfw"
-                    },
-                    {
-                        profile: "/assets/images/users/user-2.jpg",
-                        seller: "Sheja eddy",
-                        storeName: "Vicedel",
-                        products: "50",
-                        walletBalance: "405,000FRW",
-                        createdDate: "05/06/2019",
-                        revenue: "40500rfw"
-                    },
-                    {
-                        profile: "/assets/images/users/user-1.jpg",
-                        seller: "Shema fred",
-                        storeName: "Circumous",
-                        products: "50",
-                        walletBalance: "405,000FRW",
-                        createdDate: "05/06/2019",
-                        revenue: "40500rfw"
-                    }
-                ]
-            };
+export default {
+  name: 'all sellers',
+  data () {
+    return {
+      sellers: [
+        {
+          profile: '/assets/images/users/user-10.jpg',
+          seller: 'Shema Fred',
+          storeName: 'Homovee',
+          products: '8',
+          walletBalance: '12,000FRW',
+          createdDate: '7/7/2019',
+          revenue: '100rfw'
+        },
+        {
+          profile: '/assets/images/users/user-8.jpg',
+          seller: 'Sheja anni',
+          storeName: 'Execucy',
+          products: '12',
+          walletBalance: '122,000FRW',
+          createdDate: '09/12/2019',
+          revenue: '1000rfw'
+        },
+        {
+          profile: '/assets/images/users/user-5.jpg',
+          seller: 'Kathryn S. Collier',
+          storeName: 'Epiloo',
+          products: '50',
+          walletBalance: '122,000FRW',
+          createdDate: '06/30/2019',
+          revenue: '1010rfw'
+        },
+        {
+          profile: '/assets/images/users/user-3.jpg',
+          seller: 'Mucyo patrick',
+          storeName: 'Symic',
+          products: '235',
+          walletBalance: '352,000FRW',
+          createdDate: '09/08/2019',
+          revenue: '5000rfw'
+        },
+        {
+          profile: '/assets/images/users/user-6.jpg',
+          seller: 'Shema allain',
+          storeName: 'Insulore',
+          products: '435',
+          walletBalance: '450,000FRW',
+          createdDate: '09/05/2019',
+          revenue: '3000rfw'
+        },
+        {
+          profile: '/assets/images/users/user-5.jpg',
+          seller: 'Sheja cedric',
+          storeName: 'Susadmin',
+          products: '28',
+          walletBalance: '15,000FRW',
+          createdDate: '08/02/2019',
+          revenue: '300rfw'
+        },
+        {
+          profile: '/assets/images/users/user-4.jpg',
+          seller: 'Mucyo emmy',
+          storeName: 'Hyperill',
+          products: '77',
+          walletBalance: '45,000FRW',
+          createdDate: '08/02/2019',
+          revenue: '4500rfw'
+        },
+        {
+          profile: '/assets/images/users/user-2.jpg',
+          seller: 'Sheja eddy',
+          storeName: 'Vicedel',
+          products: '50',
+          walletBalance: '405,000FRW',
+          createdDate: '05/06/2019',
+          revenue: '40500rfw'
+        },
+        {
+          profile: '/assets/images/users/user-1.jpg',
+          seller: 'Shema fred',
+          storeName: 'Circumous',
+          products: '50',
+          walletBalance: '405,000FRW',
+          createdDate: '05/06/2019',
+          revenue: '40500rfw'
         }
-    };
+      ]
+    }
+  }
+}
 </script>
 
 <style scoped></style>

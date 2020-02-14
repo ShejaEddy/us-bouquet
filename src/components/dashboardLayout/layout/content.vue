@@ -5,23 +5,23 @@
 </template>
 
 <script>
-    export default {
-        name: "dashboard-content",
-        data(){
-          return{
-            }
-        },
-        components: {
-        },
-        computed: {
-            pro() {
-                this.$store.getters.views;
-            }
-        },
-        methods: {
+export default {
+  name: 'dashboard-content',
+  data () {
+    return {
+    }
+  },
+  components: {
+  },
+  computed: {
+    pro () {
+      this.$store.getters.views
+    }
+  },
+  methods: {
 
-        }
-    };
+  }
+}
 </script>
 
 <style scoped>

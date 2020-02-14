@@ -25,31 +25,19 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-lg">
 
-                    <div class="dropdown-item noti-title">
-                        <h5 class="m-0">
-                                    <span class="float-right">
-                                        <a class="text-dark" href="#">
-                                            <small>Clear All</small>
-                                        </a>
-                                    </span>Notification
-                        </h5>
-                    </div>
-
-                    <div class="slimscroll noti-scroll">
-                        <a class="dropdown-item notify-item active" href="#">
-                            <div class="notify-icon">
-                                <img alt="" class="img-fluid rounded-circle" src="assets/images/users/user-2.jpg"/>
-                            </div>
-                            <p class="notify-details">John Doe</p>
-                            <p class="text-muted mb-0 user-msg">
-                                <small>Hi, How are you? What about our next meeting</small>
-                            </p>
-                        </a>
-                    </div>
-                    <a class="dropdown-item text-center text-primary notify-item notify-all" href="#">
+<!--                    <div class="dropdown-item noti-title">-->
+<!--                        <h5 class="m-0">-->
+<!--                                    <span class="float-right">-->
+<!--                                        <a class="text-dark" href="#">-->
+<!--                                            <small>Clear All</small>-->
+<!--                                        </a>-->
+<!--                                    </span>Notification-->
+<!--                        </h5>-->
+<!--                    </div>-->
+                    <router-link class="dropdown-item text-center text-primary notify-item notify-all" to="#">
                         View all
                         <i class="fi-arrow-right"></i>
-                    </a>
+                    </router-link>
                 </div>
             </li>
 
@@ -71,17 +59,17 @@
                         <span>My Account</span>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item notify-item" href="#">
+                    <router-link class="dropdown-item notify-item" :to="{name:'Home'}">
                         <i class="fe-log-out"></i>
                         <span>Logout</span>
-                    </a>
+                    </router-link>
                 </div>
             </li>
         </ul>
         <div class="logo-box">
             <router-link to="/admin" class="logo text-center" >
                         <span class="logo-lg">
-                            <img class="tsap-logo" alt="Tsapl-Logo" height="70" src="assets/images/logo.jpg">
+                            <img class="tsapal-logo" alt="Tsapal-Logo" height="70" src="assets/images/logo.jpg">
                         </span>
             </router-link>
         </div>
@@ -89,13 +77,13 @@
 </template>
 
 <script>
-    export default {
-        name: "navbar"
-    };
+export default {
+  name: 'navbar'
+}
 </script>
 
 <style scoped>
-    .tsap-logo{
+    .tsapal-logo{
         width:240px !important;
     }
 </style>
