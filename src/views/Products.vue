@@ -39,42 +39,48 @@ export default {
           productDescription:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
           productName: 'Kamambiri',
-          productPrice: '100$'
+          actualPrice: '150$',
+          offerPrice: '140$',
         },
         {
           productImage: '/img/2.jpg',
           productDescription:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
           productName: 'Sandal',
-          productPrice: '600$'
+          actualPrice: '300$',
+          offerPrice: '250$',
         },
         {
           productImage: '/img/3.jpg',
           productDescription:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
           productName: 'Umoja',
-          productPrice: '400$'
+          actualPrice: '400$',
+          offerPrice:'300$'
         },
         {
           productImage: '/img/shoe-bg.jpg',
           productDescription:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
           productName: 'Slippers',
-          productPrice: '150$'
+          actualPrice: '150$',
+          offerPrice:'100$'
         },
         {
           productImage: '/img/3.jpg',
           productDescription:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
           productName: 'Ketch',
-          productPrice: '300$'
+          actualPrice: '300$',
+          offerPrice:'200$'
         },
         {
           productImage: '/img/1.jpg',
           productDescription:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
           productName: 'Style',
-          productPrice: '50$'
+          actualPrice: '50$',
+          offerPrice:'40$'
         }
       ],
       loading: false

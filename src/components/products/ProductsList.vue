@@ -10,7 +10,6 @@
            <edit-product ref="editProduct" />
     </div>
 </template>
-
 <script>
 import axios from 'axios'
 import CardTemplate from '../shared/CardTemplate'

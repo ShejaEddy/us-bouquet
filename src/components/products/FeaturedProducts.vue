@@ -26,37 +26,50 @@ export default {
           productImage: '/img/1.jpg',
           productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
           productName: 'Kamambiri',
-          productPrice: '100$'
+          actualPrice: '100$',
+          offerPrice:'80$'
         },
         {
           productImage: '/img/2.jpg',
           productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
           productName: 'Sandal',
-          productPrice: '600$'
+          actualPrice: '600$',
+          offerPrice:'500$'
         },
         {
           productImage: '/img/3.jpg',
           productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
           productName: 'Umoja',
-          productPrice: '400$'
+          actualPrice: '400$',
+          offerPrice:'350$'
         },
         {
-          productImage: '/img/shoe-bg.jpg',
+          productImage: '/img/tsapa10.jpg',
           productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
           productName: 'Slippers',
-          productPrice: '150$'
+          actualPrice: '150$',
+          offerPrice:'100$'
         },
         {
           productImage: '/img/3.jpg',
           productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
           productName: 'Ketch',
-          productPrice: '300$'
+          actualPrice: '300$',
+          offerPrice:'200$'
         },
         {
           productImage: '/img/1.jpg',
           productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
           productName: 'Style',
-          productPrice: '50$'
+          actualPrice: '50$',
+          offerPrice:'40$'
+        },
+        {
+          productImage: '/img/tsapal7.jpg',
+          productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          productName: 'Ruagabire',
+          actualPrice: '20$',
+          offerPrice:'10$'
         }
       ],
       loading: false

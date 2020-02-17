@@ -13,9 +13,16 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row mb-2">
-                                <div class="col-lg-8">
+                                <div class="col-xl-8">
                                     <i class="fa fa-bell"></i>
                                     <span>Product</span>
+                                </div>
+                                <div class="text-lg-right">
+                                    <button type="button"
+                                            @click="addProduct()"
+                                            class="btn btn-danger waves-effect waves-light mb-2 mr-2"><i
+                                            class="mdi mdi-basket mr-1"></i> Add New Product
+                                    </button>
                                 </div>
                             </div>
 
@@ -51,7 +58,8 @@
                                         <td>{{product.code}}</td>
                                         <td>{{product.disabled}}</td>
                                         <td>
-                                            <span class="action-icon"><i class="mdi mdi-eye-circle-outline"></i></span>
+                                                <span class="action-icon"><i
+                                                        class="mdi mdi-eye-circle-outline"></i></span>
                                             <span style="cursor: pointer" class="action-icon"><i
                                                     class="mdi mdi-square-edit-outline"></i></span>
                                             <span class="action-icon" style="cursor: pointer"> <i
@@ -76,82 +84,87 @@
 </template>
 
 <script>
-export default {
-  name: 'product-list-management',
-  data () {
-    return {
-      productLists: [
-        {
-          productImage: '/img/tsapal5.jpg',
-          category: 'Men',
-          subCategory: 'footwear',
-          productName: 'Kamambiri',
-          actualPrice: '100$',
-          offerPrice: '80$',
-          quantity: '12',
-          code: 'S267',
-          disabled: '0'
-        },
-        {
-          productImage: '/img/2.jpg',
-          category: 'Women',
-          subCategory: 'footwear',
-          productName: 'Sandal',
-          actualPrice: '600$',
-          offerPrice: '500$',
-          quantity: '12',
-          code: 'S267',
-          disabled: '1'
-        },
-        {
-          productImage: '/img/3.jpg',
-          category: 'Men',
-          subCategory: 'footwear',
-          productName: 'Umoja',
-          actualPrice: '400$',
-          offerPrice: '300$',
-          quantity: '12',
-          code: 'S267',
-          disabled: '0'
-        },
-        {
-          productImage: '/img/shoe-bg.jpg',
-          category: 'Women',
-          subCategory: 'footwear',
-          productName: 'Slippers',
-          actualPrice: '150$',
-          offerPrice: '140$',
-          quantity: '12',
-          code: 'S267',
-          disabled: '0'
-        },
-        {
-          productImage: '/img/3.jpg',
-          category: 'Men',
-          subCategory: 'footwear',
-          productName: 'Ketch',
-          actualPrice: '300$',
-          offerPrice: '250$',
-          quantity: '12',
-          code: 'S267',
-          disabled: '0'
-        },
-        {
-          productImage: '/img/1.jpg',
-          category: 'Men',
-          subCategory: 'footwear',
-          productName: 'Style',
-          actualPrice: '50$',
-          offerPrice: '40$',
-          quantity: '12',
-          code: 'S267',
-          disabled: '1'
-        }
-      ]
+    export default {
+        name: 'product-list-management',
+        data() {
+            return {
+                productLists: [
+                    {
+                        productImage: '/img/tsapal5.jpg',
+                        category: 'Men',
+                        subCategory: 'footwear',
+                        productName: 'Kamambiri',
+                        actualPrice: '100$',
+                        offerPrice: '80$',
+                        quantity: '12',
+                        code: 'S267',
+                        disabled: '0'
+                    },
+                    {
+                        productImage: '/img/2.jpg',
+                        category: 'Women',
+                        subCategory: 'footwear',
+                        productName: 'Sandal',
+                        actualPrice: '600$',
+                        offerPrice: '500$',
+                        quantity: '12',
+                        code: 'S267',
+                        disabled: '1'
+                    },
+                    {
+                        productImage: '/img/3.jpg',
+                        category: 'Men',
+                        subCategory: 'footwear',
+                        productName: 'Umoja',
+                        actualPrice: '400$',
+                        offerPrice: '300$',
+                        quantity: '12',
+                        code: 'S267',
+                        disabled: '0'
+                    },
+                    {
+                        productImage: '/img/shoe-bg.jpg',
+                        category: 'Women',
+                        subCategory: 'footwear',
+                        productName: 'Slippers',
+                        actualPrice: '150$',
+                        offerPrice: '140$',
+                        quantity: '12',
+                        code: 'S267',
+                        disabled: '0'
+                    },
+                    {
+                        productImage: '/img/3.jpg',
+                        category: 'Men',
+                        subCategory: 'footwear',
+                        productName: 'Ketch',
+                        actualPrice: '300$',
+                        offerPrice: '250$',
+                        quantity: '12',
+                        code: 'S267',
+                        disabled: '0'
+                    },
+                    {
+                        productImage: '/img/1.jpg',
+                        category: 'Men',
+                        subCategory: 'footwear',
+                        productName: 'Style',
+                        actualPrice: '50$',
+                        offerPrice: '40$',
+                        quantity: '12',
+                        code: 'S267',
+                        disabled: '1'
+                    }
+                ]
 
+            }
+        },
+        methods:{
+            addProduct(){
+                this.$router.push({path:'/add-product'})
+            }
+        }
     }
-  }
-}
 </script>
 
 <style scoped>

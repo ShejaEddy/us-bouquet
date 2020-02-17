@@ -162,6 +162,11 @@ export default new Router({
           name: 'product-list-management',
           path: 'product-list',
           component: () => import('../components/dashboardLayout/pages/product/product-list')
+        },
+        {
+          name:"admin profile",
+          path:"profile",
+          component: () => import('../components/dashboardLayout/pages/profile')
         }
       ]
     },

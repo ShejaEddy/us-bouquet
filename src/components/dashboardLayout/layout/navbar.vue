@@ -54,10 +54,10 @@
                     <div class="dropdown-header noti-title">
                         <h6 class="text-overflow m-0">Welcome !</h6>
                     </div>
-                    <a class="dropdown-item notify-item" href="#">
+                    <router-link class="dropdown-item notify-item" :to="{name:'admin profile'}">
                         <i class="fe-user"></i>
                         <span>My Account</span>
-                    </a>
+                    </router-link>
                     <div class="dropdown-divider"></div>
                     <router-link class="dropdown-item notify-item" :to="{name:'Home'}">
                         <i class="fe-log-out"></i>
