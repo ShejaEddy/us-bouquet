@@ -17,7 +17,7 @@
                                     <i class="fa fa-bell"></i>
                                     <span>Product</span>
                                 </div>
-                                <div class="text-lg-right">
+                                <div class="text-lg-right" style="margin-left: 130px;">
                                     <button type="button"
                                             @click="addProduct()"
                                             class="btn btn-danger waves-effect waves-light mb-2 mr-2"><i
@@ -25,7 +25,6 @@
                                     </button>
                                 </div>
                             </div>
-
                             <div class="table-responsive">
                                 <table class="table table-centered mb-0">
                                     <thead class="thead-light">
@@ -82,7 +81,6 @@
         </div>
     </div>
 </template>
-
 <script>
     export default {
         name: 'product-list-management',
@@ -161,7 +159,7 @@
         },
         methods:{
             addProduct(){
-                this.$router.push({path:'/add-product'})
+                this.$router.push('add-product')
             }
         }
     }
