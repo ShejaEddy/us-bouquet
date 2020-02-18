@@ -67,10 +67,17 @@ export default {
         {
           productImage: '/img/tsapal7.jpg',
           productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          productName: 'Ruagabire',
+          productName: 'Rugabire',
           actualPrice: '20$',
           offerPrice:'10$'
-        }
+        },
+          {
+              productImage: '/img/tsapal6.jpg',
+              productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+              productName: 'Masayi',
+              actualPrice: '90$',
+              offerPrice:'60$'
+          }
       ],
       loading: false
     }
