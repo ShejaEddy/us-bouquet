@@ -121,7 +121,7 @@ export default new Router({
         {
           name: 'Add product',
           path: 'add-product',
-          component: () => import('../components/dashboardLayout/pages/product/add-product.vue')
+          component: () => import('../components/dashboardLayout/pages/product/create-product.vue')
         },
         {
           path: 'orders',

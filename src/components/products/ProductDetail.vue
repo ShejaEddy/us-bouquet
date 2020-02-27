@@ -6,7 +6,7 @@
                     <div class="wrapper row">
                         <div class="preview col-md-6">
                             <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1"><img :src="product.productImage"/></div>
+                                <div class="tab-pane active" id="pic-1"><img :src="product.image"/></div>
                                 <div class="tab-pane" id="pic-2"><img src="/img/2.jpg"/></div>
                                 <div class="tab-pane" id="pic-3"><img src="/img/3.jpg"/></div>
                                 <div class="tab-pane" id="pic-4"><img src="/img/4.jpg"/></div>
@@ -14,7 +14,7 @@
                             </div>
                             <ul class="preview-thumbnail nav nav-tabs">
                                 <li class="active"><a data-target="#pic-1" data-toggle="tab"><img
-                                        :src="product.productImage"/></a></li>
+                                        :src="product.image"/></a></li>
                                 <li><a data-target="#pic-2" data-toggle="tab"><img src="/img/2.jpg"/></a></li>
                                 <li><a data-target="#pic-3" data-toggle="tab"><img src="/img/3.jpg"/></a></li>
                                 <li><a data-target="#pic-4" data-toggle="tab"><img src="/img/4.jpg"/></a></li>
@@ -22,7 +22,7 @@
                             </ul>
                         </div>
                         <div class="details col-md-6">
-                            <h3 class="product-title">{{product.productName}}</h3>
+                            <h3 class="product-title">{{product.name}}</h3>
                             <div class="rating">
                                 <div class="stars">
                                     <span class="fa fa-star checked"></span>
@@ -33,9 +33,8 @@
                                 </div>
                                 <span class="review-no">41 reviews</span>
                             </div>
-                            <p class="product-description">{{product.productDescription}}</p>
-                            <h4 class="price">current price: <span>{{product.actualPrice}}</span></h4>
-                            <h4 class="price">New price: <span>{{product.offerPrice}}</span></h4>
+                            <p class="product-description">{{product.description}}</p>
+                            <h4 class="price">current price: <span>{{product.price}}</span></h4>
                             <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87
                                 votes)</strong></p>
                             <h6 class="sizes">sizes:
@@ -88,54 +87,60 @@
         data() {
             return {
                 product: {
-                    productImage: '/img/shoe-bg.jpg',
-                    productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                    productName: 'Slippers',
-                    productPrice: '150$'
+                    image: '/img/2.jpg',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                    name: 'Slippers',
+                    price: '150$'
                 },
-                loading:false,
+                loading: false,
                 similarProduct: [
                     {
-                        productImage: '/img/1.jpg',
-                        productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        productName: 'Kamambiri',
-                        actualPrice: '100$',
-                        offerPrice:'80$'
+                        image: '/img/1.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Kamambiri',
+                        price: '100$',
+                        stock:'12',
+                        offerPrice: '80$'
                     },
                     {
-                        productImage: '/img/2.jpg',
-                        productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        productName: 'Sandal',
-                        actualPrice: '600$',
-                        offerPrice:'500$'
+                        image: '/img/2.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Sandal',
+                        price: '600$',
+                        stock:'12',
+                        offerPrice: '500$'
                     },
                     {
-                        productImage: '/img/3.jpg',
-                        productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        productName: 'Umoja',
-                        actualPrice: '400$',
-                        offerPrice:'300$'
+                        image: '/img/3.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Umoja',
+                        price: '400$',
+                        stock:'12',
+                        offerPrice: '300$'
                     },
                     {
-                        productImage: '/img/shoe-bg.jpg',
-                        productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        productName: 'Slippers',
-                        actualPrice: '150$',
-                        offerPrice:'100$'
+                        image: '/img/shoe-bg.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Slippers',
+                        price: '150$',
+                        stock:'12',
+                        offerPrice: '100$'
                     },
                     {
-                        productImage: '/img/3.jpg',
-                        productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        productName: 'Ketch',
-                        actualPrice: '300$',
-                        offerPrice:'250$'
+                        image: '/img/3.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Ketch',
+                        price: '300$',
+                        stock:'12',
+                        offerPrice: '250$'
                     },
                     {
-                        productImage: '/img/1.jpg',
-                        productDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        productName: 'Style',
-                        actualPrice: '50$',
-                        offerPrice:'45$'
+                        image: '/img/1.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Style',
+                        price: '50$',
+                        stock:'12',
+                        offerPrice: '45$'
                     }
                 ]
             }

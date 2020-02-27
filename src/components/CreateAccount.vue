@@ -18,7 +18,7 @@
                             class="form-control"
                             id="firstName"
                             placeholder="First Name"
-                            v-model="user.firstName"
+                            v-model="user.first_name"
                             required
                     >
                     <div class="invalid-feedback">Valid first name is required.</div>
@@ -27,7 +27,7 @@
                     <input
                             type="text"
                             class="form-control"
-                            v-model="user.lastName"
+                            v-model="user.last_name"
                             id="lastName"
                             placeholder="Last Name"
                             value
@@ -55,13 +55,41 @@
                     <input
                             type="text"
                             class="form-control"
-                            id="act-password"
-                            placeholder="New password"
+                            v-model="user.username"
+                            id="username"
+                            placeholder="user name"
+                            value
+                            required
+                    >
+                    <div class="invalid-feedback">Valid user-name is required.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md mb-3">
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="password"
+                            placeholder="password"
                             value
                             v-model="user.password"
                             required
                     >
-                    <div class="invalid-feedback">Valid first name is required.</div>
+                    <div class="invalid-feedback">Valid password  is required.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md mb-3">
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="conf-password"
+                            placeholder="Confirm password"
+                            value
+                            v-model="user.password_confirmation"
+                            required
+                    >
+                    <div class="invalid-feedback">Valid password  is required.</div>
                 </div>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">
@@ -71,66 +99,68 @@
     </div>
 </template>
 <script>
-import axios from 'axios'
-import { successToaster, errorToaster } from './shared/service/ErrorHandler.js'
+    import axios from 'axios'
+    import {successToaster, errorToaster} from './shared/service/ErrorHandler.js'
 
-export default {
-  name: 'CreateAccount',
-  data () {
-    return {
-      showLoader: false,
-      user: {
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: ''
-      },
-      errorMessage: []
+    export default {
+        name: 'CreateAccount',
+        data() {
+            return {
+                showLoader: false,
+                user: {
+                    first_name: '',
+                    last_name: '',
+                    email: '',
+                    username: '',
+                    password: '',
+                    password_confirmation:''
+                },
+                errorMessage: []
+            }
+        },
+        methods: {
+            createAccount(e) {
+                this.showLoader = true
+                this.errorMessage = []
+                if (this.user.first_name.length < 5) {
+                    this.errorMessage.push(
+                        'FirstName should contains more than 5 character'
+                    )
+                }
+                if (this.ValidateEmail(this.user.email) === false) {
+                    this.errorMessage.push('Please provide a valid Email address')
+                }
+                if (this.user.password !== this.user.password_confirmation){
+                    this.errorMessage.push('Please provide identical password')
+                }
+                if (this.errorMessage.length === 0) {
+                    axios
+                        .post(`${process.env.VUE_APP_BASE_URL}/users`, this.user)
+                        .then(response => {
+                            this.showLoader = false
+                            successToaster(
+                                'Registered Successfully',
+                                'User Registered Successfully'
+                            )
+                        })
+                        .catch(error => {
+                            console.log(error)
+                            errorToaster(
+                                'Registeration Failed',
+                                'Please try again after sometime'
+                            )
+                        })
+                }
+            },
+
+            ValidateEmail(mail) {
+                if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+                    return true
+                }
+                return false
+            }
+        }
     }
-  },
-  methods: {
-    createAccount (e) {
-      this.showLoader = true
-
-      this.errorMessage = []
-
-      if (this.user.firstName.length < 5) {
-        this.errorMessage.push(
-          'FirstName should contains more than 5 character'
-        )
-      }
-
-      if (this.ValidateEmail(this.user.email) === false) {
-        this.errorMessage.push('Please provide a valid Email address')
-      }
-      if (this.errorMessage.length === 0) {
-        axios
-          .post(`${process.env.VUE_APP_BASE_URL}/users`, this.user)
-          .then(response => {
-            this.showLoader = false
-            successToaster(
-              'Registered Successfully',
-              'User Registered Successfully'
-            )
-          })
-          .catch(error => {
-            console.log(error)
-            errorToaster(
-              'Registeration Failed',
-              'Please try again after sometime'
-            )
-          })
-      }
-    },
-
-    ValidateEmail (mail) {
-      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
-        return true
-      }
-      return false
-    }
-  }
-}
 </script>
 
 <style>

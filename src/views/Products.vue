@@ -35,51 +35,51 @@ export default {
       products_list: [],
       product_duplicate: [
         {
-          productImage: '/img/tsapal5.jpg',
-          productDescription:
+          image: '/img/tsapal5.jpg',
+          description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          productName: 'Kamambiri',
-          actualPrice: '150$',
+          name: 'Kamambiri',
+          price: '150$',
           offerPrice: '140$',
         },
         {
-          productImage: '/img/2.jpg',
-          productDescription:
+          image: '/img/2.jpg',
+          description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          productName: 'Sandal',
-          actualPrice: '300$',
+          name: 'Sandal',
+          price: '300$',
           offerPrice: '250$',
         },
         {
-          productImage: '/img/3.jpg',
-          productDescription:
+          image: '/img/3.jpg',
+          description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          productName: 'Umoja',
-          actualPrice: '400$',
+          name: 'Umoja',
+          price: '400$',
           offerPrice:'300$'
         },
         {
-          productImage: '/img/shoe-bg.jpg',
-          productDescription:
+          image: '/img/shoe-bg.jpg',
+          description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          productName: 'Slippers',
-          actualPrice: '150$',
+          name: 'Slippers',
+          price: '150$',
           offerPrice:'100$'
         },
         {
-          productImage: '/img/3.jpg',
-          productDescription:
+          image: '/img/3.jpg',
+          description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          productName: 'Ketch',
-          actualPrice: '300$',
+          name: 'Ketch',
+          price: '300$',
           offerPrice:'200$'
         },
         {
-          productImage: '/img/1.jpg',
-          productDescription:
+          image: '/img/1.jpg',
+          description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          productName: 'Style',
-          actualPrice: '50$',
+          name: 'Style',
+          price: '50$',
           offerPrice:'40$'
         }
       ],

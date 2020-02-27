@@ -3,7 +3,7 @@
         <div class="card mb-4 shadow-sm" id="img-card">
             <div class="set-data">
                 <div class="img-set-data">
-                    <img :src="item.productImage" alt="">
+                    <img :src="item.image" alt="">
                 </div>
                 <ul class="options">
                     <li><a href="javascript:;;" @click="navigateProductDetail(item)"><i class="fa fa-eye"></i></a></li>
@@ -15,10 +15,9 @@
             </div>
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
-                    <p class="productName">{{item.productName}}</p>
+                    <p class="productName">{{item.name}} </p>
                     <span style="display: inline-flex">
-                      <p style="text-decoration: line-through" class="product-actual-price">{{item.actualPrice}}</p>
-                      <p class="product-offer-price">{{item.offerPrice}}</p>
+                      <p class="product-offer-price">{{item.price}}</p>
                     </span>
                 </div>
             </div>
@@ -53,15 +52,14 @@
             ...mapMutations(['ADD_CART_LOCAL']),
 
             addToCart(product) {
-                // const data = _.find(this.$store.getters.cartProducts, product);
-                // if (data) {
-                // infoToaster("Already Added", "Product Already Added");
-                // } else {
+                const data = _.find(this.$store.getters.cartProducts, product);
+                if (data) {
+                infoToaster("Already Added", "Product Already Added");
+                } else {
                 successToaster('Added Successfully', 'Product Added Successfully')
                 this.ADD_CART_LOCAL(product)
-                // }
+                }
             },
-
             // this will trigger the parentComponent function
             updateEditProduct(product, id) {
                 this.$parent.editProduct(product)

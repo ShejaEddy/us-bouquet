@@ -1,36 +1,35 @@
 <template>
     <div class="edit-product">
-       <modal :header="'Edit Product'" :isShow="showModal" v-if="showModal" @close="showModal = false">
+        <modal :header="'Edit Product'" :isShow="showModal" v-if="showModal" @close="showModal = false">
             <product-form :product="product" v-on:submit-form="productAction"/>
-       </modal>
+        </modal>
     </div>
 </template>
 
 <script>
-import Modal from '../../shared/Modal'
-import ProductForm from './ProductForm'
+    import Modal from '../../shared/Modal'
+    import ProductForm from './ProductForm'
+    export default {
+        name: 'editProduct',
+        components: {Modal, ProductForm},
+        data() {
+            return {
+                product: new Object(),
+                showModal: false
+            }
+        },
+        methods: {
+            setProduct(product) {
+                this.showModal = true
+                this.product = product
+            },
 
-export default {
-  name: 'editProduct',
-  components: { Modal, ProductForm },
-  data () {
-    return {
-      product: new Object(),
-      showModal: false
+            productAction: function (product) {
+                console.log('Updated Product Details', product)
+                // Update the product to server
+            }
+        }
     }
-  },
-  methods: {
-    setProduct (product) {
-      this.showModal = true
-      this.product = product
-    },
-
-    productAction: function (product) {
-      console.log('Updated Product Details', product)
-      // Update the product to server
-    }
-  }
-}
 </script>
 
 <style>

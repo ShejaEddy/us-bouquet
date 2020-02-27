@@ -86,14 +86,12 @@
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
 import FeaturedProducts from '@/components/products/FeaturedProducts.vue'
 import ProductFilter from '@/components/products/filters/ProductFilter.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld,
     FeaturedProducts,
     ProductFilter
   },

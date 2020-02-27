@@ -23,9 +23,7 @@
 		      	<address-table v-if="addressTable" @openAddressForm="hideTable"/>
 		      	<div class="col-md-6 text-left mx-auto" v-else>
 		      		<address-form/>
-		      		<button class="btn btn-primary mx-auto">Save Address</button>
 		      	</div>
-
 		      </div>
 		    </div>
   		</div>

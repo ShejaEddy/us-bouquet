@@ -29,10 +29,9 @@
                                 <tr v-for="item in orderProducts" :key="item.id">
                                     <div class="media align-items-lg-center flex-column flex-lg-row p-3">
                                         <div class="media-body order-2 order-lg-1">
-                                            <h5 class="mt-0 font-weight-bold mb-2">{{item.productName}}</h5>
-                                            <p class="font-italic text-muted mb-0 small">{{item.productDescription}}</p>
+                                            <p class="font-italic text-muted mb-0 small">{{item.description}}</p>
                                             <div class="d-flex align-items-center justify-content-between mt-1">
-                                                <h6 class="font-weight-bold my-2">{{item.productPrice}}</h6>
+                                                <h6 class="font-weight-bold my-2">{{item.price}}</h6>
                                                 <ul class="list-inline small">
                                                     <li class="list-inline-item m-0"><i
                                                             class="fa fa-star text-success"></i></li>
@@ -47,7 +46,7 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <img :src="item.productImage" alt="Generic placeholder image" width="200"
+                                        <img :src="item.image" alt="Generic placeholder image" width="200"
                                              class="ml-lg-5 order-1 order-lg-2">
                                     </div>
                                     <td class="border-0 align-middle" style="min-width: 150px;">
@@ -56,7 +55,7 @@
                                     <td class="border-0 align-middle" style="min-width: 150px;">
                                         {{item.Quantity}}
                                     </td>
-                                    <td class="border-0 align-middle" style="min-width: 150px;"><strong>{{item.productPrice}}</strong>
+                                    <td class="border-0 align-middle" style="min-width: 150px;"><strong>{{item.price}}</strong>
                                     </td>
                                     <td class="border-0 align-middle"><a href="javascript:;;" class="text-dark"><i
                                             class="fa fa-trash" @click="removeProductCart(item)"></i></a></td>
@@ -85,34 +84,34 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapMutations } from 'vuex'
+    import {mapState, mapActions, mapMutations} from 'vuex'
 
-export default {
-  name: 'Orders',
-  data () {
-    return {
-      qty: []
-    }
-  },
-  computed: {
-    ...mapState(['orderProducts'])
-  },
-  methods: {
-    ...mapMutations(['SET_ORDER_PRODUCTS']),
-    removeProductOrder (product) {
-      const products = JSON.parse(localStorage.getItem('iki-order'))
-      for (let i = 0; i < products.length; i++) {
-        if (products[i]._id === product._id) {
-          products.splice(i, 1)
+    export default {
+        name: 'Orders',
+        data() {
+            return {
+                qty: []
+            }
+        },
+        computed: {
+            ...mapState(['orderProducts'])
+        },
+        methods: {
+            ...mapMutations(['SET_ORDER_PRODUCTS']),
+            removeProductOrder(product) {
+                const products = JSON.parse(localStorage.getItem('iki-order'))
+                for (let i = 0; i < products.length; i++) {
+                    if (products[i]._id === product._id) {
+                        products.splice(i, 1)
+                    }
+                }
+                this.SET_ORDER_PRODUCTS(products)
+                localStorage.setItem('iki-order', JSON.stringify(products))
+            }
+        },
+        mounted() {
         }
-      }
-      this.SET_ORDER_PRODUCTS(products)
-      localStorage.setItem('iki-order', JSON.stringify(products))
     }
-  },
-  mounted () {
-  }
-}
 </script>
 
 <style>
@@ -120,16 +119,13 @@ export default {
         padding: 40px 15px;
         text-align: center;
     }
-
     .error-actions {
         margin-top: 15px;
         margin-bottom: 15px;
     }
-
     .error-actions .btn {
         margin-right: 10px;
     }
-
     tr {
         border-bottom: 1px solid lightgrey;
     }

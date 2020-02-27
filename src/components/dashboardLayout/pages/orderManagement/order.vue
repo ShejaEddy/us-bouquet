@@ -70,10 +70,13 @@
                                             {{order.dates.date}} <small class="text-muted">{{order.dates.time}}</small>
                                         </td>
                                         <td>
-                                            <h5><span
-                                                      class="badge bg-soft-success text-success"><i
-                                                    class="mdi mdi-coin"></i> {{order ? order.paymentStatus : "sorry for poor network!" }}</span>
-                                                <span > </span></h5>
+                                            <div v-if="order.paymentStatus == Paid"><h5 ><span
+                                                    class="badge bg-soft-success text-success"><i
+                                                    class="mdi mdi-coin"></i> Paid</span>
+                                                <span> </span></h5></div>
+                                            <div v-else><h5><span class="badge bg-soft-danger text-danger"><i
+                                                    class="mdi mdi-cancel"></i> Payment Failed</span></h5></div>
+
                                         </td>
                                         <td>
                                             {{order.total}}
@@ -82,7 +85,8 @@
                                             {{order.paymentMethod}}
                                         </td>
                                         <td>
-                                            <h5><span class="badge badge-info">{{order ? order.orderStatus : "sorry for poor network!"}}</span></h5>
+                                            <h5><span class="badge badge-info">{{order ? order.orderStatus : "sorry for poor network!"}}</span>
+                                            </h5>
                                         </td>
                                         <td class="moreOp">
                                             <a class="action-icon"> <i class="mdi mdi-delete"></i></a>
@@ -101,112 +105,112 @@
 </template>
 
 <script>
-export default {
-  name: 'orders',
-  data () {
-    return {
-      orders: [
+    export default {
+        name: 'orders',
+        data() {
+            return {
+                orders: [
 
-        {
-          orderId: '#UB9708',
-          productProfile: '/img/tsapal5.jpg',
-          dates: {
-            date: 'August 05 2019',
-            time: '10:29 PM'
-          },
-          paymentStatus: 'Paid',
-          total: '17000rfw',
-          paymentMethod: 'Mobile Money',
-          orderStatus: 'Shipped'
-        },
-        {
-          orderId: '#UB9706',
-          productProfile: '/img/3.jpg',
-          dates: {
-            date: 'August 04 2019',
-            time: '10:18 AM'
-          },
-          paymentStatus: 'Paid',
-          total: '800,000rfw',
-          paymentMethod: 'Credit Card',
-          orderStatus: 'Processing'
-        },
-        {
-          orderId: '#UB9705',
-          productProfile: '/img/4.jpg',
-          dates: {
-            date: 'August 03 2019',
-            time: '07:18 AM'
-          },
-          paymentStatus: 'Paid',
-          total: '215,000rfw',
-          paymentMethod: 'Mastercard',
-          orderStatus: 'Delivered'
-        },
-        {
-          orderId: '#UB9704',
-          productProfile: '/img/shoe-bg.jpg',
-          dates: {
-            date: 'May 22 2019',
-            time: '07:22 PM'
-          },
-          paymentStatus: 'Payment Failed',
-          total: '915,000rfw',
-          paymentMethod: 'Tigo Cash',
-          orderStatus: 'Cancelled'
-        },
-        {
-          orderId: '#UB9703',
-          productProfile: '/img/2.jpg',
-          dates: {
-            date: 'May 22 2019',
-            time: '07:22 PM'
-          },
-          paymentStatus: 'Paid',
-          total: '183,000rfw',
-          paymentMethod: 'Paypal',
-          orderStatus: 'Shipped'
-        },
-        {
-          orderId: '#UB9702',
-          productProfile: '/img/2.jpg',
-          dates: {
-            date: 'March 18 2019',
-            time: '11:19 PM'
-          },
-          paymentStatus: 'Awaiting Authorization',
-          total: '1,768,000rfw',
-          paymentMethod: 'Visa',
-          orderStatus: 'Processing'
-        },
-        {
-          orderId: '#UB9701',
-          productProfile: '/img/3.jpg',
-          dates: {
-            date: 'February 01 2019',
-            time: '07:22 AM'
-          },
-          paymentStatus: 'Cash on Delivery',
-          total: '2,768,000rfw',
-          paymentMethod: 'Mobile Money',
-          orderStatus: 'Shipped'
-        },
-        {
-          orderId: '#UB9700',
-          productProfile: '/img/4.jpg',
-          dates: {
-            date: 'January 22 2019',
-            time: '08:09 PM'
-          },
-          paymentStatus: 'Paid',
-          total: '768,000rfw',
-          paymentMethod: 'TIGO Cash',
-          orderStatus: 'Delivered'
+                    {
+                        orderId: '#UB9708',
+                        productProfile: '/img/tsapal5.jpg',
+                        dates: {
+                            date: 'August 05 2019',
+                            time: '10:29 PM'
+                        },
+                        paymentStatus: 'Paid',
+                        total: '17000rfw',
+                        paymentMethod: 'Mobile Money',
+                        orderStatus: 'Shipped'
+                    },
+                    {
+                        orderId: '#UB9706',
+                        productProfile: '/img/3.jpg',
+                        dates: {
+                            date: 'August 04 2019',
+                            time: '10:18 AM'
+                        },
+                        paymentStatus: 'Paid',
+                        total: '800,000rfw',
+                        paymentMethod: 'Credit Card',
+                        orderStatus: 'Processing'
+                    },
+                    {
+                        orderId: '#UB9705',
+                        productProfile: '/img/4.jpg',
+                        dates: {
+                            date: 'August 03 2019',
+                            time: '07:18 AM'
+                        },
+                        paymentStatus: 'Paid',
+                        total: '215,000rfw',
+                        paymentMethod: 'Mastercard',
+                        orderStatus: 'Delivered'
+                    },
+                    {
+                        orderId: '#UB9704',
+                        productProfile: '/img/shoe-bg.jpg',
+                        dates: {
+                            date: 'May 22 2019',
+                            time: '07:22 PM'
+                        },
+                        paymentStatus: 'Payment Failed',
+                        total: '915,000rfw',
+                        paymentMethod: 'Tigo Cash',
+                        orderStatus: 'Cancelled'
+                    },
+                    {
+                        orderId: '#UB9703',
+                        productProfile: '/img/2.jpg',
+                        dates: {
+                            date: 'May 22 2019',
+                            time: '07:22 PM'
+                        },
+                        paymentStatus: 'Paid',
+                        total: '183,000rfw',
+                        paymentMethod: 'Paypal',
+                        orderStatus: 'Shipped'
+                    },
+                    {
+                        orderId: '#UB9702',
+                        productProfile: '/img/2.jpg',
+                        dates: {
+                            date: 'March 18 2019',
+                            time: '11:19 PM'
+                        },
+                        paymentStatus: 'Awaiting Authorization',
+                        total: '1,768,000rfw',
+                        paymentMethod: 'Visa',
+                        orderStatus: 'Processing'
+                    },
+                    {
+                        orderId: '#UB9701',
+                        productProfile: '/img/3.jpg',
+                        dates: {
+                            date: 'February 01 2019',
+                            time: '07:22 AM'
+                        },
+                        paymentStatus: 'Cash on Delivery',
+                        total: '2,768,000rfw',
+                        paymentMethod: 'Mobile Money',
+                        orderStatus: 'Shipped'
+                    },
+                    {
+                        orderId: '#UB9700',
+                        productProfile: '/img/4.jpg',
+                        dates: {
+                            date: 'January 22 2019',
+                            time: '08:09 PM'
+                        },
+                        paymentStatus: 'Paid',
+                        total: '768,000rfw',
+                        paymentMethod: 'TIGO Cash',
+                        orderStatus: 'Delivered'
+                    }
+                ]
+            }
         }
-      ]
     }
-  }
-}
 </script>
 
 <style scoped>
