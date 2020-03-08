@@ -23,13 +23,13 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr v-for="item in products" :key="item.id">
+                                <tr v-for="(item,id) in products" :key="id">
                                     <div class="media align-items-lg-center flex-column flex-lg-row p-3">
                                         <div class="media-body order-2 order-lg-1">
-                                            <h5 class="mt-0 font-weight-bold mb-2">{{item.productName}}</h5>
-                                            <p class="font-italic text-muted mb-0 small">{{item.productDescription}}</p>
+                                            <h5 class="mt-0 font-weight-bold mb-2">{{item.name}}</h5>
+                                            <p class="font-italic text-muted mb-0 small">{{item.description}}</p>
                                             <div class="d-flex align-items-center justify-content-between mt-1">
-                                                <h6 class="font-weight-bold my-2">{{item.productPrice}}</h6>
+                                                <h6 class="font-weight-bold my-2">{{item.price}}</h6>
                                                 <ul class="list-inline small">
                                                     <li class="list-inline-item m-0"><i
                                                             class="fa fa-star text-success"></i></li>
@@ -44,7 +44,7 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <img :src="item.image" alt="Generic placeholder image" width="200"
+                                        <img :src="item.image" alt="Generic placeholder image" width="80"
                                              class="ml-lg-5 order-1 order-lg-2">
                                     </div>
                                     <td class="border-0 align-middle" style="min-width: 150px;">
@@ -62,8 +62,8 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="border-0 align-middle" style="min-width: 150px;"><strong>{{item.productPrice}}</strong>
-                                    </td>
+                                    <td class="border-0 align-middle" style="min-width: 150px;">
+                                        <strong>{{item.price}}</strong></td>
                                     <td class="border-0 align-middle"><a href="javascript:;;" class="text-dark"><i
                                             class="fa fa-trash" @click="removeProductCart(item)"></i></a></td>
                                 </tr>
@@ -85,6 +85,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row py-5 p-4 bg-white rounded shadow-sm" v-if="products.length>0">
                     <div class="col-lg-6">
                         <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Coupon code</div>
@@ -127,7 +128,7 @@
                                 </li>
                             </ul>
                             <button @click="$router.push('/checkout')" class="btn btn-dark rounded-pill py-2 btn-block">
-                                Procced to Checkout
+                                Procceed to Checkout
                             </button>
                         </div>
                     </div>
@@ -136,61 +137,63 @@
         </div>
     </div>
 </template>
+
 <script>
-    import {mapState, mapActions, mapMutations} from 'vuex'
-    import CartCalculator from './CartCalculator'
+import { mapState, mapActions, mapMutations } from 'vuex'
+import CartCalculator from './CartCalculator'
 
-    export default {
-        name: 'CartProducts',
-        components: {CartCalculator},
-        data() {
-            return {
-                qty: []
-            }
-        },
-        computed: {
-            ...mapState(['cartProducts']),
-            products() {
-                return [...new Set(this.cartProducts.map(v => JSON.stringify(v)))].map(v => JSON.parse(v))
-            }
-
-        },
-        methods: {
-            ...mapMutations(['SET_CART_PRODUCTS', 'ADD_CART_LOCAL']),
-            addToCart(product) {
-                this.ADD_CART_LOCAL(product)
-            },
-            removeFromCart(item) {
-                var index = null
-                for (let i = 0; i < this.cartProducts.length; i++) {
-                    if (this.cartProducts[i].productName === item.productName) {
-                        index = i
-                    }
-                }
-                this.cartProducts.splice(index, 1)
-                this.SET_CART_PRODUCTS(this.cartProducts)
-                localStorage.setItem('iki-cart', JSON.stringify(this.cartProducts))
-            },
-            QtyProduct(item) {
-                return this.cartProducts.filter(v => v.productName === item.productName).length
-            },
-            removeProductCart(product) {
-                const products = JSON.parse(localStorage.getItem('iki-cart'))
-                for (let i = 0; i < products.length; i++) {
-                    if (products[i]._id === product._id) {
-                        products.splice(i, 1)
-                    }
-                }
-                this.SET_CART_PRODUCTS(products)
-                localStorage.setItem('iki-cart', JSON.stringify(products))
-                this.$refs.cartCalculator.calulateTotalPrice()
-            }
-        },
-        mounted() {
-        }
+export default {
+  name: 'CartProducts',
+  components: { CartCalculator },
+  data () {
+    return {
+      qty: []
     }
+  },
+  computed: {
+    ...mapState(['cartProducts']),
+    products () {
+      return [...new Set(this.cartProducts.map(v => JSON.stringify(v)))].map(v => JSON.parse(v))
+    }
+
+  },
+  methods: {
+    ...mapMutations(['SET_CART_PRODUCTS', 'ADD_CART_LOCAL']),
+    addToCart (product) {
+      this.ADD_CART_LOCAL(product)
+    },
+    removeFromCart (item) {
+      var index = null
+      for (let i = 0; i < this.cartProducts.length; i++) {
+        if (this.cartProducts[i].name === item.name) {
+          index = i
+        }
+      }
+      this.cartProducts.splice(index, 1)
+      this.SET_CART_PRODUCTS(this.cartProducts)
+      localStorage.setItem('iki-cart', JSON.stringify(this.cartProducts))
+    },
+    QtyProduct (item) {
+      return this.cartProducts.filter(v => v.name === item.name).length
+    },
+    removeProductCart (product) {
+      const products = JSON.parse(localStorage.getItem('iki-cart'))
+      for (let i = 0; i < products.length; i++) {
+        if (products[i]._id === product._id) {
+          products.splice(i, 1)
+        }
+      }
+      this.SET_CART_PRODUCTS(products)
+      localStorage.setItem('iki-cart', JSON.stringify(products))
+      this.$refs.cartCalculator.calulateTotalPrice()
+    }
+  },
+  mounted () {
+  }
+}
 </script>
-<style lang="scss">
+
+<style>
     .error-template {
         padding: 40px 15px;
         text-align: center;

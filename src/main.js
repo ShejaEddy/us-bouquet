@@ -7,7 +7,7 @@ import NProgress from 'nprogress'
 import axios from './config/axios.config'
 import bootstrapVue from 'bootstrap-vue'
 import './registerServiceWorker'
-
+import '../node_modules/toastr/build/toastr.css'
 import 'swiper/dist/css/swiper.css'
 import '../node_modules/nprogress/nprogress.css'
 import 'bootstrap/dist/css/bootstrap.css'

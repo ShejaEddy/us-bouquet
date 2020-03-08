@@ -61,8 +61,7 @@
             <div class="feat">
                 <span class="txt-ft" aria-current="page">SIMILAR PRODUCTS</span>
             </div>
-            <card-loader :loopCount=8 v-if="loading"/>
-            <products-list :products_list="product_duplicate"/>
+            <card-loader :loopCount="4" v-if="loading"/>
         </div>
         <div class="row p-3">
             <div class="col-md-3 mt-3" v-for="(item, index) in similarProduct" :key="index">
@@ -73,124 +72,124 @@
 </template>
 
 <script>
-    import {mapState, mapActions, mapMutations} from 'vuex'
-    import CardTemplate from '../shared/CardTemplate'
-    import productsList from './ProductsList'
-    import {infoToaster, successToaster, errorToaster} from '../../components/shared/service/ErrorHandler.js'
+import { mapState, mapActions, mapMutations } from 'vuex'
+import CardTemplate from '../shared/CardTemplate'
+import { infoToaster, successToaster, errorToaster } from '../../components/shared/service/ErrorHandler.js'
 
-    export default {
-        name: 'productDetail',
-        components: {
-            CardTemplate,
-            productsList
+export default {
+  name: 'productDetail',
+  components: {
+    CardTemplate
+  },
+  data () {
+    return {
+      product: {
+        image: '/img/2.jpg',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+        name: 'Slippers',
+        price: '150$'
+      },
+      loading: false,
+      similarProduct: [
+        {
+          image: '/img/1.jpg',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          name: 'Kamambiri',
+          price: '100$',
+          stock: '12',
+          offerPrice: '80$'
         },
-        data() {
-            return {
-                product: {
-                    image: '/img/2.jpg',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                    name: 'Slippers',
-                    price: '150$'
-                },
-                loading: false,
-                similarProduct: [
-                    {
-                        image: '/img/1.jpg',
-                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Kamambiri',
-                        price: '100$',
-                        stock:'12',
-                        offerPrice: '80$'
-                    },
-                    {
-                        image: '/img/2.jpg',
-                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Sandal',
-                        price: '600$',
-                        stock:'12',
-                        offerPrice: '500$'
-                    },
-                    {
-                        image: '/img/3.jpg',
-                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Umoja',
-                        price: '400$',
-                        stock:'12',
-                        offerPrice: '300$'
-                    },
-                    {
-                        image: '/img/shoe-bg.jpg',
-                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Slippers',
-                        price: '150$',
-                        stock:'12',
-                        offerPrice: '100$'
-                    },
-                    {
-                        image: '/img/3.jpg',
-                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Ketch',
-                        price: '300$',
-                        stock:'12',
-                        offerPrice: '250$'
-                    },
-                    {
-                        image: '/img/1.jpg',
-                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Style',
-                        price: '50$',
-                        stock:'12',
-                        offerPrice: '45$'
-                    }
-                ]
-            }
+        {
+          image: '/img/2.jpg',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          name: 'Sandal',
+          price: '600$',
+          stock: '12',
+          offerPrice: '500$'
         },
-        methods: {
-            getSimilarProduct(productSeller) {
-                axios
-                    .get(`${process.env.VUE_APP_BASE_URL}/products/similarProduct`, {
-                        params: {productSeller: productSeller}
-                    })
-                    .then(response => {
-                        this.similarProduct = response.data
-                    })
-                    .catch(error => {
-                        console.log(error)
-                    })
-            },
-            ...mapMutations(['ADD_CART_LOCAL']),
-            addToCart(product) {
-                const data = _.find(this.$store.getters.cartProducts, product)
-                if (data) {
-                    infoToaster('Already Added', 'Product Already Added')
-                } else {
-                    successToaster('Added Successfully', 'Product Added Successfully')
-                    this.ADD_CART_LOCAL(product)
-                }
-            }
+        {
+          image: '/img/3.jpg',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          name: 'Umoja',
+          price: '400$',
+          stock: '12',
+          offerPrice: '300$'
         },
-        created() {
-            // this.$axios
-            //   .get(/products/${this.$route.params.id})
-            //   .then(response => {
-            //     this.product = response.data;
-            //     const starTotal = 5;
-            //     const starPercentage =
-            //       (Number(this.product.productRating) / starTotal) * 100;
-            //     const starPercentageRounded = `${Math.round(starPercentage / 10) *
-            //       10}%`;
-            //     document.querySelector(
-            //       `.stars-inner`
-            //     ).style.width = starPercentageRounded;
-
-            //     this.getSimilarProduct(this.product.productSeller);
-            //   })
-            //   .catch(error => {
-            //     console.log(error);
-            //     errorToaster("Error while fetching similar products", "");
-            //   });
+        {
+          image: '/img/shoe-bg.jpg',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          name: 'Slippers',
+          price: '150$',
+          stock: '12',
+          offerPrice: '100$'
+        },
+        {
+          image: '/img/3.jpg',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          name: 'Ketch',
+          price: '300$',
+          stock: '12',
+          offerPrice: '250$'
+        },
+        {
+          image: '/img/1.jpg',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+          name: 'Style',
+          price: '50$',
+          stock: '12',
+          offerPrice: '45$'
         }
+      ]
     }
+  },
+  methods: {
+    getSimilarProduct (productSeller) {
+      axios
+        .get(`${process.env.VUE_APP_BASE_URL}/products/similarProduct`, {
+          params: { productSeller: productSeller }
+        })
+        .then(response => {
+          this.similarProduct = response.data
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    },
+    ...mapMutations(['ADD_CART_LOCAL']),
+    addToCart (product) {
+      const data = _.find(this.$store.getters.cartProducts, product)
+      if (data) {
+        infoToaster('Already Added', 'Product Already Added')
+      } else {
+        successToaster('Added Successfully', 'Product Added Successfully', {
+          color: 'red'
+        })
+        this.ADD_CART_LOCAL(product)
+      }
+    }
+  },
+  created () {
+    // this.$axios
+    //     .get(/products/${this.$route.params.id})
+    //     .then(response => {
+    //         this.product = response.data;
+    //         const starTotal = 5;
+    //         const starPercentage =
+    //             (Number(this.product.productRating) / starTotal) * 100;
+    //         const starPercentageRounded = `${Math.round(starPercentage / 10) *
+    //         10}%`;
+    //         document.querySelector(
+    //             `.stars-inner`
+    //         ).style.width = starPercentageRounded;
+    //
+    //         this.getSimilarProduct(this.product.productSeller);
+    //     })
+    //     .catch(error => {
+    //         console.log(error);
+    //         errorToaster("Error while fetching similar products", "");
+    //     });
+  }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -154,7 +154,7 @@ export default new Router({
           component: () => import('../components/dashboardLayout/pages/categoryManagement/category-list')
         },
         {
-          name: 'sub category management',
+          name: 'sub-category-list',
           path: 'sub-category-list',
           component: () => import('../components/dashboardLayout/pages/categoryManagement/sub-category-list')
         },
@@ -164,9 +164,19 @@ export default new Router({
           component: () => import('../components/dashboardLayout/pages/product/product-list')
         },
         {
-          name:"admin profile",
-          path:"profile",
+          name: 'admin profile',
+          path: 'profile',
           component: () => import('../components/dashboardLayout/pages/profile')
+        },
+        {
+          name:'add category',
+          path:'category',
+          component: () => import('../components/dashboardLayout/pages/categoryManagement/components/addCategory')
+        },
+        {
+          name:'add sub-category',
+          path:'sub-category',
+          component: () => import('../components/dashboardLayout/pages/categoryManagement/components/add-sub-category')
         }
       ]
     },

@@ -17,6 +17,12 @@
                                     <i class="fa fa-bell"></i>
                                     <span>Category</span>
                                 </div>
+                                <div class="text-lg-right" style="margin-left: 130px">
+                                    <button type="submit" @click="addCategory()"
+                                            class="dbtn btn-success waves-effect waves-light mb-2 mr-2"><i
+                                            class="mdi mdi-basket mr-1"></i>Add Category
+                                    </button>
+                                </div>
                             </div>
 
                             <div class="table-responsive">
@@ -26,7 +32,7 @@
                                         <th><i class="fa fa-briefcase"></i>Select</th>
                                         <th><i class="fa fa-briefcase"></i>S.no</th>
                                         <th><i class="fa fa-user"></i>Category</th>
-                                        <th><i class="fa fa-user"></i>Status</th>
+                                        <th><i class="fa fa-user"></i>Description</th>
                                         <th>Option</th>
                                     </tr>
                                     </thead>
@@ -37,11 +43,16 @@
                                         <td>
                                             <small class="text-muted">{{category.category}}</small>
                                         </td>
-                                        <td>{{ category.status}}</td>
+                                        <td>{{ category.description}}</td>
                                         <td>
-                                            <span style="cursor: pointer" class="action-icon"><i
+                                            <span title="edit" style="cursor: pointer" class="action-icon"
+                                                  data-target="#EditCategoryModal" data-toggle="modal"
+                                                  @click="edit(category)"><i
                                                     class="mdi mdi-square-edit-outline"></i></span>
-                                            <span class="action-icon" style="cursor: pointer"> <i
+                                            <span data-toggle="modal"
+                                                  data-target="#DeleteCategoryModal" @click="del(category)"
+                                                  title="delete"
+                                                  class="action-icon" style="cursor: pointer"> <i
                                                     class="mdi mdi-delete"></i></span>
                                         </td>
                                     </tr>
@@ -58,32 +69,69 @@
                     </button>
                 </div>
             </div>
+            <delete-category @deleteCategory="deleteCat()" :del="category"/>
+            <edit-category :edit="category"/>
         </div>
     </div>
 </template>
-
 <script>
-export default {
-  name: 'category list management',
-  data () {
-    return {
-      categories: [
-        {
-          category: 'Men',
-          status: 'active'
+    import axios from "axios"
+    import deleteCategory from "./notification/delete-category"
+    import editCategory from "./notification/edit-category"
+
+    export default {
+        name: 'product-list-management',
+        components: {
+            deleteCategory,
+            editCategory
         },
-        {
-          category: 'Women',
-          status: 'active'
+        data() {
+            return {
+                category: {},
+                categories: [
+                    {
+                        category: 'Men',
+                        description: 'All men'
+                    },
+                    {
+                        category: 'Women',
+                        description: 'All women'
+                    },
+                    {
+                        category: 'Kid',
+                        description: 'All children'
+                    }
+                ]
+            }
         },
-        {
-          category: 'Kid',
-          status: 'active'
+        methods: {
+            addCategory() {
+                this.$router.push('category')
+            },
+            getAllCategory() {
+                // axios
+                // .get(`${process.env.VUE_APP_BASE_URL}/categories`)
+                // .then(response => {
+                //     this.category = response.data
+                // })
+                // .catch(error => {
+                //     console.log(error)
+                // })
+            },
+            del(category) {
+                this.category = category
+            },
+            edit(category) {
+                this.category = category
+            },
+            deleteCat() {
+                this.getAllCategory()
+            }
+        },
+        created() {
+            this.getAllCategory()
         }
-      ]
     }
-  }
-}
 </script>
 
 <style scoped>

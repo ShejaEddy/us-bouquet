@@ -128,48 +128,48 @@
     </div>
 </template>
 <script>
-    import axios from "axios";
-    import {errorToaster, successToaster} from "../../../shared/service/ErrorHandler";
-    export default {
-        data() {
-            return {
-                showLoader: false,
-                product: {
-                    name: '',
-                    description: '',
-                    price: '',
-                    stock: '',
-                    categories: '',
-                    tags: ''
-                },
-                errorMessage: []
-            }
-        },
-        methods: {
-            createProduct(e) {
-                this.showLoader = true
-                if (this.product.name.length == 0) {
-                    this.errorMessage.push(
-                        'name should contains at least some character'
-                    )
-                }
-                axios
-                    .post(`${process.env.VUE_APP_BASE_URL}/products`, this.product)
-                    .then(response => {
-                        this.showLoader = false
-                        successToaster(
-                            'Product created Successfully',
-                            'Product created Successfully'
-                        )
-                    })
-                    .catch(error => {
-                        console.log(error)
-                        errorToaster(
-                            'Product created Failed',
-                            'Please try again after sometime'
-                        )
-                    })
-            }
-        }
+import axios from 'axios'
+import { errorToaster, successToaster } from '../../../shared/service/ErrorHandler'
+export default {
+  data () {
+    return {
+      showLoader: false,
+      product: {
+        name: '',
+        description: '',
+        price: '',
+        stock: '',
+        categories: '',
+        tags: ''
+      },
+      errorMessage: []
     }
+  },
+  methods: {
+    createProduct (e) {
+      this.showLoader = true
+      if (this.product.name.length == 0) {
+        this.errorMessage.push(
+          'name should contains at least some character'
+        )
+      }
+      axios
+        .post(`${process.env.VUE_APP_BASE_URL}/products`, this.product)
+        .then(response => {
+          this.showLoader = false
+          successToaster(
+            'Product created Successfully',
+            'Product created Successfully'
+          )
+        })
+        .catch(error => {
+          console.log(error)
+          errorToaster(
+            'Product created Failed',
+            'Please try again after sometime'
+          )
+        })
+    }
+  }
+}
 </script>

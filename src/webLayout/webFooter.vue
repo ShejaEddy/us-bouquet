@@ -63,9 +63,9 @@
     </footer>
 </template>
 <script>
-    export default{
-        name:"web-footer"
-    }
+export default{
+  name: 'web-footer'
+}
 
 </script>
 <style lang="scss">

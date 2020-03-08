@@ -17,6 +17,13 @@
                                     <i class="fa fa-bell"></i>
                                     <span>Sub Category</span>
                                 </div>
+                                <div class="text-lg-right" style="margin-left: 130px
+                                ">
+                                    <button type="submit" @click="addSubCategory()"
+                                            class="dbtn btn-success waves-effect waves-light mb-2 mr-2"><i
+                                            class="mdi mdi-basket mr-1"></i>Add Sub-Category
+                                    </button>
+                                </div>
                             </div>
 
                             <div class="table-responsive">
@@ -26,8 +33,7 @@
                                         <th><i class="fa fa-briefcase"></i>Select</th>
                                         <th><i class="fa fa-briefcase"></i>S.no</th>
                                         <th><i class="fa fa-user"></i>SubCategory</th>
-                                        <th><i class="fa fa-user"></i>Category</th>
-                                        <th><i class="fa fa-user"></i>Status</th>
+                                        <th><i class="fa fa-user"></i>Description</th>
                                         <th>Option</th>
                                     </tr>
                                     </thead>
@@ -36,14 +42,14 @@
                                         <td><input width="20px" type="checkbox"></input></td>
                                         <td><a class="text-body font-weight-bold"></a>{{index +1}}</td>
                                         <td>{{subCat.subCategory}}</td>
+                                        <td>{{ subCat.description}}</td>
                                         <td>
-                                            <small class="text-muted">{{subCat.category}}</small>
-                                        </td>
-                                        <td>{{ subCat.status}}</td>
-                                        <td>
-                                            <span style="cursor: pointer" class="action-icon"><i
+                                            <span title="edit" style="cursor: pointer" class="action-icon"
+                                                  data-target="#EditSubCategoryModal" data-toggle="modal" @click="edit(subCat)"><i
                                                     class="mdi mdi-square-edit-outline"></i></span>
-                                            <span class="action-icon" style="cursor: pointer"> <i
+                                            <span data-toggle="modal"
+                                                  data-target="#DeleteSubCategoryModal" @click="del(subCat)" title="delete"
+                                                  class="action-icon" style="cursor: pointer"> <i
                                                     class="mdi mdi-delete"></i></span>
                                         </td>
                                     </tr>
@@ -60,50 +66,80 @@
                     </button>
                 </div>
             </div>
+            <delete-category @deleteTags="deleteSub()" :del="subCat"/>
+            <edit-category :edit="subCat"/>
         </div>
     </div>
 </template>
-
 <script>
-export default {
-  name: 'sub-category-list',
-  data () {
-    return {
-      SubCategories: [
-        {
-          category: 'Men',
-          subCategory: 'footwear',
-          status: 'active'
+    import axios from "axios"
+    import deleteCategory from "./notification/delete-sub-category"
+    import editCategory from "./notification/edit-sub-category"
+    export default {
+        name: 'sub-category-list',
+        components: {
+            deleteCategory,
+            editCategory
         },
-        {
-          category: 'Men',
-          subCategory: 'Watches',
-          status: 'active'
+        data() {
+            return {
+                subCat: {},
+                SubCategories: [
+                    {
+                        subCategory: 'footwear',
+                        description: 'iza abagabo'
+                    },
+                    {
+                        subCategory: 'Watches',
+                        description: 'za abagore'
+                    },
+                    {
+                        subCategory: 'Masayi',
+                        description: "z' abana"
+                    },
+                    {
+                        subCategory: 'slipper',
+                        description: 'za abakobwa'
+                    },
+                    {
+                        subCategory: 'T-shirt',
+                        description: 'za abasore'
+                    },
+                    {
+                        subCategory: 'umoja',
+                        description: 'za aba bose'
+                    }
+                ]
+            }
         },
-        {
-          category: 'Women',
-          subCategory: 'masayi',
-          status: 'active'
+        methods: {
+            addSubCategory() {
+                this.$router.push('sub-category')
+            },
+            getAllSubCategory() {
+                // axios
+                //     .get(`${process.env.VUE_APP_BASE_URL}/tags`)
+                //     .then(response => {
+                //         this.SubCategories = response.data
+                //     })
+                //     .catch(error => {
+                //         console.log(error)
+                //     })
+            },
+            del(subCat) {
+                this.subCat = subCat
+            },
+            edit(subCat) {
+                this.subCat = subCat
+            },
+            deleteSub() {
+                this.getAllSubCategory()
+            }
         },
-        {
-          category: 'Kid',
-          subCategory: 'slipper',
-          status: 'active'
-        },
-        {
-          category: 'Men',
-          subCategory: 'T-shirt',
-          status: 'in active'
-        },
-        {
-          category: 'Women',
-          subCategory: 'umoja',
-          status: 'active'
+        created() {
+            this.getAllSubCategory()
         }
-      ]
     }
-  }
-}
 </script>
 
 <style scoped>

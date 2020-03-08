@@ -53,43 +53,48 @@
     </div>
 </template>
 <script>
-    import axios from "axios";
-    import {errorToaster, successToaster} from "../../shared/service/ErrorHandler";
+import axios from 'axios'
+import { errorToaster, successToaster } from '../../shared/service/ErrorHandler'
 
-    export default {
-        data() {
-            return {
-                addresses: [],
-                showLoader: false
-            }
-        },
-        computed: {
-            Address() {
-                return []
-            },
-
-        },
-        created() {
-            this.showLoader = true
-            axios
-                .get(`${process.env.VUE_APP_BASE_URL}/addresses`)
-                .then(response => {
-                    this.showLoader = false
-                    this.addresses = response.data
-                })
-                .catch(error => {
-                    console.log(error)
-                    errorToaster('Error while fetching address', '')
-                })
-
-        },
-        methods: {
-            openForm() {
-                this.$emit('openAddressForm')
-            },
-            createBtn(e) {
-                this.$emit('createBtn', e)
-            }
-        }
+export default {
+  data () {
+    return {
+      addresses: [],
+      showLoader: false
     }
+  },
+  computed: {
+    Address () {
+      return []
+    }
+
+  },
+  created () {
+   this.getAdresses()
+  },
+  methods: {
+    openForm () {
+      this.$emit('openAddressForm')
+    },
+    createBtn (e) {
+      this.$emit('createBtn', e)
+    },
+      getAdresses() {
+          this.showLoader = true
+          axios
+              .get(`${process.env.VUE_APP_BASE_URL}/addresses`)
+              .then(response => {
+                  this.showLoader = false
+                  this.addresses = response.data
+              })
+              .catch(error => {
+                  console.log(error)
+                  errorToaster('Error while fetching address', 'Please wait for while')
+              })
+      }
+  }
+}
 </script>
+<style>
+
+</style>

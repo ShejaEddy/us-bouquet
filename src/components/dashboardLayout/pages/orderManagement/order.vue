@@ -16,8 +16,8 @@
                                 <div class="col-lg-8">
                                     <form class="form-inline">
                                         <div class="form-group mb-2">
-                                            <label for="inputPassword2" class="sr-only">Search</label>
-                                            <input type="search" class="form-control" id="inputPassword2"
+                                            <label for="searchOrder" class="sr-only">Search</label>
+                                            <input type="search" class="form-control" id="searchOrder"
                                                    placeholder="Search...">
                                         </div>
                                         <div class="form-group mx-sm-3 mb-2">
@@ -36,10 +36,6 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="text-lg-right">
-                                        <button type="button"
-                                                class="btn btn-danger waves-effect waves-light mb-2 mr-2"><i
-                                                class="mdi mdi-basket mr-1"></i> Add New Order
-                                        </button>
                                         <button type="button" class="btn btn-light waves-effect mb-2">Export
                                         </button>
                                     </div>
@@ -50,46 +46,52 @@
                                 <table class="table table-centered mb-0">
                                     <thead class="thead-light">
                                     <tr>
-                                        <th>Order ID</th>
-                                        <th>Products</th>
-                                        <th>Date</th>
-                                        <th>Payment Status</th>
-                                        <th>Total</th>
-                                        <th>Payment Method</th>
-                                        <th>Order Status</th>
+                                        <th>Costumer_Names</th>
+                                        <th>Order_Date</th>
+                                        <th>Payment_Status</th>
+                                        <th>Costumer_Email</th>
+                                        <th>Costumer_Number</th>
+                                        <th>Costumer_address</th>
+                                        <th>zip_Code</th>
+                                        <th>cart_Details</th>
+                                        <th>card_Number</th>
+                                        <th>Status</th>
                                         <th style="width: 125px;">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr v-for="(order, index) in orders" :key="index">
-                                        <td><a class="text-body font-weight-bold">{{order.orderId}}</a></td>
+                                        <td><span>{{order.firstName }} {{ order.lastName}}</span></td>
                                         <td>
-                                            <a><img :src="order.productProfile" alt="order-image" height="32"/></a>
+                                            <span style="font-size: 12.5px">{{order.dates.date}}</span><br/> <small
+                                                class="text-muted">{{order.dates.time}}</small>
                                         </td>
                                         <td>
-                                            {{order.dates.date}} <small class="text-muted">{{order.dates.time}}</small>
-                                        </td>
-                                        <td>
-                                            <div v-if="order.paymentStatus == Paid"><h5 ><span
+                                            <div><h5><span
                                                     class="badge bg-soft-success text-success"><i
-                                                    class="mdi mdi-coin"></i> Paid</span>
-                                                <span> </span></h5></div>
-                                            <div v-else><h5><span class="badge bg-soft-danger text-danger"><i
-                                                    class="mdi mdi-cancel"></i> Payment Failed</span></h5></div>
-
+                                                    class="mdi mdi-coin"></i> Paid</span></h5></div>
+                                        </td>
+                                        <td>{{order.email}}</td>
+                                        <td>{{order.phoneNumber}}</td>
+                                        <td>
+                                            {{order.district}} <br/>
+                                            <small class="text-muted">{{order.address}}</small>
+                                        </td>
+                                        <td>{{order.zipCode}}</td>
+                                        <td style="font-size:14px">
+                                            <span v-for="(cart,index) in order.cart_item" :key="index">
+                                                Quantity:{{cart.quantity }}<br/>
+                                            </span>
                                         </td>
                                         <td>
-                                            {{order.total}}
-                                        </td>
-                                        <td>
-                                            {{order.paymentMethod}}
+                                            {{order.card_number}}
                                         </td>
                                         <td>
                                             <h5><span class="badge badge-info">{{order ? order.orderStatus : "sorry for poor network!"}}</span>
                                             </h5>
                                         </td>
                                         <td class="moreOp">
-                                            <a class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                            <span @click="del(order)" data-target="#DeleteOrderModal" data-toggle="modal" style="cursor: pointer" class="action-icon"> <i class="mdi mdi-delete"></i></span>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -99,116 +101,125 @@
                     </div>
                 </div>
             </div>
+            <delete-order :del="order" @deletedOrder="orderDeleted()"/>
         </div>
 
     </div>
 </template>
 
 <script>
+    import axios from "axios"
+    import deleteOrder from "./notification/delete-order"
     export default {
         name: 'orders',
+        components:{deleteOrder},
         data() {
             return {
+                order:{},
                 orders: [
 
                     {
                         orderId: '#UB9708',
                         productProfile: '/img/tsapal5.jpg',
+                        firstName: "sheja",
+                        lastName: "fred",
+                        email: "yannick@example.com",
+                        phoneNumber: "0783873738",
+                        district: 'Kimihurura',
+                        address: 'Rugando',
+                        zipCode: '433-030',
                         dates: {
                             date: 'August 05 2019',
                             time: '10:29 PM'
                         },
+                        cart_item: [
+                            {
+                                quantity: '3'
+                            },
+                            {
+                                quantity: '5'
+                            }
+                        ],
+                        card_number: '122-122',
+                        orderStatus: 'Shipped',
                         paymentStatus: 'Paid',
-                        total: '17000rfw',
-                        paymentMethod: 'Mobile Money',
-                        orderStatus: 'Shipped'
                     },
                     {
-                        orderId: '#UB9706',
-                        productProfile: '/img/3.jpg',
+                        orderId: '#UB9708',
+                        productProfile: '/img/tsapal5.jpg',
+                        firstName: "umutoni",
+                        lastName: "jane",
+                        email: "jane9@example.com",
+                        phoneNumber: "0783873738",
+                        district: 'Kimihurura',
+                        address: 'Rugando',
+                        zipCode: '433-030',
                         dates: {
-                            date: 'August 04 2019',
-                            time: '10:18 AM'
+                            date: 'August 05 2019',
+                            time: '10:29 PM'
                         },
+                        cart_item: [
+                            {
+                                quantity: '3'
+                            },
+                            {
+                                quantity: '5'
+                            }
+                        ],
+                        card_number: '122-122',
+                        orderStatus: 'Shipped',
                         paymentStatus: 'Paid',
-                        total: '800,000rfw',
-                        paymentMethod: 'Credit Card',
-                        orderStatus: 'Processing'
                     },
                     {
-                        orderId: '#UB9705',
-                        productProfile: '/img/4.jpg',
+                        orderId: '#UB9708',
+                        productProfile: '/img/tsapal5.jpg',
+                        firstName: "Shema",
+                        lastName: "eddy",
+                        email: "shema5@example.com",
+                        phoneNumber: "0783873738",
+                        district: 'Kimihurura',
+                        address: 'Rugando',
+                        zipCode: '433-030',
                         dates: {
-                            date: 'August 03 2019',
-                            time: '07:18 AM'
+                            date: 'August 05 2019',
+                            time: '10:29 PM'
                         },
+                        cart_item: [
+                            {
+                                quantity: '3'
+                            },
+                            {
+                                quantity: '5'
+                            }
+                        ],
+                        card_number: '122-122',
+                        orderStatus: 'Shipped',
                         paymentStatus: 'Paid',
-                        total: '215,000rfw',
-                        paymentMethod: 'Mastercard',
-                        orderStatus: 'Delivered'
                     },
-                    {
-                        orderId: '#UB9704',
-                        productProfile: '/img/shoe-bg.jpg',
-                        dates: {
-                            date: 'May 22 2019',
-                            time: '07:22 PM'
-                        },
-                        paymentStatus: 'Payment Failed',
-                        total: '915,000rfw',
-                        paymentMethod: 'Tigo Cash',
-                        orderStatus: 'Cancelled'
-                    },
-                    {
-                        orderId: '#UB9703',
-                        productProfile: '/img/2.jpg',
-                        dates: {
-                            date: 'May 22 2019',
-                            time: '07:22 PM'
-                        },
-                        paymentStatus: 'Paid',
-                        total: '183,000rfw',
-                        paymentMethod: 'Paypal',
-                        orderStatus: 'Shipped'
-                    },
-                    {
-                        orderId: '#UB9702',
-                        productProfile: '/img/2.jpg',
-                        dates: {
-                            date: 'March 18 2019',
-                            time: '11:19 PM'
-                        },
-                        paymentStatus: 'Awaiting Authorization',
-                        total: '1,768,000rfw',
-                        paymentMethod: 'Visa',
-                        orderStatus: 'Processing'
-                    },
-                    {
-                        orderId: '#UB9701',
-                        productProfile: '/img/3.jpg',
-                        dates: {
-                            date: 'February 01 2019',
-                            time: '07:22 AM'
-                        },
-                        paymentStatus: 'Cash on Delivery',
-                        total: '2,768,000rfw',
-                        paymentMethod: 'Mobile Money',
-                        orderStatus: 'Shipped'
-                    },
-                    {
-                        orderId: '#UB9700',
-                        productProfile: '/img/4.jpg',
-                        dates: {
-                            date: 'January 22 2019',
-                            time: '08:09 PM'
-                        },
-                        paymentStatus: 'Paid',
-                        total: '768,000rfw',
-                        paymentMethod: 'TIGO Cash',
-                        orderStatus: 'Delivered'
-                    }
+
                 ]
             }
+        },
+        methods: {
+            getAllOrders() {
+                axios
+                    .get(`${process.env.VUE_APP_BASE_URL}/orders`)
+                    .then(response => {
+                        this.orders = response.data
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
+            },
+            del(order){
+                this.order = order
+            },
+            orderDeleted(){
+                this.getAllOrders()
+            }
+        },
+        created() {
+            this.getAllOrders()
         }
     }
 </script>

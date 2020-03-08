@@ -8,12 +8,12 @@
     </div>
 </template>
 <script>
-    import {VclFacebook, VclInstagram} from 'vue-content-loading'
-    export default {
-        name: 'cardLoader',
-        props: ['loopCount'],
-        components: {VclInstagram}
-    }
+import { VclFacebook, VclInstagram } from 'vue-content-loading'
+export default {
+  name: 'cardLoader',
+  props: ['loopCount'],
+  components: { VclInstagram }
+}
 </script>
 <style>
 </style>

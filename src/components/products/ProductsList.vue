@@ -6,6 +6,28 @@
                  :key="index">
                 <card-template :item="item"/>
             </div>
+            <card-loader :loopCount="8" v-if="loading"/>
+            <div class="text-lg-right">
+            <div class="col-12 ">
+                <nav aria-label="...">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item  active">
+                            <a class="page-link" href="#"> <span class="sr-only">(current)</span>1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            </div>
         </div>
         <edit-product ref="editProduct"/>
     </div>
@@ -14,11 +36,12 @@
     import axios from 'axios'
     import CardTemplate from '../shared/CardTemplate'
     import EditProduct from './actions/EditProduct'
+    import CardLoader from "../shared/CardLoader";
 
     export default {
         name: 'productslist',
-        props: ['products_list'],
-        components: {CardTemplate, EditProduct},
+        props: ['products_list', 'loading'],
+        components: {CardTemplate, EditProduct, CardLoader},
         data() {
             return {
                 selectedProduct: Object

@@ -68,10 +68,10 @@
 <script>
 import axios from 'axios'
 export default{
-    data() {
-        return{
-            profiles:{}
-        }
+  data () {
+    return {
+      profiles: {}
     }
+  }
 }
 </script>

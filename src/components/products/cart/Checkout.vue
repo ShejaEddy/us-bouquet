@@ -33,41 +33,41 @@
 </template>
 
 <script>
-    import {mapState, mapActions, mapMutations} from 'vuex'
-    import CartCalculator from './CartCalculator'
-    import addressTable from '../address/table.vue'
-    import addressForm from '../address/form.vue'
-    import axios from 'axios'
-    import {errorToaster} from '../../shared/service/ErrorHandler.js'
+import { mapState, mapActions, mapMutations } from 'vuex'
+import CartCalculator from './CartCalculator'
+import addressTable from '../address/table.vue'
+import addressForm from '../address/form.vue'
+import axios from 'axios'
+import { errorToaster } from '../../shared/service/ErrorHandler.js'
 
-    export default {
-        name: 'Checkout',
-        components: {CartCalculator, addressTable, addressForm},
-        data() {
-            return {
-                shippingDetail: {
-                    address1: '',
-                    address2: '',
-                    country: '',
-                    zipCode: '',
-                    shippingDate: '',
-                    products: [],
-                    userId: '',
-                    totalPrice: ''
-                },
-                createAddress: false,
-                createBtn: true
-            }
-        },
-        methods: {
-            openAddress() {
-                this.createAddress = true
-            },
-            createBtnFunc(e) {
-                this.createBtn = e
-            }
-        }
+export default {
+  name: 'Checkout',
+  components: { CartCalculator, addressTable, addressForm },
+  data () {
+    return {
+      shippingDetail: {
+        address1: '',
+        address2: '',
+        country: '',
+        zipCode: '',
+        shippingDate: '',
+        products: [],
+        userId: '',
+        totalPrice: ''
+      },
+      createAddress: false,
+      createBtn: true
     }
+  },
+  methods: {
+    openAddress () {
+      this.createAddress = true
+    },
+    createBtnFunc (e) {
+      this.createBtn = e
+    }
+  }
+}
 </script>
 
 <style lang="scss">

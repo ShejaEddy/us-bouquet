@@ -42,14 +42,14 @@
             </li>
 
             <li class="dropdown notification-list">
-                <a aria-expanded="false" aria-haspopup="false"
+                <span aria-expanded="false" aria-haspopup="false"
                    class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown"
-                   href="#" role="button">
+                    role="button">
                     <img alt="user-image" class="rounded-circle" src="assets/images/users/user-3.jpg">
                     <span class="pro-user-name ml-1">
                                 Admin <i class="mdi mdi-chevron-down"></i>
                             </span>
-                </a>
+                </span>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                     <div class="dropdown-header noti-title">
                         <h6 class="text-overflow m-0">Welcome !</h6>

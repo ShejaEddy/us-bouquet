@@ -49,55 +49,55 @@
     </div>
 </template>
 <script>
-    import CreateAccount from '@/components/CreateAccount'
-    import {encryptUser} from '../components/shared/service/authService'
-    import axios from 'axios'
-    import {
-        successToaster,
-        errorToaster
-    } from '../components/shared/service/ErrorHandler.js'
+import CreateAccount from '@/components/CreateAccount'
+import { encryptUser } from '../components/shared/service/authService'
+import axios from 'axios'
+import {
+  successToaster,
+  errorToaster
+} from '../components/shared/service/ErrorHandler.js'
 
-    import {mapState, mapActions, mapMutations} from 'vuex'
+import { mapState, mapActions, mapMutations } from 'vuex'
 
-    export default {
-        name: 'login',
-        components: {CreateAccount},
-        data() {
-            return {
-                user: {
-                    email: '',
-                    password: ''
-                },
-                showLoader: false,
-                isSignUp: false
-            }
-        },
-        methods: {
-            toggleForm() {
-                this.isSignUp = !this.isSignUp
-            },
-            ...mapMutations(['ADD_LOGGED_USER']),
-
-            login(event) {
-                this.showLoader = true
-                const user = this.user;
-                this.$router.push('/admin')
-                // this.$axios
-                //   .post('/login', user)
-                //   .then(response => {
-                //     this.showLoader = false
-                //     this.ADD_LOGGED_USER(response.data.user)
-                //     event.target.reset()
-                //     this.$router.push(this.$route.query.from || '/')
-                //   })
-                //   .catch(error => {
-                //     this.showLoader = false
-                //     errorToaster('Invalid Credentials', '')
-                //     console.log(error)
-                //   })
-            }
-        }
+export default {
+  name: 'login',
+  components: { CreateAccount },
+  data () {
+    return {
+      user: {
+        email: '',
+        password: ''
+      },
+      showLoader: false,
+      isSignUp: false
     }
+  },
+  methods: {
+    toggleForm () {
+      this.isSignUp = !this.isSignUp
+    },
+    ...mapMutations(['ADD_LOGGED_USER']),
+
+    login (event) {
+      this.showLoader = true
+      const user = this.user
+      this.$router.push('/admin')
+      // this.$axios
+      //   .post('/login', user)
+      //   .then(response => {
+      //     this.showLoader = false
+      //     this.ADD_LOGGED_USER(response.data.user)
+      //     event.target.reset()
+      //     this.$router.push(this.$route.query.from || '/')
+      //   })
+      //   .catch(error => {
+      //     this.showLoader = false
+      //     errorToaster('Invalid Credentials', '')
+      //     console.log(error)
+      //   })
+    }
+  }
+}
 </script>
 <style>
     .login {

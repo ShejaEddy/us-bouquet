@@ -77,62 +77,62 @@
     </div>
 </template>
 <script>
-    import axios from 'axios'
-    import {errorToaster} from '../../shared/service/ErrorHandler.js'
+import axios from 'axios'
+import { errorToaster } from '../../shared/service/ErrorHandler.js'
 
-    export default {
-        name: 'productForm',
-        props: ['product'],
-        data() {
-            return {
-                errors: [],
-                productCategroyDummy: '',
-                productSellerDummy: '',
-                categories: [],
-                sellers: [],
-                loading: false
-            }
-        },
-        methods: {
-            actionProduct(event) {
-                event.preventDefault()
-                this.$emit('submit-form', this.product)
-            }
-        },
-        created() {
-            this.loading = true
-            axios
-                .get(`${process.env.VUE_APP_BASE_URL}/products`)
-                .then(response => {
-                    // getting all products and getting the uniq value for
-                    // productCategory and returning the productCategory property only
-                    this.categories = _.uniqBy(
-                        _.map(response.data, function (object) {
-                            return _.pick(object, ['productCategory'])
-                        }),
-                        'productCategory'
-                    )
-                    this.categories.push({productCategory: 'Create New'})
-
-                    // getting all products and getting the uniq value for
-                    // productSeller and returning the productSeller property only
-                    this.sellers = _.uniqBy(
-                        _.map(response.data, function (object) {
-                            return _.pick(object, ['productSeller'])
-                        }),
-                        'productSeller'
-                    )
-
-                    this.sellers.push({productSeller: 'Create New'})
-
-                    this.loading = false
-                })
-                .catch(error => {
-                    console.log(error)
-                    errorToaster('Error while fetching products', '')
-                })
-        }
+export default {
+  name: 'productForm',
+  props: ['product'],
+  data () {
+    return {
+      errors: [],
+      productCategroyDummy: '',
+      productSellerDummy: '',
+      categories: [],
+      sellers: [],
+      loading: false
     }
+  },
+  methods: {
+    actionProduct (event) {
+      event.preventDefault()
+      this.$emit('submit-form', this.product)
+    }
+  },
+  created () {
+    this.loading = true
+    axios
+      .get(`${process.env.VUE_APP_BASE_URL}/products`)
+      .then(response => {
+        // getting all products and getting the uniq value for
+        // productCategory and returning the productCategory property only
+        this.categories = _.uniqBy(
+          _.map(response.data, function (object) {
+            return _.pick(object, ['productCategory'])
+          }),
+          'productCategory'
+        )
+        this.categories.push({ productCategory: 'Create New' })
+
+        // getting all products and getting the uniq value for
+        // productSeller and returning the productSeller property only
+        this.sellers = _.uniqBy(
+          _.map(response.data, function (object) {
+            return _.pick(object, ['productSeller'])
+          }),
+          'productSeller'
+        )
+
+        this.sellers.push({ productSeller: 'Create New' })
+
+        this.loading = false
+      })
+      .catch(error => {
+        console.log(error)
+        errorToaster('Error while fetching products', '')
+      })
+  }
+}
 </script>
 <style lang="scss">
     .productForm {

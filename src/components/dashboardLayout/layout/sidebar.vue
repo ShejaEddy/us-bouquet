@@ -1,24 +1,23 @@
 <template>
     <div class="left-side-menu">
-
         <div class="silkscreen-menu">
             <div id="sidebar-menu">
-
                 <ul class="metismenu" id="side-menu">
                     <li>
                         <a style="cursor: pointer" @click="productOpt = true">
                             <i class="fe-shopping-cart"></i>
-                            <span >Product Management</span>
+                            <span>Product Management</span>
                             <span>
                             <i v-if="!productOpt" class="menu-arrow"></i>
-                            <i  v-else ></i>
+                            <i v-else></i>
                             </span>
                         </a>
                         <ul class="nav-second-level" v-if="productOpt">
-                            <li >
-                                <router-link :to="{name:'Add product'}" style="cursor: pointer">Product Edit</router-link>
+                            <li>
+                                <router-link :to="{name:'Add product'}" style="cursor: pointer">Product Edit
+                                </router-link>
                             </li>
-                            <li >
+                            <li>
                                 <router-link :to="{name:'product-list-management'}">Product Detail</router-link>
                             </li>
                         </ul>
@@ -29,12 +28,13 @@
                             <span>Logo Management</span>
                             <span>
                             <i v-if="!logoOption" class="menu-arrow"></i>
-                            <i  v-else ></i>
+                            <i v-else></i>
                             </span>
                         </a>
                         <ul class="nav-second-level" v-if="logoOption">
                             <li>
-                                <router-link :to="{name:'Logo management'}" style="cursor:pointer;">Logo Manage</router-link>
+                                <router-link :to="{name:'Logo management'}" style="cursor:pointer;">Logo Manage
+                                </router-link>
                             </li>
                         </ul>
                     </li>
@@ -44,7 +44,7 @@
                             <span>Slider Image</span>
                             <span>
                             <i v-if="!sliderOption" class="menu-arrow"></i>
-                            <i  v-else ></i>
+                            <i v-else></i>
                             </span>
                         </a>
                         <ul class="nav-second-level" v-if="sliderOption">
@@ -62,7 +62,7 @@
                             <span>Category Management</span>
                             <span>
                             <i v-if="!categoryOption" class="menu-arrow"></i>
-                            <i  v-else ></i>
+                            <i v-else></i>
                             </span>
                         </a>
                         <ul class="nav-second-level" v-if="categoryOption">
@@ -70,7 +70,7 @@
                                 <router-link :to="{name:'category list management'}">Category List</router-link>
                             </li>
                             <li>
-                                <router-link :to="{name:'sub category management'}">Sub Category List</router-link>
+                                <router-link :to="{name:'sub-category-list'}">Sub Category List</router-link>
                             </li>
                         </ul>
                     </li>
@@ -80,7 +80,7 @@
                             <span>Order Management</span>
                             <span>
                             <i v-if="!orderOption" class="menu-arrow"></i>
-                            <i  v-else ></i>
+                            <i v-else></i>
                             </span>
                         </a>
                         <ul class="nav-second-level" v-if="orderOption">
@@ -102,26 +102,34 @@
 </template>
 
 <script>
-export default {
-  name: 'sidebar',
-  data () {
-    return {
-      productOpt: false,
-      logoOption: false,
-      sliderOption: false,
-      categoryOption: false,
-      orderOption: false
+    export default {
+        name: 'sidebar',
+        data() {
+            return {
+                productOpt: false,
+                logoOption: false,
+                sliderOption: false,
+                categoryOption: false,
+                orderOption: false
+            }
+        },
+        computed: {},
+        methods: {
+            productEdit() {
+                this.$store.dispatch('productManagement')
+            }
+        }
     }
-  },
-  computed: {},
-  methods: {
-    productEdit () {
-      this.$store.dispatch('productManagement')
-      console.log(this.$store.getters.views)
-    }
-  }
-}
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+  a {
+        color: #2c3e50;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+
+        &.router-link-exact-active {
+            color: #007bff;
+        }
+    }
 </style>

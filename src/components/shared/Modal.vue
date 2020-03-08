@@ -21,13 +21,13 @@
     </div>
 </template>
 <script>
-    export default {
-        props: ['header'],
-        data() {
-            return {}
-        },
-        methods: {}
-    }
+export default {
+  props: ['header'],
+  data () {
+    return {}
+  },
+  methods: {}
+}
 </script>
 <style lang="scss">
     .showModal {

@@ -11,7 +11,7 @@ export default {
   components: { Modal },
   data () {
     return {
-      showModal: false
+      showModal: true
     }
   },
   methods: {}
