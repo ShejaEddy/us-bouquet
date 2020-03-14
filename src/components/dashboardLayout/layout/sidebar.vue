@@ -4,12 +4,13 @@
             <div id="sidebar-menu">
                 <ul class="metismenu" id="side-menu">
                     <li>
-                        <a style="cursor: pointer" @click="productOpt = true">
+                        <a style="cursor: pointer"
+                           @click="productOpt = true">
                             <i class="fe-shopping-cart"></i>
                             <span>Product Management</span>
                             <span>
                             <i v-if="!productOpt" class="menu-arrow"></i>
-                            <i v-else></i>
+                            <i class="fa fa-angle-down" v-else></i>
                             </span>
                         </a>
                         <ul class="nav-second-level" v-if="productOpt">
@@ -28,7 +29,7 @@
                             <span>Logo Management</span>
                             <span>
                             <i v-if="!logoOption" class="menu-arrow"></i>
-                            <i v-else></i>
+                            <i class="fa fa-angle-down" v-else></i>
                             </span>
                         </a>
                         <ul class="nav-second-level" v-if="logoOption">
@@ -44,7 +45,7 @@
                             <span>Slider Image</span>
                             <span>
                             <i v-if="!sliderOption" class="menu-arrow"></i>
-                            <i v-else></i>
+                            <i v-else class="fa fa-angle-down"></i>
                             </span>
                         </a>
                         <ul class="nav-second-level" v-if="sliderOption">
@@ -57,12 +58,12 @@
                         </ul>
                     </li>
                     <li>
-                        <a style="cursor: pointer" @click="categoryOption = true">
+                        <a style="cursor: pointer ; font-size:15px" @click="categoryOption = true">
                             <i class="fe-shopping-cart"></i>
                             <span>Category Management</span>
                             <span>
                             <i v-if="!categoryOption" class="menu-arrow"></i>
-                            <i v-else></i>
+                            <i v-else class="fa fa-angle-down"></i>
                             </span>
                         </a>
                         <ul class="nav-second-level" v-if="categoryOption">
@@ -80,7 +81,7 @@
                             <span>Order Management</span>
                             <span>
                             <i v-if="!orderOption" class="menu-arrow"></i>
-                            <i v-else></i>
+                            <i v-else class="fa fa-angle-down"></i>
                             </span>
                         </a>
                         <ul class="nav-second-level" v-if="orderOption">
@@ -123,7 +124,7 @@
 </script>
 
 <style scoped lang="scss">
-  a {
+    a {
         color: #2c3e50;
         font-family: "Roboto", sans-serif;
         font-size: 14px;

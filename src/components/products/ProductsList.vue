@@ -28,8 +28,8 @@
                 </nav>
             </div>
             </div>
+            <edit-product :editProduct="edit"/>
         </div>
-        <edit-product ref="editProduct"/>
     </div>
 </template>
 <script>
@@ -44,14 +44,15 @@
         components: {CardTemplate, EditProduct, CardLoader},
         data() {
             return {
-                selectedProduct: Object
+                selectedProduct: Object,
+                edit:{}
             }
         },
         methods: {
             // manadatory function called from cardTemplate while onClick 'edit'
             editProduct(product) {
                 // this.will pass the product to the editProduct to bind with Product Object
-                this.$refs.editProduct.setProduct(product)
+                this.edit = product
             }
         },
         mounted() {

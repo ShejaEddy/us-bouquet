@@ -24,9 +24,9 @@
                     >{{category.productCategory}}
                     </option>
                 </select>
-                <input type="password" class="form-control" id="productCategroyDummy"
+                <input type="password" class="form-control" id="productCategoryDummy"
                        v-if="product.productCategory === 'Create New'" placeholder="Password"
-                       name="productCategroyDummy" v-model="product.productCategroyDummy">
+                       name="productCategoryDummy" v-model="product.productCategoryDummy">
             </div>
             <div class="form-group">
                 <label for="productSeller">Product Seller</label>
@@ -71,9 +71,8 @@
             </div>
             <br>
             <button type="submit" class="btn buttonGreen">Save changes</button>
+            <div class="lds-dual-ring" v-if="loading"></div>
         </form>
-
-        <div class="lds-dual-ring" v-if="loading"></div>
     </div>
 </template>
 <script>
@@ -86,7 +85,7 @@ export default {
   data () {
     return {
       errors: [],
-      productCategroyDummy: '',
+      productCategoryDummy: '',
       productSellerDummy: '',
       categories: [],
       sellers: [],
@@ -101,36 +100,36 @@ export default {
   },
   created () {
     this.loading = true
-    axios
-      .get(`${process.env.VUE_APP_BASE_URL}/products`)
-      .then(response => {
-        // getting all products and getting the uniq value for
-        // productCategory and returning the productCategory property only
-        this.categories = _.uniqBy(
-          _.map(response.data, function (object) {
-            return _.pick(object, ['productCategory'])
-          }),
-          'productCategory'
-        )
-        this.categories.push({ productCategory: 'Create New' })
-
-        // getting all products and getting the uniq value for
-        // productSeller and returning the productSeller property only
-        this.sellers = _.uniqBy(
-          _.map(response.data, function (object) {
-            return _.pick(object, ['productSeller'])
-          }),
-          'productSeller'
-        )
-
-        this.sellers.push({ productSeller: 'Create New' })
-
-        this.loading = false
-      })
-      .catch(error => {
-        console.log(error)
-        errorToaster('Error while fetching products', '')
-      })
+    // axios
+    //   .get(`${process.env.VUE_APP_BASE_URL}/products`)
+    //   .then(response => {
+    //     // getting all products and getting the uniq value for
+    //     // productCategory and returning the productCategory property only
+    //     this.categories = _.uniqBy(
+    //       _.map(response.data, function (object) {
+    //         return _.pick(object, ['productCategory'])
+    //       }),
+    //       'productCategory'
+    //     )
+    //     this.categories.push({ productCategory: 'Create New' })
+    //
+    //     // getting all products and getting the uniq value for
+    //     // productSeller and returning the productSeller property only
+    //     this.sellers = _.uniqBy(
+    //       _.map(response.data, function (object) {
+    //         return _.pick(object, ['productSeller'])
+    //       }),
+    //       'productSeller'
+    //     )
+    //
+    //     this.sellers.push({ productSeller: 'Create New' })
+    //
+    //     this.loading = false
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    //     errorToaster('Error while fetching products', '')
+    //   })
   }
 }
 </script>

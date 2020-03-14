@@ -11,6 +11,7 @@
                     </div>
                     <card-loader :loopCount="8" v-if="loading"/>
                     <products-list :products_list="product_duplicate" :loading="loading"/>
+                    <modal @reloadProduct="updateProducts()"/>
                 </div>
             </div>
         </div>
@@ -21,12 +22,18 @@
     import ProductsList from '@/components/products/ProductsList'
     import CardLoader from '@/components/shared/CardLoader'
     import ProductFilter from '@/components/products/filters/ProductFilter'
+    import modal from "@/components/shared/Modal"
     import axios from 'axios'
     import _ from 'lodash'
 
     export default {
         name: 'allProducts',
-        components: {ProductsList, CardLoader, ProductFilter},
+        components: {
+            ProductsList,
+            CardLoader,
+            ProductFilter,
+            modal
+        },
         data() {
             return {
                 categories: ['new products', 'best products', 'popular products'],
@@ -99,6 +106,9 @@
             }
         },
         methods: {
+            updateProducts(){
+                this.getAllProducts()
+            },
             getAllProducts: function () {
                 // this.loading = true;
                 // axios

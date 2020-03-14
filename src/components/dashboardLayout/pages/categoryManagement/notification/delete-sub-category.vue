@@ -5,7 +5,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" id="exampleModalLongTitle">Delete Sub-Category</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button style="outline: none" type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -14,7 +14,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" @click="deleteSub()">Delete</button>
+                    <button type="button" class="btn btn-primary" :data-dismiss="close" @click="deleteSub()">Delete
+                    </button>
                 </div>
             </div>
         </div>
@@ -23,19 +24,25 @@
 
 <script>
     import axios from "axios"
+
     export default {
         name: "delete-sub-category",
         props: ["del"],
+        data() {
+            return {
+                close: null
+            }
+        },
         methods: {
             deleteSub() {
                 // axios
-                    // .delete(`${process.env.VUE_APP_BASE_URL}/tags/` + this.del.id)
-                    // .then(response => {
-                        this.$emit("deleteTags")
-                    // })
-                    // .catch(error => {
-                    //     console.log(error)
-                    // })
+                // .delete(`${process.env.VUE_APP_BASE_URL}/tags/` + this.del.id)
+                // .then(response => {
+                //     this.close = "modal"
+                // })
+                // .catch(error => {
+                //     console.log(error)
+                // })
             }
         }
     }

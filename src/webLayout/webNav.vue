@@ -50,7 +50,7 @@
                 </ul>
                 <form class="form-inline my-2 my-lg-0" id="search-bar">
                     <div class="input-group">
-                        <input type="search" class="form-control" placeholder="search" aria-label="search"
+                        <input type="search" v-model="search" class="form-control" placeholder="search" aria-label="search"
                                aria-describedby="search-btn">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="search-btn"><i class="fas fa-search"></i></span>
@@ -71,7 +71,8 @@ export default {
   data () {
     return {
       cartValue: 0,
-      logo: '/assets/images/logo.jpg'
+      logo: '/assets/images/logo.jpg',
+        search:null
     }
   },
   computed: mapState(['cartProducts', 'loggedUser']),
@@ -98,6 +99,13 @@ export default {
       location.reload()
     }
   },
+   computed:{
+      // filteredProduct(){
+      //     if(this.search = !undefined){
+      //
+      //     }
+      // }
+   },
   created () {
     this.getLocalProducts()
 

@@ -14,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(VueAwesomeSwiper)
-
+Vue.use(bootstrapVue)
 Vue.config.productionTip = false
 
 router.beforeResolve((to, from, next) => {

@@ -7,7 +7,8 @@
                 </div>
                 <ul class="options">
                     <li><a href="javascript:;;" @click="navigateProductDetail(item)"><i class="fa fa-eye"></i></a></li>
-                    <li><a href="javascript:;;" @click="updateEditProduct(item, item.id)"><i class="fa fa-pen"></i></a>
+                    <li data-target="#editProduct" data-toggle="modal"><a href="javascript:;;" @click="createComment(item)"><i
+                            class="fa fa-pen"></i></a>
                     </li>
                     <li><a href="javascript:;;"><i class="fa fa-heart"></i></a></li>
                     <li><a href="javascript:;;" @click="addToCart(item)"><i class="fa fa-shopping-cart"></i></a></li>
@@ -21,50 +22,55 @@
                     </span>
                 </div>
             </div>
+            <modal :comment="productComment"/>
+            <edit-product :editProduct="productComment"/>
         </div>
     </div>
 </template>
 
 <script>
-import { mapState, mapActions, mapMutations } from 'vuex'
-import { infoToaster, successToaster } from './service/ErrorHandler'
-import _ from 'lodash'
+    import {mapState, mapActions, mapMutations} from 'vuex'
+    import {infoToaster, successToaster} from './service/ErrorHandler'
+    import editProduct from "../products/actions/EditProduct"
+    import modal from "./Modal"
+    import _ from 'lodash'
 
-export default {
-  name: 'cardTemplate',
-  props: ['item'],
-  data () {
-    return {
-      showModal: false
+    export default {
+        name: 'cardTemplate',
+        props: ['item'],
+        components: {editProduct, modal},
+        data() {
+            return {
+                showModal: false,
+                productComment: null
+            }
+        },
+        computed: mapState(['loggedUser']),
+        methods: {
+            navigateProductDetail(product) {
+                this.$router.push({
+                    name: 'productDetails',
+                    params: {id: '193878-38936-39878'}
+                })
+            },
+            ...mapMutations(['ADD_CART_LOCAL']),
+            addToCart(product) {
+                const data = _.find(this.$store.getters.cartProducts, product)
+                if (data) {
+                    infoToaster('Already Added', 'Product Already Added')
+                } else {
+                    successToaster('Added Successfully', 'Product Added Successfully')
+                    this.ADD_CART_LOCAL(product)
+                }
+            },
+            // this will trigger the parentComponent function
+            createComment(item) {
+                this.productComment = item
+            }
+        },
+        mounted() {
+        }
     }
-  },
-  components: {},
-  computed: mapState(['loggedUser']),
-  methods: {
-    navigateProductDetail (product) {
-      this.$router.push({
-        name: 'productDetails',
-        params: { id: '193878-38936-39878' }
-      })
-    },
-    ...mapMutations(['ADD_CART_LOCAL']),
-    addToCart (product) {
-      const data = _.find(this.$store.getters.cartProducts, product)
-      if (data) {
-        infoToaster('Already Added', 'Product Already Added')
-      } else {
-        successToaster('Added Successfully', 'Product Added Successfully')
-        this.ADD_CART_LOCAL(product)
-      }
-    },
-    // this will trigger the parentComponent function
-    updateEditProduct (product, id) {
-      this.$parent.editProduct(product)
-    }
-  },
-  mounted () {
-  }
-}
 </script>
 <style lang="scss" scoped>
     #img-card {

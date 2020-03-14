@@ -4,7 +4,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" >Delete Order</h4>
+                    <h4 class="modal-title">Delete Order</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -14,7 +14,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" @click="deleteOrder()">Delete</button>
+                    <button type="button" class="btn btn-primary" :data-dismiss="close" @click="deleteOrder()">Delete
+                    </button>
                 </div>
             </div>
         </div>
@@ -23,19 +24,26 @@
 
 <script>
     import axios from "axios"
+
     export default {
         name: "delete-order",
-        props:["del"],
-        methods:{
-            deleteOrder(){
-                axios
-                .post(`${process.env.APP__VUE_BASE_URL}/orders`+this.del.id)
-                .then(response =>{
-                    this.$emit('deletedOrder')
-                })
-                .catch(error => {
-                    console.log(error)
-                })
+        props: ["del"],
+        data() {
+            return {
+                close: null
+            }
+        },
+        methods: {
+            deleteOrder() {
+                // axios
+                // .post(`${process.env.APP__VUE_BASE_URL}/orders`+this.del.id)
+                // .then(response =>{
+                //     this.$emit('deletedOrder')
+                //     this.close = "modal"
+                // })
+                // .catch(error => {
+                //     console.log(error)
+                // })
             }
         }
     }

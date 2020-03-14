@@ -32,104 +32,104 @@
 </template>
 
 <script>
-import axios from 'axios'
-import { errorToaster } from '../shared/service/ErrorHandler'
-import CardLoader from '../shared/CardLoader'
-import CardTemplate from '../shared/CardTemplate'
-import EditProduct from './actions/EditProduct'
+    import axios from 'axios'
+    import {errorToaster} from '../shared/service/ErrorHandler'
+    import CardLoader from '../shared/CardLoader'
+    import CardTemplate from '../shared/CardTemplate'
+    import EditProduct from './actions/EditProduct'
 
-export default {
-  name: 'BestProducts',
-  components: { CardLoader, CardTemplate, EditProduct },
-  data () {
-    return {
-      FeaturedProducts: [
-        {
-          image: '/img/1.jpg',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          name: 'Kamambiri',
-          price: '100$',
-          offerPrice: '80$'
+    export default {
+        name: 'BestProducts',
+        components: {CardLoader, CardTemplate, EditProduct},
+        data() {
+            return {
+                FeaturedProducts: [
+                    {
+                        image: '/img/1.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Kamambiri',
+                        price: '100$',
+                        offerPrice: '80$'
+                    },
+                    {
+                        image: '/img/2.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Sandal',
+                        price: '600$',
+                        offerPrice: '500$'
+                    },
+                    {
+                        image: '/img/3.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Umoja',
+                        price: '400$',
+                        offerPrice: '350$'
+                    },
+                    {
+                        image: '/img/tsapa10.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Slippers',
+                        price: '150$',
+                        offerPrice: '100$'
+                    },
+                    {
+                        image: '/img/3.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Ketch',
+                        price: '300$',
+                        offerPrice: '200$'
+                    },
+                    {
+                        image: '/img/1.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Style',
+                        price: '50$',
+                        offerPrice: '40$'
+                    },
+                    {
+                        image: '/img/tsapal7.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Rugabire',
+                        price: '20$',
+                        offerPrice: '10$'
+                    },
+                    {
+                        image: '/img/tsapal6.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Masayi',
+                        price: '90$',
+                        offerPrice: '60$'
+                    }
+                ],
+                loading: false,
+            }
         },
-        {
-          image: '/img/2.jpg',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          name: 'Sandal',
-          price: '600$',
-          offerPrice: '500$'
+        methods: {
+            editProduct(product) {
+                this.$refs.editProduct.setProduct(product)
+            },
+
+            getFeaturedProducts() {
+                // this.loading = true;
+                // axios
+                //   .get(`${process.env.VUE_APP_BASE_URL}/best/products`)
+                //   .then(response => {
+                //     this.loading = false;
+                //     this.FeaturedProducts = response.data;
+                //   })
+                //   .catch(error => {
+                //     console.log(error);
+                //     errorToaster(
+                //       "The server encountered an unexpected condition.",
+                //       "Internal Error 500"
+                //     );
+                //   });
+            }
         },
-        {
-          image: '/img/3.jpg',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          name: 'Umoja',
-          price: '400$',
-          offerPrice: '350$'
-        },
-        {
-          image: '/img/tsapa10.jpg',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          name: 'Slippers',
-          price: '150$',
-          offerPrice: '100$'
-        },
-        {
-          image: '/img/3.jpg',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          name: 'Ketch',
-          price: '300$',
-          offerPrice: '200$'
-        },
-        {
-          image: '/img/1.jpg',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          name: 'Style',
-          price: '50$',
-          offerPrice: '40$'
-        },
-        {
-          image: '/img/tsapal7.jpg',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          name: 'Rugabire',
-          price: '20$',
-          offerPrice: '10$'
-        },
-        {
-          image: '/img/tsapal6.jpg',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          name: 'Masayi',
-          price: '90$',
-          offerPrice: '60$'
+        created() {
+            this.getFeaturedProducts()
         }
-      ],
-      loading: false
     }
-  },
-  methods: {
-    editProduct (product) {
-      this.$refs.editProduct.setProduct(product)
-    },
-
-    getFeaturedProducts () {
-      // this.loading = true;
-      // axios
-      //   .get(`${process.env.VUE_APP_BASE_URL}/best/products`)
-      //   .then(response => {
-      //     this.loading = false;
-      //     this.FeaturedProducts = response.data;
-      //   })
-      //   .catch(error => {
-      //     console.log(error);
-      //     errorToaster(
-      //       "The server encountered an unexpected condition.",
-      //       "Internal Error 500"
-      //     );
-      //   });
-    }
-  },
-  created () {
-    this.getFeaturedProducts()
-  }
-}
 </script>
 
 <style lang="scss">
