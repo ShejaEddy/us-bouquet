@@ -63,7 +63,7 @@
                     <div class="priceoff p-1 text-center">
                         <i class="fas fa-handshake"></i>
                         <div class="title">
-                            <p>U.S Bouquet Price <span>50%</span> OFF</p>
+                            <p>S.U Bouquets Price <span>50%</span> OFF</p>
                             <p class="shop-now">
                                 SHOP NOW
                                 <i

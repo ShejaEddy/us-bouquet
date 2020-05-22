@@ -62,7 +62,7 @@
             <form>
             <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
             <address>
-                <strong>S.U Bouquet, Inc.</strong><br>
+                <strong>S.U Bouquets, Inc.</strong><br>
                 Rwanda, Kigali<br>
                 Remera, Kabuga<br>
                 <b title="Phone">

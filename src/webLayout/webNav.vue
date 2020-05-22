@@ -23,7 +23,7 @@
         <div class="mid-nav row">
             <div class="col-md-3 d-flex align-items-start pl-5">
                 <!-- <span class="logo-header"></span> -->
-                <span class="c-default mr-2 h3">U.S</span> <span class="text-info h4 mt-1">BOUQUET</span></div>
+                <span class="c-default mr-2 h3">S.U</span> <span class="text-info h4 mt-1">BOUQUETS</span></div>
             <div class="col-md-3 d-flex text-muted align-items-center f-13"><i class="fa fa-cannabis mb-3 mr-2"></i><div class=""><p class="font-weight-bold m-0">FULL SERVICES FLORIST</p>
             <p>Wedding are our passion</p></div></div>
             <div class="col-md-3 d-flex text-muted align-items-center f-13"><i class="fa fa-clock mb-3 mr-2"></i><div class=""><p class="font-weight-bold m-0">DELIVERY</p>

@@ -9,7 +9,7 @@
                         <p>We are an award-winning creative agency, dedicated to the best result in the designing of
                             flowers, manufacturing of pots and marketing.</p>
                         <p class="rights"><span>©  </span><span
-                                class="copyright-year">2020</span><span> </span><span>Tsapal</span><span>. </span><span>All Rights Reserved.</span>
+                                class="copyright-year">2020</span><span> </span><span>S.U - Bouquets</span><span>. </span><span>All Rights Reserved.</span>
                         </p>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                     </dl>
                     <dl class="contact-list">
                         <dt>email:</dt>
-                        <dd><a href="mailto:#">Usbouquet@gmail.com</a></dd>
+                        <dd><a href="mailto:#">subouquet@gmail.com</a></dd>
                     </dl>
                     <dl class="contact-list">
                         <dt>phones:</dt>
