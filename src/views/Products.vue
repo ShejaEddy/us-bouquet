@@ -1,6 +1,6 @@
 <template>
     <div class="products mb-2">
-        <div class="row mr-auto">
+        <div class="row mr-auto px-3">
             <div class="col-md-3 order-md-1 mb-4">
                 <product-filter :categories="categories" :price="price"/>
             </div>
@@ -36,70 +36,66 @@
         },
         data() {
             return {
-                categories: ['new products', 'best products', 'popular products'],
-                price: ['High', 'low'],
+                categories: ['Office flower', 'Wedding flower', 'Funeral flower', 'Birthday flower', 'Valentine\'s day flower'],
+                price: ['High', 'medium', 'low'],
                 fabric: ['tissue', 'hard', 'leather'],
                 products_list: [],
                 product_duplicate: [
                     {
-                        image: '/img/tsapal5.jpg',
-                        description:
-                            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Kamambiri',
-                        price: '150$',
-                        stock: '23',
-                        tags: 'Men',
-                        categories: 'shoe-set'
+                        image: '/img/1.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Floeur de lotus',
+                        price: '100$',
+                        offerPrice: '80$'
                     },
                     {
                         image: '/img/2.jpg',
-                        description:
-                            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Sandal',
-                        price: '300$',
-                        stock: '10',
-                        tags: 'Women',
-                        categories: 'T-Shirt'
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Wonder wild',
+                        price: '600$',
+                        offerPrice: '500$'
                     },
                     {
-                        image: '/img/tsapal8.jpg',
-                        description:
-                            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Umoja',
+                        image: '/img/3.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Valentine \'s beauty',
                         price: '400$',
-                        stock: '30',
-                        tags: 'Women',
-                        categories: 'shoe-set'
+                        offerPrice: '350$'
                     },
                     {
-                        image: '/img/shoe-bg.jpg',
-                        description:
-                            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Slippers',
+                        image: '/img/10.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'The grail of love',
                         price: '150$',
-                        stock: '15',
-                        tags: 'Men',
-                        categories: 'shoe-set'
+                        offerPrice: '100$'
                     },
                     {
-                        image: '/img/tsapal3.jpg',
-                        description:
-                            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Ketch',
+                        image: '/img/3.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Spray of the sun',
                         price: '300$',
-                        stock: '50',
-                        tags: 'Kids',
-                        categories: 'Open-shoe'
+                        offerPrice: '200$'
                     },
                     {
                         image: '/img/1.jpg',
-                        description:
-                            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Style',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Stylish flowers',
                         price: '50$',
-                        stock: '23',
-                        tags: 'Men',
-                        categories: 'close-shoe'
+                        offerPrice: '40$'
+                    },
+                    {
+                        image: '/img/7.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'New reality',
+                        price: '20$',
+                        offerPrice: '10$'
+                    },
+                    {
+                        image: '/img/6.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Windof love',
+                        price: '90$',
+                        offerPrice: '60$'
                     }
                 ],
                 loading: false
@@ -161,15 +157,15 @@
         created() {
             this.getAllProducts()
         }
-    }
+    };
 </script>
 
 <style lang="scss">
+    $mainColor: #e7257c;
     .products {
         margin-top: 40px;
         .list-2 {
             background-color: white;
-            border: 1px solid gainsboro;
         }
     }
 
@@ -177,13 +173,13 @@
         padding: 1em;
 
         .feat {
-            border: 1px solid gainsboro;
+            border: 1px solid $mainColor;
             height: 30px;
             padding-top: 2px;
 
             .txt-ft {
                 font-weight: bold;
-                color: #aba8a8;
+                color: $mainColor;
                 font-family: "roboto";
                 font-size: 18px;
                 float: left;

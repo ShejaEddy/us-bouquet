@@ -1,12 +1,12 @@
 <template>
-    <div class="featured-products container">
-        <div class="row">
+    <div class="featured-products">
+        <div class="row justify-content-around">
             <card-loader :loopCount="4" v-if="loading"/>
-            <div class="col-md-3" v-for="(item, index) in FeaturedProducts" :key="index">
+            <div class="d-inline mx-1" v-for="(item, index) in FeaturedProducts" :key="index">
                 <card-template :item="item" width="100%"/>
             </div>
             <div class="text-lg-right">
-                <div class="col-12 ">
+                <div class="col-md-12">
                     <nav aria-label="...">
                         <ul class="pagination">
                             <li class="page-item disabled">
@@ -47,56 +47,56 @@
                     {
                         image: '/img/1.jpg',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Kamambiri',
+                        name: 'Floeur de lotus',
                         price: '100$',
                         offerPrice: '80$'
                     },
                     {
                         image: '/img/2.jpg',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Sandal',
+                        name: 'Wonder wild',
                         price: '600$',
                         offerPrice: '500$'
                     },
                     {
                         image: '/img/3.jpg',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Umoja',
+                        name: 'Valentine \'s beauty',
                         price: '400$',
                         offerPrice: '350$'
                     },
                     {
-                        image: '/img/tsapa10.jpg',
+                        image: '/img/10.jpg',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Slippers',
+                        name: 'The grail of love',
                         price: '150$',
                         offerPrice: '100$'
                     },
                     {
                         image: '/img/3.jpg',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Ketch',
+                        name: 'Spray of the sun',
                         price: '300$',
                         offerPrice: '200$'
                     },
                     {
                         image: '/img/1.jpg',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Style',
+                        name: 'Stylish flowers',
                         price: '50$',
                         offerPrice: '40$'
                     },
                     {
-                        image: '/img/tsapal7.jpg',
+                        image: '/img/7.jpg',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Rugabire',
+                        name: 'New reality',
                         price: '20$',
                         offerPrice: '10$'
                     },
                     {
-                        image: '/img/tsapal6.jpg',
+                        image: '/img/6.jpg',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-                        name: 'Masayi',
+                        name: 'Windof love',
                         price: '90$',
                         offerPrice: '60$'
                     }

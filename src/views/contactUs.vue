@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                        <button type="submit" class="btn text-white bg-default pull-right" id="btnContactUs">
                             Send Message</button>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
             <form>
             <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
             <address>
-                <strong>Tsapal, Inc.</strong><br>
+                <strong>S.U Bouquet, Inc.</strong><br>
                 Rwanda, Kigali<br>
                 Remera, Kabuga<br>
                 <b title="Phone">
@@ -71,7 +71,7 @@
             </address>
             <address>
                 <strong>Email</strong><br>
-                <a href="mailto:#">tsapal@gmail.com</a>
+                <a href="mailto:#" class="c-default">subouquet@gmail.com</a>
             </address>
             </form>
         </div>
@@ -94,5 +94,11 @@
 }
 .h3 small {
 	font-size: 20px;
+}
+.c-default {
+    color: #e7257c !important;
+}
+.bg-default {
+    background-color: #e7257c !important;
 }
 </style>

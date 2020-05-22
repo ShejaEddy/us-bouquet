@@ -17,19 +17,41 @@
                                 data-target="#carouselExampleIndicators"
                                 data-slide-to="1"
                         ></li>
+                        <li
+                                data-target="#carouselExampleIndicators"
+                                data-slide-to="2"
+                        ></li>
+                        <li
+                                data-target="#carouselExampleIndicators"
+                                data-slide-to="3"
+                        ></li>
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img
                                     class="d-block w-100 img-fluid sld"
-                                    src="/img/package.jpg"
+                                    src="/img/4.jpg"
                                     alt="First sld"
                             />
                         </div>
                         <div class="carousel-item">
                             <img
                                     class="d-block w-100 img-fluid sld"
-                                    src="/img/tsapal7.jpg"
+                                    src="/img/14.jpg"
+                                    alt="First sld"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                    class="d-block w-100 img-fluid sld"
+                                    src="/img/15.jpg"
+                                    alt="First sld"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                    class="d-block w-100 img-fluid sld"
+                                    src="/img/19.jpg"
                                     alt="First sld"
                             />
                         </div>
@@ -38,10 +60,10 @@
             </div>
             <div class="col-md-3 order-md-2 part-1">
                 <div class="addons">
-                    <div class="priceoff">
+                    <div class="priceoff p-1 text-center">
                         <i class="fas fa-handshake"></i>
                         <div class="title">
-                            <p>Tsapal Price <span>50%</span> OFF</p>
+                            <p>U.S Bouquet Price <span>50%</span> OFF</p>
                             <p class="shop-now">
                                 SHOP NOW
                                 <i
@@ -55,11 +77,11 @@
                         <p class="count-down">Expires in 3:42:56</p>
                         <div class="parts">
                             <div class="one">
-                                <p>MASAYI</p>
+                                <p>Lotus</p>
                                 <p>Extra 33% OFF</p>
                             </div>
                             <div class="two">
-                                <img src="/img/4.jpg"/>
+                                <img src="/img/11.jpg"/>
                             </div>
                         </div>
                         <p class="shop-now">
@@ -102,7 +124,7 @@ export default {
       fabric: ['tissue', 'hard', 'leather']
     }
   }
-}
+};
 </script>
 <style lang="scss">
     @import "../assets/style/home.scss";

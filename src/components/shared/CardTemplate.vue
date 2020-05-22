@@ -70,11 +70,13 @@
         },
         mounted() {
         }
-    }
+    };
 </script>
 <style lang="scss" scoped>
+    $mainColor: #e7257c;
     #img-card {
         height: 290px;
+        min-width: 250px;
     }
 
     .productName {
@@ -85,14 +87,14 @@
 
     .product-offer-price {
         font-size: 0.8em;
-        color: #007bff;
+        color: $mainColor;
         font-family: "Roboto", sans-serif;
         font-weight: bold;
     }
 
     .product-actual-price {
         font-size: 0.8em;
-        color: red;
+        color: $mainColor;
         font-family: "Roboto", sans-serif;
         font-weight: 500;
         margin-right: 1rem

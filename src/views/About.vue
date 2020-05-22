@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="aboutus-banner">
-                        <img src="/img/4.jpg" class="w-100" alt="">
+                        <img src="/img/su-logo.jpg" class="w-100" alt="">
                     </div>
                 </div>
                 <div class="col-md-5 col-sm-6 col-xs-12">
@@ -71,7 +71,7 @@
     color: #000;
 }
 .aboutus-title::after {
-    background: #fdb801 none repeat scroll 0 0;
+    background: #e7257c none repeat scroll 0 0;
     bottom: 0;
     content: "";
     height: 2px;
@@ -92,9 +92,9 @@ a:hover, a:active {
     outline: 0;
 }
 .aboutus-more {
-    border: 1px solid #fdb801;
+    border: 1px solid #e7257c;
     border-radius: 25px;
-    color: #fdb801;
+    color: #e7257c;
     display: inline-block;
     font-size: 14px;
     font-weight: 700;
@@ -109,7 +109,7 @@ a:hover, a:active {
     width: 18%;
 }
 .feature .feature-box .iconset::after {
-    background: #fdb801 none repeat scroll 0 0;
+    background: #e7257c none repeat scroll 0 0;
     content: "";
     height: 150%;
     left: 43%;
@@ -147,9 +147,9 @@ a:hover, a:active {
     color : #f4b841;
     padding:0px;
     font-size:40px;
-    border: 1px solid #fdb801;
+    border: 1px solid #e7257c;
     border-radius: 100px;
-    color: #fdb801;
+    color: #e7257c;
     font-size: 28px;
     height: 70px;
     line-height: 70px;

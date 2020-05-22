@@ -1,14 +1,14 @@
 <template>
     <div class="products">
-        <div class="row">
-            <div class="col-md-4"
+        <div class="row justify-content-around">
+            <div class="d-inline mx-1"
                  v-for="(item, index) in products_list"
                  :key="index">
                 <card-template :item="item"/>
             </div>
             <card-loader :loopCount="8" v-if="loading"/>
             <div class="text-lg-right">
-            <div class="col-12 ">
+            <div class="col-md-12">
                 <nav aria-label="...">
                     <ul class="pagination">
                         <li class="page-item disabled">
@@ -57,7 +57,7 @@
         },
         mounted() {
         }
-    }
+    };
 </script>
 
 <style>

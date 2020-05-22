@@ -1,27 +1,37 @@
 <template>
-    <main class="main">
-        <div class="top-nav navbar navbar-expand-lg">
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
+    <main class="main ">
+        <div class="top-nav bg-white border-bottom navbar mb-3 justify-content-end">
+            <div>
+                <ul class="m-0 d-flex align-items-center">
                     <li class="nav-item auth" @click="$router.push('/login')">
                         <i class="fas fa-lock"></i>&nbsp; <span>Login</span> or
                         <i class="fas fa-sign-in-alt"></i>&nbsp; <span>Register</span>
                     </li>
-                    <li class="nav-item auth" @click="$router.push('/Me')">
+                    <!-- <li class="nav-item auth" @click="$router.push('/Me')">
                         <i class="fas fa-user-circle"></i>&nbsp; <span>MyAccount</span>
-                    </li>
+                    </li> -->
                     <li class="nav-item auth" @click="loc_logout">
                         <i class="fas fa-sign-in-alt"></i>&nbsp; <span>Logout</span>
                     </li>
-                    <li class="nav-item" @click="$router.push('/cart')">
+                    <!-- <li class="nav-item" @click="$router.push('/cart')">
                         <i class="fas fa-cart-plus mt-1 " style="font-size:20px;"></i>&nbsp; <span
                             class="badge badge-primary" style="position: absolute;right: 8px;">{{this.$store.getters.cartProducts.length}}</span>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
+        <div class="mid-nav row">
+            <div class="col-md-3 d-flex align-items-start pl-5">
+                <!-- <span class="logo-header"></span> -->
+                <span class="c-default mr-2 h3">U.S</span> <span class="text-info h4 mt-1">BOUQUET</span></div>
+            <div class="col-md-3 d-flex text-muted align-items-center f-13"><i class="fa fa-cannabis mb-3 mr-2"></i><div class=""><p class="font-weight-bold m-0">FULL SERVICES FLORIST</p>
+            <p>Wedding are our passion</p></div></div>
+            <div class="col-md-3 d-flex text-muted align-items-center f-13"><i class="fa fa-clock mb-3 mr-2"></i><div class=""><p class="font-weight-bold m-0">DELIVERY</p>
+            <p>In-town and Out of town</p></div></div>
+            <div class="col-md-3 d-flex text-muted align-items-center f-13"><i class="fa fa-cart-arrow-down c-default mb-3 mr-2"></i><div class=""><p class="font-weight-bold m-0">SHOPPING CART</p>
+            <p>{{this.$store.getters.cartProducts.length}} item(s)-<span class="c-default">$0.00</span></p></div></div>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-light" id="nav">
-            <span class="brand mr-3"><img :src="logo" style="width:100%;"></span>
             <button
                     class="navbar-toggler"
                     type="button"
@@ -39,7 +49,16 @@
                         <router-link to="/" class="nav-link">Home</router-link>
                     </li>
                     <li class="nav-item active">
-                        <router-link to="/products" class="nav-link">Products</router-link>
+                        <router-link to="/products" class="nav-link">Office Flowers</router-link>
+                    </li>
+                    <li class="nav-item active">
+                        <router-link to="/products" class="nav-link">Wedding Flowers</router-link>
+                    </li>
+                    <li class="nav-item active">
+                        <router-link to="/products" class="nav-link">Birthday Flowers</router-link>
+                    </li>
+                    <li class="nav-item active">
+                        <router-link to="/products" class="nav-link">Funeral Flowers</router-link>
                     </li>
                     <li class="nav-item active">
                         <router-link to="/about" class="nav-link">About</router-link>
@@ -47,16 +66,19 @@
                     <li class="nav-item active">
                         <router-link to="/ContactUs" class="nav-link">Contact</router-link>
                     </li>
+                    <li>
+                        <form class="form-inline my-2 my-lg-0" id="search-bar">
+                            <div class="input-group">
+                                <input type="search" v-model="search" class="form-control" placeholder="search" aria-label="search"
+                                    aria-describedby="search-btn">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="search-btn"><i class="fas fa-search"></i></span>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0" id="search-bar">
-                    <div class="input-group">
-                        <input type="search" v-model="search" class="form-control" placeholder="search" aria-label="search"
-                               aria-describedby="search-btn">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="search-btn"><i class="fas fa-search"></i></span>
-                        </div>
-                    </div>
-                </form>
+                
 
             </div>
         </nav>

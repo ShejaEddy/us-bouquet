@@ -4,10 +4,10 @@
             <div class="row row-30">
                 <div class="col-md-4 col-xl-5">
                     <div class="pr-xl-4"><a class="brand" href="#"><img class="brand-logo-light"
-                                                                                 src="/assets/images/logo-light.png"
+                                                                                 src="/img/su-logo.jpg"
                                                                                  alt="" width="82" height="70"></a>
                         <p>We are an award-winning creative agency, dedicated to the best result in the designing of
-                            shoes, manufacturing of shoes and marketing.</p>
+                            flowers, manufacturing of pots and marketing.</p>
                         <p class="rights"><span>©  </span><span
                                 class="copyright-year">2020</span><span> </span><span>Tsapal</span><span>. </span><span>All Rights Reserved.</span>
                         </p>
@@ -21,11 +21,11 @@
                     </dl>
                     <dl class="contact-list">
                         <dt>email:</dt>
-                        <dd><a href="mailto:#">Tsapal@gmail.com</a></dd>
+                        <dd><a href="mailto:#">Usbouquet@gmail.com</a></dd>
                     </dl>
                     <dl class="contact-list">
                         <dt>phones:</dt>
-                        <dd><a href="tel:#">0784141587 </a> <span> or </span> <a href="tel:#"> 078537573</a>
+                        <dd><a href="tel:#">0784141587 </a> <span> or </span> <a href="tel:#"> 0785375738</a>
                         </dd>
                     </dl>
                 </div>
@@ -65,7 +65,7 @@
 <script>
 export default{
   name: 'web-footer'
-}
+};
 
 </script>
 <style lang="scss">

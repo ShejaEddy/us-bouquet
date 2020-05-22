@@ -1,8 +1,8 @@
 <template>
     <div class="create-account">
         <form class="form-signup" @submit.prevent="createAccount">
-            <img class="mb-4" src="../assets/create-account.svg" alt width="72" height="72">
-            <h1 class="h3 mb-3 font-weight-normal">Create an account</h1>
+            <img class="mb-4 mx-auto d-flex" src="../assets/create-account.svg" alt width="72" height="72">
+            <h1 class="h3 mb-3 text-center font-weight-normal">Create an account</h1>
             <div
                     class="alert alert-danger"
                     role="alert"
@@ -92,7 +92,7 @@
                     <div class="invalid-feedback">Valid password  is required.</div>
                 </div>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">
+            <button class="btn btn-lg bg-default text-white btn-block" type="submit">
                 <i class="fa fa-spinner fa-spin mr-1" v-if="showLoader"></i>Sign Up
             </button>
         </form>
@@ -160,7 +160,7 @@ export default {
       return false
     }
   }
-}
+};
 </script>
 
 <style>

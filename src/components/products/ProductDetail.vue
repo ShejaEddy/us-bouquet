@@ -1,57 +1,55 @@
 <template>
     <div class="product-details">
         <div class="container">
-            <div class="card">
-                <div class="container-fluid">
-                    <div class="wrapper row">
-                        <div class="preview col-md-6">
-                            <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1"><img :src="product.image"/></div>
-                                <div class="tab-pane" id="pic-2"><img src="/img/2.jpg"/></div>
-                                <div class="tab-pane" id="pic-3"><img src="/img/3.jpg"/></div>
-                                <div class="tab-pane" id="pic-4"><img src="/img/4.jpg"/></div>
-                                <div class="tab-pane" id="pic-5"><img src="/img/2.jpg"/></div>
-                            </div>
-                            <ul class="preview-thumbnail nav nav-tabs">
-                                <li class="active"><a data-target="#pic-1" data-toggle="tab"><img
-                                        :src="product.image"/></a></li>
-                                <li><a data-target="#pic-2" data-toggle="tab"><img src="/img/2.jpg"/></a></li>
-                                <li><a data-target="#pic-3" data-toggle="tab"><img src="/img/3.jpg"/></a></li>
-                                <li><a data-target="#pic-4" data-toggle="tab"><img src="/img/4.jpg"/></a></li>
-                                <li><a data-target="#pic-5" data-toggle="tab"><img src="/img/2.jpg"/></a></li>
-                            </ul>
+            <div class="container-fluid">
+                <div class="wrapper row">
+                    <div class="preview col-md-6">
+                        <div class="preview-pic tab-content">
+                            <div class="tab-pane active" id="pic-1"><img :src="product.image"/></div>
+                            <div class="tab-pane" id="pic-2"><img src="/img/16.jpg"/></div>
+                            <div class="tab-pane" id="pic-3"><img src="/img/18.jpg"/></div>
+                            <div class="tab-pane" id="pic-4"><img src="/img/19.jpg"/></div>
+                            <div class="tab-pane" id="pic-5"><img src="/img/12.jpg"/></div>
                         </div>
-                        <div class="details col-md-6">
-                            <h3 class="product-title">{{product.name}}</h3>
-                            <div class="rating">
-                                <div class="stars">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <span class="review-no">41 reviews</span>
+                        <ul class="preview-thumbnail nav nav-tabs">
+                            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img
+                                    :src="product.image"/></a></li>
+                            <li><a data-target="#pic-2" data-toggle="tab"><img src="/img/16.jpg"/></a></li>
+                            <li><a data-target="#pic-3" data-toggle="tab"><img src="/img/18.jpg"/></a></li>
+                            <li><a data-target="#pic-4" data-toggle="tab"><img src="/img/19.jpg"/></a></li>
+                            <li><a data-target="#pic-5" data-toggle="tab"><img src="/img/12.jpg"/></a></li>
+                        </ul>
+                    </div>
+                    <div class="details col-md-6">
+                        <h3 class="product-title">{{product.name}}</h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
                             </div>
-                            <p class="product-description">{{product.description}}</p>
-                            <h4 class="price">current price: <span>{{product.price}}</span></h4>
-                            <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87
-                                votes)</strong></p>
-                            <h6 class="sizes">sizes:
-                                <span class="size" data-toggle="tooltip" title="small">38</span>
-                            </h6>
-                            <h5 class="colors">colors:
-                                <span class="color orange not-available" data-toggle="tooltip"
-                                      title="Not In store"></span>
-                                <span class="color green"></span>
-                                <span class="color blue"></span>
-                            </h5>
-                            <div class="action">
-                                <button class="add-to-cart btn btn-primary mr-1" type="button">add to cart <i
-                                        class="fas fa-cart-plus"></i></button>
-                                <button class="like btn btn-primary" type="button"><span class="fa fa-heart"></span>
-                                </button>
-                            </div>
+                            <span class="review-no">41 reviews</span>
+                        </div>
+                        <p class="product-description">{{product.description}}</p>
+                        <h4 class="price">current price: <span>{{product.price}}</span></h4>
+                        <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87
+                            votes)</strong></p>
+                        <h6 class="sizes">sizes:
+                            <span class="size" data-toggle="tooltip" title="small">38</span>
+                        </h6>
+                        <h5 class="colors">colors:
+                            <span class="color orange not-available" data-toggle="tooltip"
+                                  title="Not In store"></span>
+                            <span class="color green"></span>
+                            <span class="color blue"></span>
+                        </h5>
+                        <div class="action">
+                            <button class="add-to-cart btn mr-1 bg-default" type="button">add to cart <i
+                                    class="fas fa-cart-plus"></i></button>
+                            <button class="like btn bg-default" type="button"><span class="fa fa-heart"></span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -63,8 +61,8 @@
             </div>
             <card-loader :loopCount="4" v-if="loading"/>
         </div>
-        <div class="row p-3">
-            <div class="col-md-3 mt-3" v-for="(item, index) in similarProduct" :key="index">
+        <div class="row p-3 justify-content-around">
+            <div class="d-inline mx-1 mt-3" v-for="(item, index) in similarProduct" :key="index">
                 <card-template :item="item"/>
             </div>
         </div>
@@ -86,60 +84,68 @@ export default {
       product: {
         image: '/img/2.jpg',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-        name: 'Slippers',
+        name: 'Floeur de lotus',
         price: '150$'
       },
       loading: false,
       similarProduct: [
-        {
-          image: '/img/1.jpg',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          name: 'Kamambiri',
-          price: '100$',
-          stock: '12',
-          offerPrice: '80$'
-        },
-        {
-          image: '/img/2.jpg',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          name: 'Sandal',
-          price: '600$',
-          stock: '12',
-          offerPrice: '500$'
-        },
-        {
-          image: '/img/3.jpg',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          name: 'Umoja',
-          price: '400$',
-          stock: '12',
-          offerPrice: '300$'
-        },
-        {
-          image: '/img/shoe-bg.jpg',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          name: 'Slippers',
-          price: '150$',
-          stock: '12',
-          offerPrice: '100$'
-        },
-        {
-          image: '/img/3.jpg',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          name: 'Ketch',
-          price: '300$',
-          stock: '12',
-          offerPrice: '250$'
-        },
-        {
-          image: '/img/1.jpg',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
-          name: 'Style',
-          price: '50$',
-          stock: '12',
-          offerPrice: '45$'
-        }
-      ]
+                    {
+                        image: '/img/1.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Floeur de lotus',
+                        price: '100$',
+                        offerPrice: '80$'
+                    },
+                    {
+                        image: '/img/2.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Wonder wild',
+                        price: '600$',
+                        offerPrice: '500$'
+                    },
+                    {
+                        image: '/img/3.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Valentine \'s beauty',
+                        price: '400$',
+                        offerPrice: '350$'
+                    },
+                    {
+                        image: '/img/10.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'The grail of love',
+                        price: '150$',
+                        offerPrice: '100$'
+                    },
+                    {
+                        image: '/img/3.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Spray of the sun',
+                        price: '300$',
+                        offerPrice: '200$'
+                    },
+                    {
+                        image: '/img/1.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Stylish flowers',
+                        price: '50$',
+                        offerPrice: '40$'
+                    },
+                    {
+                        image: '/img/7.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'New reality',
+                        price: '20$',
+                        offerPrice: '10$'
+                    },
+                    {
+                        image: '/img/6.jpg',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo velit blanditiis voluptate doloremque nihil fuga.',
+                        name: 'Wind of love',
+                        price: '90$',
+                        offerPrice: '60$'
+                    }
+                ]
     }
   },
   methods: {
@@ -189,21 +195,22 @@ export default {
     //         errorToaster("Error while fetching similar products", "");
     //     });
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
+    $mainColor: #e7257c;
     .ft-container {
         padding: 1em;
 
         .feat {
-            border: 1px solid gainsboro;
+            border: 1px solid $mainColor;
             height: 30px;
             padding-top: 2px;
 
             .txt-ft {
                 font-weight: bold;
-                color: #aba8a8;
+                color: $mainColor;
                 font-family: "roboto";
                 font-size: 18px;
                 float: left;
@@ -211,10 +218,13 @@ export default {
             }
         }
     }
+    .bg-default {
+        background-color: $mainColor !important;
+    }
 
     .product-details {
         background-color: white;
-        border: 1px solid gainsboro;
+        padding-top: 1em;
     }
 
     .preview {
@@ -320,7 +330,7 @@ export default {
     }
 
     .checked, .price span {
-        color: #ff9f1a;
+        color: $mainColor;
     }
 
     .product-title, .rating, .product-description, .price, .vote, .sizes {

@@ -1,6 +1,6 @@
 .home-component {
+  $mainColor: #e7257c;
   background: white;
-  border: 1px solid gainsboro;
 
   .sld {
     height: 495px;
@@ -13,29 +13,31 @@
   }
 
   .part-1 {
-    padding-top: 1em;
+    padding: 1em;
+    img {
+      height: 100px;
+      margin-bottom: 10px;
+      width: 100%;
+      display: block;
+    }
 
     .addons {
       .priceoff {
-        height: 270px;
+        height: 200px;
         width: 100%;
-        background: #f98b03;
+        background: $mainColor;
         position: relative;
 
         i {
           color: white;
           font-size: 4em;
-          margin-top: 25px;
+          margin-top: 20px;
         }
 
         .title {
           font-size: 30px;
           font-weight: bold;
           color: white;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          height: 100px;
           margin: auto;
 
           span {
@@ -147,13 +149,13 @@
     padding: 1em;
 
     .feat {
-      border: 1px solid gainsboro;
+      border: 1px solid $mainColor;
       height: 30px;
       padding-top: 2px;
 
       .txt-ft {
         font-weight: bold;
-        color: #aba8a8;
+        color: $mainColor;
         font-family: "roboto";
         font-size: 18px;
         float: left;
@@ -163,6 +165,7 @@
       .show-ft {
         float: right;
         margin-right: 1em;
+        color: $mainColor;
       }
     }
   }

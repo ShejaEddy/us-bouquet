@@ -5,8 +5,8 @@
                 <createAccount v-if="isSignUp"></createAccount>
 
                 <form class="form-signin" @submit.prevent="login" v-if="!isSignUp">
-                    <img class="mb-4" src="../assets/login-img.png" alt width="72" height="72">
-                    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                    <img class="mb-4 mx-auto d-flex" src="../assets/login-img.png" alt width="72" height="72">
+                    <h1 class="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
                     <label for="email" class="sr-only">Email address</label>
                     <input
                             type="email"
@@ -28,9 +28,9 @@
                             autocomplete="current-password"
                     >
                     <p class="text-muted">
-                        <a href="javascript:;;">Forget password ?</a>
+                        <a href="javascript:;;" class="c-default">Forget password ?</a>
                     </p>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    <button class="btn btn-lg bg-default text-white btn-block" type="submit">
                         <i class="fa fa-spinner fa-spin mr-1" v-if="showLoader"></i> Log In
                     </button>
                 </form>
@@ -40,8 +40,8 @@
             <a href="javascript:;;" @click="toggleForm">Sign in</a>
           </span>
                     <span v-if="!isSignUp">
-            New to Tsapal-Online?
-            <a href="javascript:;;" @click="toggleForm">Create an Account</a>
+            New to USBouquet-Online?
+            <a href="javascript:;;" @click="toggleForm" class="c-default">Create an Account</a>
           </span>
                 </p>
             </div>
@@ -81,7 +81,7 @@ export default {
     login (event) {
       this.showLoader = true
       const user = this.user
-      this.$router.push('/admin')
+      // this.$router.push('/admin')
       // this.$axios
       //   .post('/login', user)
       //   .then(response => {
@@ -97,12 +97,11 @@ export default {
       //   })
     }
   }
-}
+};
 </script>
 <style>
     .login {
         position: relative;
-        margin-bottom: 15%;
     }
 
     .form-signin {
